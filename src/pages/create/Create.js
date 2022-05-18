@@ -1,7 +1,12 @@
 import "./Create.css";
 import Select from "react-select";
+import { useCollection } from "../../hooks/useCollection";
+import { timestamp } from "../../firebase/config";
+import { useAuthContext } from "../../hooks/useAuthContext";
+import { useFirestore } from "../../hooks/useFirestore";
+import { useHistory } from "react-router-dom";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 const categories = [
   { value: "development", label: "development" },
@@ -11,15 +16,69 @@ const categories = [
 ];
 
 function Create() {
+  const history = useHistory();
+  const { addDocument, response } = useFirestore("projects");
+  const { documents } = useCollection("users");
+
+  const [users, setUsers] = useState([]);
+
+  const { user } = useAuthContext();
+
   const [name, setName] = useState("");
   const [details, setDetails] = useState("");
   const [dueDate, setDueDate] = useState("");
   const [category, setCategory] = useState("");
   const [assingnedUsers, setAssingnedUsers] = useState([]);
+  const [formError, setFormError] = useState(null);
 
-  const handleSubmit = (e) => {
+  useEffect(() => {
+    if (documents) {
+      const options = documents.map((user) => {
+        return { value: user, label: user.displayName };
+      });
+      setUsers(options);
+    }
+  }, [documents]);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(name, details, dueDate, category.value);
+    setFormError(null);
+    if (!category) {
+      setFormError("Please select category");
+      return;
+    }
+    if (assingnedUsers.length < 1) {
+      setFormError("Please assign project least 1");
+      return;
+    }
+
+    const createdBy = {
+      displayName: user.displayName,
+      photoURL: user.photoURL,
+      id: user.uid,
+    };
+    const assingnedUsersList = assingnedUsers.map((u) => {
+      return {
+        displayName: u.value.displayName,
+        photoURL: u.value.photoURL,
+        id: u.value.id,
+      };
+    });
+
+    const project = {
+      name,
+      details,
+      category: category.value,
+      dueDate: timestamp.fromDate(new Date(dueDate)),
+      comments: [],
+      createdBy,
+      assingnedUsersList,
+    };
+
+    await addDocument(project);
+    if (!response.error) {
+      history.push("/");
+    }
   };
   return (
     <div className="create-form">
@@ -60,10 +119,16 @@ function Create() {
           </label>
           <label>
             <span>Assing to:</span>
-            {}
+
+            <Select
+              options={users}
+              onChange={(option) => setAssingnedUsers(option)}
+              isMulti
+            />
           </label>
         </label>
         <button className="btn">Add Event</button>
+        {formError && <p className="error">{formError}</p>}
       </form>
     </div>
   );
