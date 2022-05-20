@@ -13,6 +13,7 @@ const categories = [
   { value: "design", label: "Design" },
   { value: "sales", label: "Sales" },
   { value: "marketing", label: "Marketing" },
+  { value: "mine", label: "Mine" },
 ];
 
 function Create() {
