@@ -44,25 +44,6 @@ function Dashboard() {
 
   console.log(documents);
 
-  /* switch (currentFilter) {
-      case "all":
-        return true;
-      case "mine":
-        let assignedToMe = false;
-        document.assignedUsersList.forEach((u) => {
-          if (user.uid === u.id) {
-            assignedToMe = true;
-          }
-        });
-        return assignedToMe;
-      case "delopment":
-      case "design":
-      case "sales":
-        console.log(document.category, currentFilter)
-        return (document.category = currentFilter)
-      
-    }*/
-
   return (
     <div>
       <h2 className="page-title">Dashboard</h2>
