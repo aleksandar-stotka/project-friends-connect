@@ -1,0 +1,114 @@
+[debug] [2022-05-20T23:16:30.212Z] ----------------------------------------------------------------------
+[debug] [2022-05-20T23:16:30.214Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Lenovo\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2022-05-20T23:16:30.215Z] CLI Version:   10.7.2
+[debug] [2022-05-20T23:16:30.215Z] Platform:      win32
+[debug] [2022-05-20T23:16:30.215Z] Node Version:  v16.13.1
+[debug] [2022-05-20T23:16:30.216Z] Time:          Sat May 21 2022 01:16:30 GMT+0200 (Central European Summer Time)
+[debug] [2022-05-20T23:16:30.217Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-05-20T23:16:30.320Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-05-20T23:16:30.321Z] > authorizing via signed-in user (aangelevski6@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Lenovo\Documents\procect-work5.9.2022\React-Firebase-lesson-150\the-dojo
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2022-05-20T23:16:52.226Z] Using project from CLI flag: eclipse-interactive
+[debug] [2022-05-20T23:16:52.231Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/eclipse-interactive [none]
+[debug] [2022-05-20T23:16:52.738Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/eclipse-interactive 200
+[debug] [2022-05-20T23:16:52.738Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/eclipse-interactive {"projectId":"eclipse-interactive","projectNumber":"931461415861","displayName":"eclipse-interactive","name":"projects/eclipse-interactive","resources":{"hostingSite":"eclipse-interactive","storageBucket":"eclipse-interactive.appspot.com","locationId":"europe-west"},"state":"ACTIVE"}
+[info] i  Using project eclipse-interactive (eclipse-interactive) 
+[info] 
+=== Firestore Setup
+[debug] [2022-05-20T23:16:52.762Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/eclipse-interactive/services/firestore.googleapis.com [none]
+[debug] [2022-05-20T23:16:53.850Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/eclipse-interactive/services/firestore.googleapis.com 200
+[debug] [2022-05-20T23:16:53.850Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/eclipse-interactive/services/firestore.googleapis.com [omitted]
+[debug] [2022-05-20T23:16:53.852Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2022-05-20T23:16:53.853Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-05-20T23:16:54.173Z] <<< HTTP RESPONSE 200 {"expires":"Mon, 01 Jan 1990 00:00:00 GMT","pragma":"no-cache","date":"Fri, 20 May 2022 23:16:55 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-05-20T23:16:54.187Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/eclipse-interactive  
+ 
+[debug] [2022-05-20T23:16:54.678Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Fri, 20 May 2022 23:16:55 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-05-20T23:16:54.679Z] database_type: CLOUD_FIRESTORE
+[debug] [2022-05-20T23:16:54.680Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-05-20T23:16:54.680Z] > authorizing via signed-in user (aangelevski6@gmail.com)
+[debug] [2022-05-20T23:16:54.680Z] [iam] checking project eclipse-interactive for permissions ["firebase.projects.get"]
+[debug] [2022-05-20T23:16:54.680Z] > refreshing access token with scopes: []
+[debug] [2022-05-20T23:16:54.681Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-05-20T23:16:54.948Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","date":"Fri, 20 May 2022 23:16:56 GMT","expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-05-20T23:16:54.960Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/eclipse-interactive:testIamPermissions [none]
+[debug] [2022-05-20T23:16:54.961Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/eclipse-interactive:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2022-05-20T23:16:55.423Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/eclipse-interactive:testIamPermissions 200
+[debug] [2022-05-20T23:16:55.424Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/eclipse-interactive:testIamPermissions {"permissions":["firebase.projects.get"]}
+[info] 
+[info] Firestore Security Rules allow you to define how and when to allow
+[info] requests. You can keep these rules in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2022-05-20T23:17:05.489Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/eclipse-interactive/releases pageSize=10&pageToken=
+[debug] [2022-05-20T23:17:06.003Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/eclipse-interactive/releases 200
+[debug] [2022-05-20T23:17:06.003Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/eclipse-interactive/releases {"releases":[{"name":"projects/eclipse-interactive/releases/cloud.firestore","rulesetName":"projects/eclipse-interactive/rulesets/e2e1282c-32a5-42aa-8a42-88a9a88e8f6b","createTime":"2022-04-21T08:54:41.830924Z","updateTime":"2022-04-21T08:54:41.830924Z"}]}
+[debug] [2022-05-20T23:17:06.004Z] Found ruleset: projects/eclipse-interactive/rulesets/e2e1282c-32a5-42aa-8a42-88a9a88e8f6b
+[debug] [2022-05-20T23:17:06.004Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/eclipse-interactive/rulesets/e2e1282c-32a5-42aa-8a42-88a9a88e8f6b [none]
+[debug] [2022-05-20T23:17:06.396Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/eclipse-interactive/rulesets/e2e1282c-32a5-42aa-8a42-88a9a88e8f6b 200
+[debug] [2022-05-20T23:17:06.396Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/eclipse-interactive/rulesets/e2e1282c-32a5-42aa-8a42-88a9a88e8f6b [omitted]
+[info] 
+[info] Firestore indexes allow you to perform complex queries while
+[info] maintaining performance that scales with the size of the result
+[info] set. You can keep index definitions in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2022-05-20T23:17:16.605Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2022-05-20T23:17:16.606Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-05-20T23:17:16.607Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2022-05-20T23:17:16.607Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-05-20T23:17:16.874Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","cache-control":"no-cache, no-store, max-age=0, must-revalidate","date":"Fri, 20 May 2022 23:17:17 GMT","expires":"Mon, 01 Jan 1990 00:00:00 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-05-20T23:17:16.888Z] >>> HTTP REQUEST GET https://firestore.googleapis.com/v1/projects/eclipse-interactive/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false  
+ 
+[debug] [2022-05-20T23:17:16.902Z] <<< HTTP RESPONSE 200 {"cache-control":"no-cache, no-store, max-age=0, must-revalidate","expires":"Mon, 01 Jan 1990 00:00:00 GMT","pragma":"no-cache","date":"Fri, 20 May 2022 23:17:17 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-05-20T23:17:16.916Z] >>> HTTP REQUEST GET https://firestore.googleapis.com/v1/projects/eclipse-interactive/databases/(default)/collectionGroups/-/indexes  
+ 
+[debug] [2022-05-20T23:17:17.279Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Fri, 20 May 2022 23:17:18 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-05-20T23:17:17.290Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Fri, 20 May 2022 23:17:18 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+=== Hosting Setup
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
+[debug] [2022-05-20T23:17:30.676Z] >>> [apiv2][query] GET https://www.gstatic.com/firebasejs/releases.json [none]
+[debug] [2022-05-20T23:17:30.950Z] <<< [apiv2][status] GET https://www.gstatic.com/firebasejs/releases.json 200
+[debug] [2022-05-20T23:17:30.950Z] <<< [apiv2][body] GET https://www.gstatic.com/firebasejs/releases.json {"current":{"version":"9.8.1","browserURL":"https://www.gstatic.com/firebasejs/9.8.1/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/9.8.1/firebase.tgz"},"live":{"version":"9.8","browserURL":"https://www.gstatic.com/firebasejs/live/9.8/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/live/9.8/firebase.tgz"},"components":{"analytics":"https://www.gstatic.com/firebasejs/9.8.1/firebase-analytics.js","app":"https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js","app-check":"https://www.gstatic.com/firebasejs/9.8.1/firebase-app-check.js","auth":"https://www.gstatic.com/firebasejs/9.8.1/firebase-auth.js","auth/cordova":"https://www.gstatic.com/firebasejs/9.8.1/firebase-auth/cordova.js","auth/react-native":"https://www.gstatic.com/firebasejs/9.8.1/firebase-auth/react-native.js","functions":"https://www.gstatic.com/firebasejs/9.8.1/firebase-functions.js","firestore":"https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore.js","firestore/lite":"https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore/lite.js","storage":"https://www.gstatic.com/firebasejs/9.8.1/firebase-storage.js","performance":"https://www.gstatic.com/firebasejs/9.8.1/firebase-performance.js","remote-config":"https://www.gstatic.com/firebasejs/9.8.1/firebase-remote-config.js","messaging":"https://www.gstatic.com/firebasejs/9.8.1/firebase-messaging.js","messaging/sw":"https://www.gstatic.com/firebasejs/9.8.1/firebase-messaging/sw.js","database":"https://www.gstatic.com/firebasejs/9.8.1/firebase-database.js","firestore.memory":"https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore.memory.js"}}
+[debug] [2022-05-20T23:17:31.230Z] Error: ENOENT: no such file or directory, open 'C:\Users\Lenovo\Documents\procect-work5.9.2022\React-Firebase-lesson-150\the-dojo\y\index.html'
+    at Object.openSync (node:fs:585:3)
+    at Object.writeFileSync (node:fs:2153:35)
+    at Object.createFileSync (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\fs-extra\lib\ensure\file.js:43:6)
+    at Config.writeProjectFile (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\firebase-tools\lib\config.js:151:12)
+    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\firebase-tools\lib\config.js:175:22
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async doSetup (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\firebase-tools\lib\init\features\hosting\index.js:52:5)
+    at async init (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\firebase-tools\lib\init\index.js:36:9)
+[error] 
+[error] Error: An unexpected error has occurred.
