@@ -83,10 +83,10 @@ function Create() {
   };
   return (
     <div className="create-form">
-      <h2 className="page-title">Create a new Event</h2>
+      <h2 className="page-title">Create a new Project</h2>
       <form onSubmit={handleSubmit}>
         <label>
-          <span>Event Name:</span>
+          <span>Project Name:</span>
           <input
             required
             type="text"
@@ -96,7 +96,7 @@ function Create() {
         </label>
         <label>
           <span>details:</span>
-          <input
+          <textarea
             required
             type="text"
             onChange={(e) => setDetails(e.target.value)}

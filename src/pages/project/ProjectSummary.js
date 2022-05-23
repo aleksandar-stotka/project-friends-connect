@@ -18,10 +18,10 @@ function ProjectSummary({ project }) {
         <h2 className="page-title">{project.name}</h2>
         <p>By {project.createdBy.displayName}</p>
         <p className="due-date">
-          Event due by {project.dueDate.toDate().toDateString()}
+          Project due by {project.dueDate.toDate().toDateString()}
         </p>
         <p className="details">{project.details}</p>
-        <h4>Event is assigned to:</h4>
+        <h4>Project is assigned to:</h4>
         <div className="assigned-users">
           {project.assingnedUsersList.map((user) => {
             return (
