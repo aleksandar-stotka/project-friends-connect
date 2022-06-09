@@ -31,6 +31,7 @@ function Create() {
   const [category, setCategory] = useState("");
   const [assingnedUsers, setAssingnedUsers] = useState([]);
   const [formError, setFormError] = useState(null);
+  const [file, setFile] = useState(null);
 
   useEffect(() => {
     if (documents) {
@@ -81,6 +82,12 @@ function Create() {
       history.push("/");
     }
   };
+
+  const handleFileChange = (e) => {
+    const selected = e.target.files[0];
+    console.log(selected);
+  };
+
   return (
     <div className="create-form">
       <h2 className="page-title">Create a new Project</h2>
@@ -126,6 +133,10 @@ function Create() {
               onChange={(option) => setAssingnedUsers(option)}
               isMulti
             />
+          </label>
+          <label>
+            <span>photo</span>
+            <input type="file" onChange={handleFileChange} />
           </label>
         </label>
         <button className="btn">Add Event</button>
