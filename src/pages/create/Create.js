@@ -8,6 +8,7 @@ import { useHistory } from "react-router-dom";
 
 import React, { useEffect } from "react";
 import { useState } from "react";
+import Avatar from "../../components/Avatar";
 const categories = [
   { value: "development", label: "development" },
   { value: "design", label: "Design" },
@@ -84,8 +85,15 @@ function Create() {
   };
 
   const handleFileChange = (e) => {
+    setFile(null);
     const selected = e.target.files[0];
     console.log(selected);
+    if (selected.size > 100000) {
+      setFile("image file size must be less than 100kn");
+      return;
+    }
+
+    setFile(selected);
   };
 
   return (
@@ -133,10 +141,6 @@ function Create() {
               onChange={(option) => setAssingnedUsers(option)}
               isMulti
             />
-          </label>
-          <label>
-            <span>photo</span>
-            <input type="file" onChange={handleFileChange} />
           </label>
         </label>
         <button className="btn">Add Event</button>
