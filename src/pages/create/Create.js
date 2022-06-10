@@ -75,6 +75,7 @@ function Create() {
       dueDate: timestamp.fromDate(new Date(dueDate)),
       comments: [],
       createdBy,
+
       assingnedUsersList,
     };
 
@@ -82,18 +83,6 @@ function Create() {
     if (!response.error) {
       history.push("/");
     }
-  };
-
-  const handleFileChange = (e) => {
-    setFile(null);
-    const selected = e.target.files[0];
-    console.log(selected);
-    if (selected.size > 100000) {
-      setFile("image file size must be less than 100kn");
-      return;
-    }
-
-    setFile(selected);
   };
 
   return (
@@ -141,6 +130,9 @@ function Create() {
               onChange={(option) => setAssingnedUsers(option)}
               isMulti
             />
+          </label>
+          <label>
+            <span>photo</span>
           </label>
         </label>
         <button className="btn">Add Event</button>
