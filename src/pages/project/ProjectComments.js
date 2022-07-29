@@ -5,12 +5,14 @@ import { useFirestore } from "../../hooks/useFirestore";
 
 import React from "react";
 import Avatar from "../../components/Avatar";
+import { useHistory } from "react-router-dom";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
 
 function ProjectComments({ project }) {
   const { updateDocument, response } = useFirestore("projects");
   const [newComment, setNewComment] = useState("");
   const { user } = useAuthContext();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const commentToAdd = {
