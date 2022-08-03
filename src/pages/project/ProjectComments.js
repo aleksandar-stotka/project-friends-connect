@@ -3,12 +3,12 @@ import { timestamp } from "../../firebase/config";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { useFirestore } from "../../hooks/useFirestore";
 
-import React from "react";
 import Avatar from "../../components/Avatar";
 import { useHistory } from "react-router-dom";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
 
 function ProjectComments({ project }) {
+  //////////////////////////////////////////////////////
   const { updateDocument, response } = useFirestore("projects");
   const [newComment, setNewComment] = useState("");
   const { user } = useAuthContext();
@@ -20,6 +20,7 @@ function ProjectComments({ project }) {
       photoURL: user.photoURL,
       content: newComment,
       createdAt: timestamp.fromDate(new Date()),
+
       id: Math.random(),
     };
     await updateDocument(project.id, {
@@ -42,9 +43,10 @@ function ProjectComments({ project }) {
               </div>
               <div className="comment-date">
                 <p>
-                  {formatDistanceToNow(comment.createdAt.toDate(), {
-                    addSuffix: true,
-                  })}
+                  {comment.createdAt &&
+                    formatDistanceToNow(comment.createdAt.toDate(), {
+                      addSuffix: true,
+                    })}
                 </p>
               </div>
               <div className="comment-content">
