@@ -16,7 +16,7 @@ function ProjectComments({ project }) {
   const { user } = useAuthContext();
 
   const addRemoveCommnets = async () => {
-    const commentToAdd = {
+    const commentToMove = {
       displayName: user.displayName,
       photoURL: user.photoURL,
       content: newComment,
@@ -24,12 +24,12 @@ function ProjectComments({ project }) {
 
       id: Math.random(),
     };
-    console.log(commentToAdd);
+    console.log(commentToMove);
 
     await updateDocument(project.id, {
-      comments: [!commentToAdd],
+      comments: [!commentToMove],
     });
-    console.log(commentToAdd);
+    console.log(commentToMove);
     if (!response.error) {
       setNewComment("");
     }
