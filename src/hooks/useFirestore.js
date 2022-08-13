@@ -21,6 +21,10 @@ const firestoreReducer = (state, action) => {
       };
     case "DELETED_DOCUMENT":
       return { isPending: false, document: null, success: true, error: null };
+
+    case "DELETE_COMMENTS":
+      return { isPending: false, document: null, success: true, error: null };
+
     case "UPDATED_DOCUMENT":
       return {
         isPending: false,
@@ -81,6 +85,18 @@ export const useFirestore = (collection) => {
       dispatchIfNotCancelled({ type: "ERROR", payload: "could not delete" });
     }
   };
+  //romove copmments
+  const removeComments = async (comment) => {
+    dispatch({ type: "IS_PENDING" });
+
+    try {
+      await ref.doc(comment).delete();
+      dispatchIfNotCancelled({ type: "DELETED_COMMENTS" });
+    } catch (err) {
+      dispatchIfNotCancelled({ type: "ERROR", payload: "could not delete" });
+    }
+  };
+
   //update
 
   const updateDocument = async (id, updates) => {
@@ -102,5 +118,11 @@ export const useFirestore = (collection) => {
     return () => setIsCancelled(true);
   }, []);
 
-  return { addDocument, deleteDocument, response, updateDocument };
+  return {
+    addDocument,
+    deleteDocument,
+    response,
+    updateDocument,
+    removeComments,
+  };
 };

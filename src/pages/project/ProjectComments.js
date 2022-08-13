@@ -10,8 +10,30 @@ import formatDistanceToNow from "date-fns/formatDistanceToNow";
 function ProjectComments({ project }) {
   //////////////////////////////////////////////////////
   const { updateDocument, response } = useFirestore("projects");
+  const { removeComments } = useFirestore("projects");
   const [newComment, setNewComment] = useState("");
+
   const { user } = useAuthContext();
+
+  const addRemoveCommnets = async () => {
+    const commentToAdd = {
+      displayName: user.displayName,
+      photoURL: user.photoURL,
+      content: newComment,
+      createdAt: timestamp.fromDate(new Date()),
+
+      id: Math.random(),
+    };
+    console.log(commentToAdd);
+
+    await updateDocument(project.id, {
+      comments: [!commentToAdd],
+    });
+    console.log(commentToAdd);
+    if (!response.error) {
+      setNewComment("");
+    }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,13 +45,16 @@ function ProjectComments({ project }) {
 
       id: Math.random(),
     };
+    console.log(commentToAdd);
     await updateDocument(project.id, {
       comments: [...project.comments, commentToAdd],
     });
+    console.log(commentToAdd);
     if (!response.error) {
       setNewComment("");
     }
   };
+
   return (
     <div className="project-comments">
       <h4>Project Comments</h4>
@@ -52,6 +77,10 @@ function ProjectComments({ project }) {
               <div className="comment-content">
                 <p>{comment.content}</p>
               </div>
+
+              <button className="btn" onClick={addRemoveCommnets}>
+                Mark as Complete
+              </button>
             </li>
           ))}
       </ul>
