@@ -86,11 +86,11 @@ export const useFirestore = (collection) => {
     }
   };
   //romove copmments
-  const removeComments = async (comment) => {
+  const removeComments = async (id) => {
     dispatch({ type: "IS_PENDING" });
 
     try {
-      await ref.doc(comment).delete();
+      await ref.doc(id).delete();
       dispatchIfNotCancelled({ type: "DELETED_COMMENTS" });
     } catch (err) {
       dispatchIfNotCancelled({ type: "ERROR", payload: "could not delete" });
