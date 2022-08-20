@@ -8,32 +8,14 @@ import { useHistory } from "react-router-dom";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
 
 function ProjectComments({ project }) {
+  console.log(project.comments);
+
   //////////////////////////////////////////////////////
   const { updateDocument, response } = useFirestore("projects");
   const { removeComments } = useFirestore("projects");
   const [newComment, setNewComment] = useState("");
 
   const { user } = useAuthContext();
-
-  const addRemoveCommnets = async () => {
-    const commentToMove = {
-      displayName: user.displayName,
-      photoURL: user.photoURL,
-      content: newComment,
-      createdAt: timestamp.fromDate(new Date()),
-
-      id: Math.random(),
-    };
-    console.log(commentToMove);
-
-    await updateDocument(project.id, {
-      comments: [!commentToMove],
-    });
-    console.log(commentToMove);
-    if (!response.error) {
-      setNewComment("");
-    }
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -46,6 +28,7 @@ function ProjectComments({ project }) {
       id: Math.random(),
     };
     console.log(commentToAdd);
+
     await updateDocument(project.id, {
       comments: [...project.comments, commentToAdd],
     });
@@ -54,36 +37,51 @@ function ProjectComments({ project }) {
       setNewComment("");
     }
   };
+  const removeComment = async () => {
+    await updateDocument(project.id, {
+      comments: [!newComment],
+    });
+
+    if (!response.error) {
+      setNewComment("");
+    }
+  };
 
   return (
     <div className="project-comments">
       <h4>Project Comments</h4>
-      <ul>
-        {project.comments.length > 0 &&
-          project.comments.map((comment) => (
-            <li key={comment.id}>
-              <div className="comment-author">
-                <Avatar src={comment.photoURL} />
-                <p>{comment.displayName}</p>
-              </div>
-              <div className="comment-date">
-                <p>
-                  {comment.createdAt &&
-                    formatDistanceToNow(comment.createdAt.toDate(), {
-                      addSuffix: true,
-                    })}
-                </p>
-              </div>
-              <div className="comment-content">
-                <p>{comment.content}</p>
-              </div>
+      {
+        <ul>
+          {project.comments.length > 0 &&
+            project.comments.map((comment) => (
+              <li key={comment.id}>
+                <div className="comment-author">
+                  <Avatar src={comment.photoURL} />
+                  <p>{comment.displayName}</p>
+                </div>
+                <div className="comment-date">
+                  <p>
+                    {comment.createdAt &&
+                      formatDistanceToNow(comment.createdAt.toDate(), {
+                        addSuffix: true,
+                      })}
+                  </p>
+                </div>
+                <div className="comment-content">
+                  <p>{comment.content}</p>
+                </div>
+              </li>
+            ))}
+        </ul>
+      }
+      <button
+        className="btn"
+        style={{ padding: "0.4em", margin: "1em" }}
+        onClick={removeComment}
+      >
+        delete all comments
+      </button>
 
-              <button className="btn" onClick={addRemoveCommnets}>
-                Mark as Complete
-              </button>
-            </li>
-          ))}
-      </ul>
       <form className="add-comment" onSubmit={handleSubmit}>
         <label>
           <span>Add new comment</span>
