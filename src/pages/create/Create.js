@@ -131,9 +131,6 @@ function Create() {
               isMulti
             />
           </label>
-          <label>
-            <span>photo</span>
-          </label>
         </label>
         <button className="btn">Add Event</button>
         {formError && <p className="error">{formError}</p>}
