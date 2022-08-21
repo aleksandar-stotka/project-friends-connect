@@ -132,7 +132,9 @@ function Create() {
             />
           </label>
         </label>
-        <button className="btn">Add Event</button>
+        <button style={{ marginBottom: "1em" }} className="btn">
+          Add Event
+        </button>
         {formError && <p className="error">{formError}</p>}
       </form>
     </div>
