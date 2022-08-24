@@ -7,6 +7,7 @@ import Login from "./pages/login/Login";
 import Signup from "./pages/signup/Signup";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
+import Home from "./pages/Home";
 import { useAuthContext } from "./hooks/useAuthContext";
 import OnlineUsers from "./components/OnlineUsers";
 
