@@ -32,7 +32,6 @@ function Create() {
   const [category, setCategory] = useState("");
   const [assingnedUsers, setAssingnedUsers] = useState([]);
   const [formError, setFormError] = useState(null);
-  const [file, setFile] = useState(null);
 
   useEffect(() => {
     if (documents) {
