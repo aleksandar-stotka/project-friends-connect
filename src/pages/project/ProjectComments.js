@@ -36,15 +36,6 @@ function ProjectComments({ project }) {
       setNewComment("");
     }
   };
-  const removeComment = async () => {
-    await updateDocument(project.id, {
-      comments: [!newComment],
-    });
-
-    if (!response.error) {
-      setNewComment("");
-    }
-  };
 
   return (
     <div className="project-comments">
@@ -73,13 +64,6 @@ function ProjectComments({ project }) {
             ))}
         </ul>
       }
-      <button
-        className="btn"
-        style={{ padding: "0.4em", margin: "1em" }}
-        onClick={removeComment}
-      >
-        delete all comments
-      </button>
 
       <form className="add-comment" onSubmit={handleSubmit}>
         <label>

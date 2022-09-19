@@ -4,12 +4,14 @@ import "firebase/auth";
 import "firebase/storage";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCXFoaejA_rzZZ1LjuPz3c8CEYYBMGjsv0",
-  authDomain: "friends-chat-d1bb3.firebaseapp.com",
-  projectId: "friends-chat-d1bb3",
-  storageBucket: "friends-chat-d1bb3.appspot.com",
-  messagingSenderId: "298177385516",
-  appId: "1:298177385516:web:d03e6c3825a3c226cd6d89",
+  apiKey: "AIzaSyBPjVSnq0Dar0aDAT64d-XkJ6B_aMneSfU",
+  authDomain: "eclipse-interactive.firebaseapp.com",
+  databaseURL:
+    "https://eclipse-interactive-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "eclipse-interactive",
+  storageBucket: "eclipse-interactive.appspot.com",
+  messagingSenderId: "931461415861",
+  appId: "1:931461415861:web:9d5889e1a0d4d05a608ffc",
 };
 
 firebase.initializeApp(firebaseConfig);
