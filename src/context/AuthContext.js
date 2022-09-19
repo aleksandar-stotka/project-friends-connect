@@ -13,6 +13,39 @@ export const authReducer = (state, action) => {
       return { user: action.payload, authIsReady: true };
     default:
       return state;
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
   }
 };
 

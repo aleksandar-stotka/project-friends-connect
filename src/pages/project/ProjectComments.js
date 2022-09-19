@@ -4,7 +4,6 @@ import { useAuthContext } from "../../hooks/useAuthContext";
 import { useFirestore } from "../../hooks/useFirestore";
 
 import Avatar from "../../components/Avatar";
-import { useHistory } from "react-router-dom";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
 
 function ProjectComments({ project }) {
@@ -59,7 +58,7 @@ function ProjectComments({ project }) {
                   <Avatar src={comment.photoURL} />
                   <p>{comment.displayName}</p>
                 </div>
-                <div className="comment-date">
+                <div className="comment-daSte">
                   <p>
                     {comment.createdAt &&
                       formatDistanceToNow(comment.createdAt.toDate(), {

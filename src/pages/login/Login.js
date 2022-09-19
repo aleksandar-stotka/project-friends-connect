@@ -11,7 +11,7 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    login(email, password);
+    login(email, password, "login");
   };
   return (
     <form className="auth-form" onSubmit={handleSubmit}>
