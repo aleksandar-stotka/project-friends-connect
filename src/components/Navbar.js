@@ -11,9 +11,6 @@ function Navbar() {
   return (
     <div className="navbar">
       <ul>
-        <li>
-          <Link to="/home">home</Link>
-        </li>
         <li className="logo"></li>
         {!user && (
           <>
