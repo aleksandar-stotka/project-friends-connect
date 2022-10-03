@@ -8,13 +8,15 @@ import Signup from "./pages/signup/Signup";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import Home from "./pages/Home";
-import { useAuthContext } from "./hooks/useAuthContext";
+import { useAuthContext } from "./hooks/useAuthContext"; 
+import Header from "./pages/header/Header";
 import OnlineUsers from "./components/OnlineUsers";
 
-function App() {
+function App() { 
   const { user, authIsReady } = useAuthContext();
   return (
-    <div className="App">
+    <div className="App " >
+         <Header/>
       {authIsReady && (
         <BrowserRouter>
           {user && <Sidebar />}
