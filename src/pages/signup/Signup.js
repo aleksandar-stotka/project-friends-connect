@@ -38,7 +38,8 @@ function Signup() {
     signup(email, password, displayName, thumbnail);
   };
   return (
-    <form className="auth-form" onSubmit={handleSubmit}>
+    <div className="form-container" style={{display:'flex', justifyContent:'center',width:'100%'}}>
+ <form className="auth-form" onSubmit={handleSubmit}>
       <h2>Sing up</h2>
       <label>
         <span>email:</span>
@@ -77,6 +78,8 @@ function Signup() {
       )}
       {error && <div className="error">{error}</div>}
     </form>
+    </div>
+   
   );
 }
 
