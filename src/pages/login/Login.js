@@ -1,7 +1,14 @@
 import "./Login.css";
 import { useState } from "react";
+import { useEffect } from "react";
 import { useLogin } from "../../hooks/useLogin";
 import React from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
+
+
+
+
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -9,14 +16,19 @@ function Login() {
 
   const { login, isPending, error } = useLogin();
 
+
   const handleSubmit = (e) => {
     e.preventDefault();
     login(email, password, "login");
   };
+  useEffect(() => {
+    Aos.init({ duration: 2500 });
+  }, []);
+  
   return (
 
       <div className='form-container' style={{display:'flex', justifyContent:'center',width:'100%'}}>
-      <form className="auth-form" onSubmit={handleSubmit}>
+      <form className="auth-form" onSubmit={handleSubmit}    data-aos="flip-left">
         <h2>Login</h2>
         <label>
           <span>email:</span>

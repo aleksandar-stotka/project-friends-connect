@@ -115,7 +115,7 @@ function Create() {
             value={dueDate}
           />
           <label>
-            <span>Event category:</span>
+            <span>Project category:</span>
             <Select
               onChange={(option) => setCategory(option)}
               options={categories}
