@@ -92,26 +92,3 @@ Modal
 }
 
 /* OPEN/CLOSE MODAL */
-.show-modal {
-  visibility: visible;
-  z-index: 10;
-}
-.modal-container {
-  border-radius: var(--radius);
-  
-  max-width: 50rem;
-  text-align: center;
-  display: grid;
-  place-items: center;
-  position: relative;
-}
-
-.close-modal-btn {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  font-size: 2rem;
-  border-color: transparent;
-  color: white;
-  cursor: pointer;
-}
