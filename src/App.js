@@ -9,14 +9,16 @@ import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import Home from "./pages/Home";
 import { useAuthContext } from "./hooks/useAuthContext"; 
-import Header from "./pages/header/Header";
 import OnlineUsers from "./components/OnlineUsers";
+import { useGlobalContext
+ } from "./globalContext/context";
 
 function App() { 
   const { user, authIsReady } = useAuthContext();
+  const {heloo} = useGlobalContext()
   return (
     <div className="App " >
-         <Header/>
+       <h1>{heloo}</h1>
       {authIsReady && (
         <BrowserRouter>
           {user && <Sidebar />}
