@@ -7,6 +7,7 @@ import Login from "./pages/login/Login";
 import Signup from "./pages/signup/Signup";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
+import Modal from "./components/modal/Modal";
 import Home from "./pages/Home";
 import { useAuthContext } from "./hooks/useAuthContext"; 
 import OnlineUsers from "./components/OnlineUsers";
@@ -15,14 +16,15 @@ import { useGlobalContext
 
 function App() { 
   const { user, authIsReady } = useAuthContext();
-  const {heloo} = useGlobalContext()
   return (
     <div className="App " >
-       <h1>{heloo}</h1>
+  
       {authIsReady && (
         <BrowserRouter>
           {user && <Sidebar />}
           <div className="container">
+            
+          <Modal/>
             <Navbar />
             <Switch>
               <Route exact path="/">

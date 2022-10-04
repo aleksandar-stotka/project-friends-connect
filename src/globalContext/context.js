@@ -1,19 +1,26 @@
-import React, {useState, useContext, useEffect} from "react";
+import React, { useState, useContext, useEffect } from "react";
+
+const AppContext = React.createContext();
+
+export const AppProvider = ({ children }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
 
-const AppContext = React.createContext()
-
-export const AppProvider = ({children}) => {
-    const heloo = 'heloo'
-
-    return (
-        <AppContext.Provider value={{heloo}}>{children}</AppContext.Provider>
-    )
-
-}
-
-
+  return (
+    <AppContext.Provider value={{ isModalOpen, openModal, closeModal }}>
+      {children}
+    </AppContext.Provider>
+  );
+};
 
 export const useGlobalContext = () => {
-    return useContext(AppContext)
-}
+  return useContext(AppContext);
+};
