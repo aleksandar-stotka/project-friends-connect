@@ -4,6 +4,7 @@ import React from "react";
 import { useSignup } from "../../hooks/useSignup";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import { useGlobalContext } from "../../globalContext/context";
 function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -11,8 +12,8 @@ function Signup() {
   const [thumbnail, setThumbnail] = useState(null);
   const [thumbnailError, setThumbnailError] = useState(null);
   const { signup, isPending, error } = useSignup();
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
+   ///////
+   const {openModal} = useGlobalContext()
 
   const handleFileChange = (e) => {
     ///first reset
@@ -22,12 +23,7 @@ function Signup() {
       //////// modal
 
      
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
+;
 
   
  

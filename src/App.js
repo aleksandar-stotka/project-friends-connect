@@ -8,11 +8,8 @@ import Signup from "./pages/signup/Signup";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import Modal from "./components/modal/Modal";
-import Home from "./pages/Home";
 import { useAuthContext } from "./hooks/useAuthContext"; 
 import OnlineUsers from "./components/OnlineUsers";
-import { useGlobalContext
- } from "./globalContext/context";
 
 function App() { 
   const { user, authIsReady } = useAuthContext();
@@ -24,8 +21,10 @@ function App() {
           {user && <Sidebar />}
           <div className="container">
             
-          <Modal/>
+             
             <Navbar />
+            <Modal/>
+            
             <Switch>
               <Route exact path="/">
                 {!user && <Redirect to="/login" />}
