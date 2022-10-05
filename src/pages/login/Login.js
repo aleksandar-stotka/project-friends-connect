@@ -28,7 +28,7 @@ function Login() {
   return (
 
       <div className='form-container' style={{display:'flex', justifyContent:'center',width:'100%'}}>
-      <form className="auth-form" onSubmit={handleSubmit}    data-aos="flip-left">
+      <form className="auth-form" onSubmit={handleSubmit} style={{width: '40rem',height:'30rem'}}    data-aos="flip-left">
         <h2>Login</h2>
         <label>
           <span>email:</span>
