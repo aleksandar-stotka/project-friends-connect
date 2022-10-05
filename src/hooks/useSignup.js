@@ -30,7 +30,7 @@ export const useSignup = () => {
       //upload user thubmail
       const uploadPath = `thumbnails/${res.user.uid}/${thumbnail.name}`;
       const img = await projectStorage.ref(uploadPath).put(thumbnail);
-      const imgUrl = await img.ref.getDownloadURL();
+      const imgUrl = await img.ref.getDownloadURL();   
       // add display name to user
       await res.user.updateProfile({ displayName, photoURL: imgUrl });
 
@@ -49,7 +49,7 @@ export const useSignup = () => {
         setIsPending(false);
         setError(null);
       }
-    } catch (err) {
+    } catch (err) { 
       if (!isCancelled) {
         setError(err.message);
         setIsPending(false);
