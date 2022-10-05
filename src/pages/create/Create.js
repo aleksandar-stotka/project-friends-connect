@@ -9,6 +9,7 @@ import { useHistory } from "react-router-dom";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import Avatar from "../../components/Avatar";
+import Header from "../../components/header/Header";
 const categories = [
   { value: "development", label: "development" },
   { value: "design", label: "Design" },
@@ -85,8 +86,18 @@ function Create() {
   };
 
   return (
+    <>
     <div className="create-form">
-      <h2 className="page-title">Create a new Project</h2>
+    <div data-aos="flip-right" style={{width:'100%', display:'flex', justifyContent:'center', flexDirection:'column',alignItems:'center',textAlign:'center'}}>
+  <h1>
+  Create your project and
+  share with friends
+    </h1>
+    <h2>
+      Create group
+    </h2>
+
+  </div>
       <form onSubmit={handleSubmit}>
         <label>
           <span>Project Name:</span>
@@ -137,6 +148,8 @@ function Create() {
         {formError && <p className="error">{formError}</p>}
       </form>
     </div>
+    </>
+    
   );
 }
 

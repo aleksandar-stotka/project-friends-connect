@@ -7,28 +7,25 @@ import Login from "./pages/login/Login";
 import Signup from "./pages/signup/Signup";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
-import { useAuthContext } from "./hooks/useAuthContext"; 
+import { useAuthContext } from "./hooks/useAuthContext";
 import OnlineUsers from "./components/OnlineUsers";
 import Header from "./components/header/Header";
 
-function App() { 
+function App() {
   const { user, authIsReady } = useAuthContext();
   return (
-    <div className="App " >
-  
+    <div className="App ">
       {authIsReady && (
         <BrowserRouter>
           {user && <Sidebar />}
           <div className="container">
-            
-             
             <Navbar />
-            <Header/>
+
             
-            
+
             <Switch>
               <Route exact path="/">
-                {!user && <Redirect to="/login" />}
+                {!user && <Redirect to="/header" />}
                 {user && <Dashboard />}
               </Route>
               <Route path="/create">
@@ -41,11 +38,14 @@ function App() {
               </Route>
               <Route path="/login">
                 {user && <Redirect to="/" />}
-                {!user && <Login />}  
+                {!user && <Login />}
               </Route>
               <Route path="/signup">
                 {user && <Redirect to="/" />}
                 {!user && <Signup />}
+              </Route>
+              <Route path="/header">
+               <Header/>
               </Route>
             </Switch>
           </div>

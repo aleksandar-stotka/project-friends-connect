@@ -102,6 +102,816 @@ Modal
 .btn-blue:hover {
   @apply bg-blue-700;
 }
+/* Big tablet to 1200px (widths smaller taht the 1140px row) */
+@media only screen and (max-width: 1200px) {
+    .hero-text-box {
+        width: 100%;
+        padding: 0 2%;
+    }
+    
+    .row { padding: 0 2%; }
+}
+
+
+/* Small tablet to big tablet: from 768px to 1023px */
+@media only screen and (max-width: 1023px) {
+    body { font-size: 18px; }
+    section { padding: 60px 0; }
+    
+    .long-copy {
+        width: 80%;
+        margin-left: 10%;
+    }
+    
+    .steps-box { margin-top: 10px; }
+    .steps-box:last-child { margin-top: 10px; }
+    .works-steps { margin-bottom: 40px; }
+    .works-step:last-of-type { margin-bottom: 60px; }
+    
+    .app-screen { width: 50%; }
+    
+    .icon-small { 
+        width: 17px;
+        margin-right: 5px;
+    }
+    
+    .city-feature { font-size: 90%; }
+    
+    .plan-box {
+        width: 100%;
+        margin-left: 0%;
+    }
+    
+    .plan-price { font-size: 250%; }
+    .contact-form { width: 80%; }
+}
+
+
+
+/* Small phones to small tablets: from 481px to 767px */
+@media only screen and (max-width: 767px) {
+    body { font-size: 16px; }
+    section { padding: 30px 0; }
+    
+    .row,
+    .hero-text-box { padding: 0 4%; }
+    .col { 
+        width: 100%;
+        margin: 0 0 4% 0;
+    }
+    
+    
+    .main-nav { display: none; }
+    .mobile-nav-icon {display: inline-block;}
+    
+    .main-nav {
+        float: left;
+        margin-top: 30px;
+        margin-left: 25px;
+    }
+    
+    .main-nav li {
+        display: block;
+    }
+    
+    .main-nav li a:link,
+    .main-nav li a:visited {
+        display: block;
+        border: 0;
+        padding: 10px 0;
+        font-size: 100%;
+    }
+    
+    .sticky .main-nav { margin-top: 10px; }
+
+    .sticky .main-nav li a:link,
+    .sticky .main-nav li a:visited { padding: 10px 0; }
+    .sticky .mobile-nav-icon { margin-top: 10px; }
+    .sticky .mobile-nav-icon i { color: #555; }
+    
+    
+    
+    h1 { font-size: 180%; }
+    h2 { font-size: 150%; }
+    
+    .long-copy {
+        width: 100%;
+        margin-left: 0%;
+    }
+    
+    .app-screen { width: 40%; }
+    .steps-box:first-child { text-align: center; }
+    
+    .works-step div {
+        height: 40px;
+        width: 40px;
+        margin-right: 15px;
+        padding: 4px;
+        font-size: 120%;
+    }
+    
+    .works-step { margin-bottom: 20px; }
+    .works-step:last-of-type { margin-bottom: 20px; }
+    
+}
+
+
+
+/* Small phones: from 0 to 480px */
+@media only screen and (max-width: 480px) {
+    section { padding: 25px 0; }
+    .contact-form {width: 100%; }
+}
+
+/*  SECTIONS  ============================================================================= */
+
+.section {
+  clear: both;
+  padding: 0px;
+  margin: 0px;
+}
+
+
+/*  GROUPING  ============================================================================= */
+
+.row {
+  zoom: 1;
+  /* For IE 6/7 (trigger hasLayout) */
+}
+
+.row:before,
+.row:after {
+  content: "";
+  display: table;
+}
+
+.row:after {
+  clear: both;
+}
+
+
+/*  GRID COLUMN SETUP   ==================================================================== */
+
+.col {
+  display: block;
+  float: left;
+  margin: 1% 0 1% 1.6%;
+}
+
+.col:first-child {
+  margin-left: 0;
+}
+
+
+/* all browsers except IE6 and lower */
+
+
+/*  REMOVE MARGINS AS ALL GO FULL WIDTH AT 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+  .col {
+      /*margin: 1% 0 1% 0%;*/
+      margin: 0;
+  }
+}
+
+
+/*  GRID OF TWO   ============================================================================= */
+
+.span-2-of-2 {
+  width: 100%;
+}
+
+.span-1-of-2 {
+  width: 49.2%;
+}
+
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+  .span-2-of-2 {
+      width: 100%;
+  }
+  .span-1-of-2 {
+      width: 100%;
+  }
+}
+
+
+/*  GRID OF THREE   ============================================================================= */
+
+.span-3-of-3 {
+  width: 100%;
+}
+
+.span-2-of-3 {
+  width: 66.13%;
+}
+
+.span-1-of-3 {
+  width: 32.26%;
+}
+
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+  .span-3-of-3 {
+      width: 100%;
+  }
+  .span-2-of-3 {
+      width: 100%;
+  }
+  .span-1-of-3 {
+      width: 100%;
+  }
+}
+
+
+/*  GRID OF FOUR   ============================================================================= */
+
+.span-4-of-4 {
+  width: 100%;
+}
+
+.span-3-of-4 {
+  width: 74.6%;
+}
+
+.span-2-of-4 {
+  width: 49.2%;
+}
+
+.span-1-of-4 {
+  width: 23.8%;
+}
+
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+  .span-4-of-4 {
+      width: 100%;
+  }
+  .span-3-of-4 {
+      width: 100%;
+  }
+  .span-2-of-4 {
+      width: 100%;
+  }
+  .span-1-of-4 {
+      width: 100%;
+  }
+}
+
+
+/*  GRID OF FIVE   ============================================================================= */
+
+.span-5-of-5 {
+  width: 100%;
+}
+
+.span-4-of-5 {
+  width: 79.68%;
+}
+
+.span-3-of-5 {
+  width: 59.36%;
+}
+
+.span-2-of-5 {
+  width: 39.04%;
+}
+
+.span-1-of-5 {
+  width: 18.72%;
+}
+
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+  .span-5-of-5 {
+      width: 100%;
+  }
+  .span-4-of-5 {
+      width: 100%;
+  }
+  .span-3-of-5 {
+      width: 100%;
+  }
+  .span-2-of-5 {
+      width: 100%;
+  }
+  .span-1-of-5 {
+      width: 100%;
+  }
+}
+
+
+/*  GRID OF SIX   ============================================================================= */
+
+.span-6-of-6 {
+  width: 100%;
+}
+
+.span-5-of-6 {
+  width: 83.06%;
+}
+
+.span-4-of-6 {
+  width: 66.13%;
+}
+
+.span-3-of-6 {
+  width: 49.2%;
+}
+
+.span-2-of-6 {
+  width: 32.26%;
+}
+
+.span-1-of-6 {
+  width: 15.33%;
+}
+
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+  .span-6-of-6 {
+      width: 100%;
+  }
+  .span-5-of-6 {
+      width: 100%;
+  }
+  .span-4-of-6 {
+      width: 100%;
+  }
+  .span-3-of-6 {
+      width: 100%;
+  }
+  .span-2-of-6 {
+      width: 100%;
+  }
+  .span-1-of-6 {
+      width: 100%;
+  }
+}
+
+
+/*  GRID OF SEVEN   ============================================================================= */
+
+.span-7-of-7 {
+  width: 100%;
+}
+
+.span-6-of-7 {
+  width: 85.48%;
+}
+
+.span-5-of-7 {
+  width: 70.97%;
+}
+
+.span-4-of-7 {
+  width: 56.45%;
+}
+
+.span-3-of-7 {
+  width: 41.94%;
+}
+
+.span-2-of-7 {
+  width: 27.42%;
+}
+
+.span-1-of-7 {
+  width: 12.91%;
+}
+
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+  .span-7-of-7 {
+      width: 100%;
+  }
+  .span-6-of-7 {
+      width: 100%;
+  }
+  .span-5-of-7 {
+      width: 100%;
+  }
+  .span-4-of-7 {
+      width: 100%;
+  }
+  .span-3-of-7 {
+      width: 100%;
+  }
+  .span-2-of-7 {
+      width: 100%;
+  }
+  .span-1-of-7 {
+      width: 100%;
+  }
+}
+
+
+/*  GRID OF EIGHT   ============================================================================= */
+
+.span-8-of-8 {
+  width: 100%;
+}
+
+.span-7-of-8 {
+  width: 87.3%;
+}
+
+.span-6-of-8 {
+  width: 74.6%;
+}
+
+.span-5-of-8 {
+  width: 61.9%;
+}
+
+.span-4-of-8 {
+  width: 49.2%;
+}
+
+.span-3-of-8 {
+  width: 36.5%;
+}
+
+.span-2-of-8 {
+  width: 23.8%;
+}
+
+.span-1-of-8 {
+  width: 11.1%;
+}
+
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+  .span-8-of-8 {
+      width: 100%;
+  }
+  .span-7-of-8 {
+      width: 100%;
+  }
+  .span-6-of-8 {
+      width: 100%;
+  }
+  .span-5-of-8 {
+      width: 100%;
+  }
+  .span-4-of-8 {
+      width: 100%;
+  }
+  .span-3-of-8 {
+      width: 100%;
+  }
+  .span-2-of-8 {
+      width: 100%;
+  }
+  .span-1-of-8 {
+      width: 100%;
+  }
+}
+
+
+/*  GRID OF NINE   ============================================================================= */
+
+.span-9-of-9 {
+  width: 100%;
+}
+
+.span-8-of-9 {
+  width: 88.71%;
+}
+
+.span-7-of-9 {
+  width: 77.42%;
+}
+
+.span-6-of-9 {
+  width: 66.13%;
+}
+
+.span-5-of-9 {
+  width: 54.84%;
+}
+
+.span-4-of-9 {
+  width: 43.55%;
+}
+
+.span-3-of-9 {
+  width: 32.26%;
+}
+
+.span-2-of-9 {
+  width: 20.97%;
+}
+
+.span-1-of-9 {
+  width: 9.68%;
+}
+
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+  .span-9-of-9 {
+      width: 100%;
+  }
+  .span-8-of-9 {
+      width: 100%;
+  }
+  .span-7-of-9 {
+      width: 100%;
+  }
+  .span-6-of-9 {
+      width: 100%;
+  }
+  .span-5-of-9 {
+      width: 100%;
+  }
+  .span-4-of-9 {
+      width: 100%;
+  }
+  .span-3-of-9 {
+      width: 100%;
+  }
+  .span-2-of-9 {
+      width: 100%;
+  }
+  .span-1-of-9 {
+      width: 100%;
+  }
+}
+
+
+/*  GRID OF TEN   ============================================================================= */
+
+.span-10-of-10 {
+  width: 100%;
+}
+
+.span-9-of-10 {
+  width: 89.84%;
+}
+
+.span-8-of-10 {
+  width: 79.68%;
+}
+
+.span-7-of-10 {
+  width: 69.52%;
+}
+
+.span-6-of-10 {
+  width: 59.36%;
+}
+
+.span-5-of-10 {
+  width: 49.2%;
+}
+
+.span-4-of-10 {
+  width: 39.04%;
+}
+
+.span-3-of-10 {
+  width: 28.88%;
+}
+
+.span-2-of-10 {
+  width: 18.72%;
+}
+
+.span-1-of-10 {
+  width: 8.56%;
+}
+
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+  .span-10-of-10 {
+      width: 100%;
+  }
+  .span-9-of-10 {
+      width: 100%;
+  }
+  .span-8-of-10 {
+      width: 100%;
+  }
+  .span-7-of-10 {
+      width: 100%;
+  }
+  .span-6-of-10 {
+      width: 100%;
+  }
+  .span-5-of-10 {
+      width: 100%;
+  }
+  .span-4-of-10 {
+      width: 100%;
+  }
+  .span-3-of-10 {
+      width: 100%;
+  }
+  .span-2-of-10 {
+      width: 100%;
+  }
+  .span-1-of-10 {
+      width: 100%;
+  }
+}
+
+
+/*  GRID OF ELEVEN   ============================================================================= */
+
+.span-11-of-11 {
+  width: 100%;
+}
+
+.span-10-of-11 {
+  width: 90.76%;
+}
+
+.span-9-of-11 {
+  width: 81.52%;
+}
+
+.span-8-of-11 {
+  width: 72.29%;
+}
+
+.span-7-of-11 {
+  width: 63.05%;
+}
+
+.span-6-of-11 {
+  width: 53.81%;
+}
+
+.span-5-of-11 {
+  width: 44.58%;
+}
+
+.span-4-of-11 {
+  width: 35.34%;
+}
+
+.span-3-of-11 {
+  width: 26.1%;
+}
+
+.span-2-of-11 {
+  width: 16.87%;
+}
+
+.span-1-of-11 {
+  width: 7.63%;
+}
+
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+  .span-11-of-11 {
+      width: 100%;
+  }
+  .span-10-of-11 {
+      width: 100%;
+  }
+  .span-9-of-11 {
+      width: 100%;
+  }
+  .span-8-of-11 {
+      width: 100%;
+  }
+  .span-7-of-11 {
+      width: 100%;
+  }
+  .span-6-of-11 {
+      width: 100%;
+  }
+  .span-5-of-11 {
+      width: 100%;
+  }
+  .span-4-of-11 {
+      width: 100%;
+  }
+  .span-3-of-11 {
+      width: 100%;
+  }
+  .span-2-of-11 {
+      width: 100%;
+  }
+  .span-1-of-11 {
+      width: 100%;
+  }
+}
+
+
+/*  GRID OF TWELVE   ============================================================================= */
+
+.span-12-of-12 {
+  width: 100%;
+}
+
+.span-11-of-12 {
+  width: 91.53%;
+}
+
+.span-10-of-12 {
+  width: 83.06%;
+}
+
+.span-9-of-12 {
+  width: 74.6%;
+}
+
+.span-8-of-12 {
+  width: 66.13%;
+}
+
+.span-7-of-12 {
+  width: 57.66%;
+}
+
+.span-6-of-12 {
+  width: 49.2%;
+}
+
+.span-5-of-12 {
+  width: 40.73%;
+}
+
+.span-4-of-12 {
+  width: 32.26%;
+}
+
+.span-3-of-12 {
+  width: 23.8%;
+}
+
+.span-2-of-12 {
+  width: 15.33%;
+}
+
+.span-1-of-12 {
+  width: 6.86%;
+}
+
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+  .span-12-of-12 {
+      width: 100%;
+  }
+  .span-11-of-12 {
+      width: 100%;
+  }
+  .span-10-of-12 {
+      width: 100%;
+  }
+  .span-9-of-12 {
+      width: 100%;
+  }
+  .span-8-of-12 {
+      width: 100%;
+  }
+  .span-7-of-12 {
+      width: 100%;
+  }
+  .span-6-of-12 {
+      width: 100%;
+  }
+  .span-5-of-12 {
+      width: 100%;
+  }
+  .span-4-of-12 {
+      width: 100%;
+  }
+  .span-3-of-12 {
+      width: 100%;
+  }
+  .span-2-of-12 {
+      width: 100%;
+  }
+  .span-1-of-12 {
+      width: 100%;
+  }
+}
 
 
 /* OPEN/CLOSE MODAL */

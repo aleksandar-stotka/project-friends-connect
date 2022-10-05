@@ -6,6 +6,7 @@ import React from "react";
 import ProjectList from "../../components/ProjectList";
 import ProjectFilter from "./ProjectFilter";
 import { useAuthContext } from "../../hooks/useAuthContext";
+import Footer from "../../components/footer/Footer";
 
 function Dashboard() {
   const { documents, error } = useCollection("projects");
@@ -46,7 +47,7 @@ function Dashboard() {
 
   return (
     <div>
-      <h2 className="page-title">Dashboard</h2>
+    
       {error && <p className="error">{error}</p>}
       {documents && (
         <ProjectFilter

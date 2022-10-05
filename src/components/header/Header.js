@@ -1,14 +1,10 @@
 import React from 'react'
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const Header = () => {
   return <>
-  <div style={{width:'100%', display:'flex', justifyContent:'center'}}>
-  <h1>
-  create your project and
-  share with friends
-    </h1>
-
-  </div>
+     header
         
   </>
   
