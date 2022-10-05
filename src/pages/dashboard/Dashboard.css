@@ -15,6 +15,7 @@
     padding: 10px;
     background-color: #fff;
     border-radius: 4px;
+    border: 2px solid #00bfff;
 }
 .project-filter p {
     font-size: 0.9em;

@@ -7,7 +7,6 @@ import Login from "./pages/login/Login";
 import Signup from "./pages/signup/Signup";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
-import Modal from "./components/modal/Modal";
 import { useAuthContext } from "./hooks/useAuthContext"; 
 import OnlineUsers from "./components/OnlineUsers";
 
@@ -23,7 +22,7 @@ function App() {
             
              
             <Navbar />
-            <Modal/>
+            
             
             <Switch>
               <Route exact path="/">
@@ -40,7 +39,7 @@ function App() {
               </Route>
               <Route path="/login">
                 {user && <Redirect to="/" />}
-                {!user && <Login />}
+                {!user && <Login />}  
               </Route>
               <Route path="/signup">
                 {user && <Redirect to="/" />}

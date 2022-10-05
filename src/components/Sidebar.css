@@ -1,7 +1,7 @@
 .sidebar {
     width: 300px;
     min-width: 300px;
-    background: var(--primary-color);
+    background: 	#00bfff;
     min-height: 100vh;
     box-sizing: border-box;
     position: relative;
