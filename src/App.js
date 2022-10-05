@@ -21,7 +21,8 @@ function App() {
           <div className="container">
             <Navbar />
 
-            
+     
+     
 
             <Switch>
               <Route exact path="/">

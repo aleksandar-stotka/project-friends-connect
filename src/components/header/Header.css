@@ -1,0 +1,20 @@
+.header {
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("https://images.pexels.com/photos/853168/pexels-photo-853168.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    height:45rem;
+    width:100%;
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size:cover;
+}
+.header h1 {
+    color:white;
+    font-size:6rem;
+}
+
+.header-content {
+    position: absolute;
+    top:48%;
+    left:17.5%;
+    width: 20wh;
+    letter-spacing: 9px;
+}
