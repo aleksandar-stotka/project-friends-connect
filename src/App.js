@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/heading-has-content */
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import "./App.css";
 import Dashboard from "./pages/dashboard/Dashboard";
@@ -14,15 +15,16 @@ import Header from "./components/header/Header";
 function App() {
   const { user, authIsReady } = useAuthContext();
   return (
+    
     <div className="App ">
+      <h1 className="text-green-600">text</h1>
       {authIsReady && (
         <BrowserRouter>
           {user && <Sidebar />}
           <div className="container">
             <Navbar />
 
-     
-     
+           
 
             <Switch>
               <Route exact path="/">

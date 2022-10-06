@@ -8,6 +8,8 @@ import './queries.css';
 
 
 
+
+
 import { AuthContextProvider } from "./context/AuthContext";
 import { AppProvider } from "./globalContext/context";
 
