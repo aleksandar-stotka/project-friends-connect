@@ -17,7 +17,6 @@ function App() {
   return (
     
     <div className="App ">
-      <h1 className="text-green-600">text</h1>
       {authIsReady && (
         <BrowserRouter>
           {user && <Sidebar />}
