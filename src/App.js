@@ -11,6 +11,7 @@ import Sidebar from "./components/Sidebar";
 import { useAuthContext } from "./hooks/useAuthContext";
 import OnlineUsers from "./components/OnlineUsers";
 import Header from "./components/header/Header";
+import About from "./pages/about/About";
 
 function App() {
   const { user, authIsReady } = useAuthContext();
@@ -26,7 +27,7 @@ function App() {
            
 
             <Switch>
-              <Route exact path="/"> n
+              <Route exact path="/"> 
                 {!user && <Redirect to="/header" />}
                 {user && <Dashboard />}
               </Route>
@@ -48,6 +49,9 @@ function App() {
               </Route>
               <Route path="/header">
                <Header/>
+              </Route>
+              <Route path="/about">
+               <About/>
               </Route>
             </Switch>
           </div>
