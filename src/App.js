@@ -26,7 +26,7 @@ function App() {
            
 
             <Switch>
-              <Route exact path="/">
+              <Route exact path="/"> n
                 {!user && <Redirect to="/header" />}
                 {user && <Dashboard />}
               </Route>
