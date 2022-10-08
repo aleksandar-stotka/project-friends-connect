@@ -1,10 +1,23 @@
 import React, { useState, useContext, useEffect } from "react";
+import { useLogout } from "../hooks/useLogout";
 
 const AppContext = React.createContext();
-
 export const AppProvider = ({ children }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [newBack, setNewBack] = useState(true)
 
+
+  const newBackground =   () => {
+    
+      
+    setTimeout(() => {
+      setNewBack(false)
+      console.log('set')
+    }, 4000)
+  
+    
+  
+};
   const openModal = () => {
     setIsModalOpen(true);
   };
@@ -12,10 +25,12 @@ export const AppProvider = ({ children }) => {
   const closeModal = () => {
     setIsModalOpen(false);
   };
-
+ useEffect(() => {
+  newBackground()
+ })
 
   return (
-    <AppContext.Provider value={{ isModalOpen, openModal, closeModal }}>
+    <AppContext.Provider value={{ isModalOpen, openModal, closeModal, newBack, newBackground }}>
       {children}
     </AppContext.Provider>
   );

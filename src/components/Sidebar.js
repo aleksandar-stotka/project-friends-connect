@@ -16,12 +16,7 @@ function Sidebar() {
         </div>
         <nav className="links">
           <ul>
-          <li>
-              <NavLink to="/about">
-                <img src={DashboardIcon} alt="about" />
-                <span>About me :)</span>
-              </NavLink>
-            </li>  
+          
             <li>
               <NavLink to="/">
                 <img src={DashboardIcon} alt="dashborad" />

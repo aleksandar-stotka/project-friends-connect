@@ -1,13 +1,22 @@
 import "./Navbar.css";
 import { Link } from "react-router-dom";
-import React from "react";
+import React, { useEffect } from "react";
 import { useLogout } from "../hooks/useLogout";
 import { useAuthContext } from "../hooks/useAuthContext";
 
 function Navbar() {
   const { user } = useAuthContext();
   const { logout, isPending } = useLogout();
+  
 
+  useEffect(() => {
+    if(logout) {
+      
+      // eslint-disable-next-line no-unused-expressions
+      
+    }
+  },[])
+  
   return (
     <div className="navbar">
       <ul>
@@ -18,7 +27,7 @@ function Navbar() {
               <Link className='btn' to="/login">Login</Link>
             </li>
             <li>
-              <Link to="/signup">Signup</Link>
+              <Link className="btn" to="/signup">Signup</Link>
             </li>
           </>
         )}

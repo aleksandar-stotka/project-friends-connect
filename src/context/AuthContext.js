@@ -1,7 +1,9 @@
 import { createContext, useReducer, useEffect } from "react";
 import { projectAuth } from "../firebase/config";
+import { useGlobalContext } from "../globalContext/context";
 
 export const AuthContext = createContext();
+
 
 export const authReducer = (state, action) => {
   switch (action.type) {

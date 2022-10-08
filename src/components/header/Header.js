@@ -4,32 +4,24 @@ import "aos/dist/aos.css";
 import Aos from "aos";
 import {useState, useEffect} from 'react'
 import "aos/dist/aos.css"
+import { useGlobalContext } from '../../globalContext/context';
 
 
 const Header = () => {
-  const [newBack, setNewBack] = useState(true)
- 
-  const newBackground = async () => {
-    try {
-      setTimeout(() => {
-        setNewBack(false);
-        console.log('set')
-      }, 4000);
-    } catch (err) {
-      console.log(err);
-    }
-  };;
   
+  const {newBack} =useGlobalContext()
+ 
+ 
   useEffect(() => {
-    newBackground()
+   
     Aos.init({ duration: 2500 });
   
-},[newBack])
+},[])
 
 ///////////////////
   return <>
   {newBack && <div className="test">
-        test
+       tset
     </div>}
     {!newBack && <div className="header" data-aos="flip-left" >
     <div className="flesh-content"> </div>
