@@ -12,11 +12,18 @@ import { useAuthContext } from "./hooks/useAuthContext";
 import OnlineUsers from "./components/OnlineUsers";
 import Header from "./components/header/Header";
 import About from "./pages/about/About";
+import { useState } from "react";
+import { useEffect } from "react";
 
 function App() {
+
+  setTimeout(() => {
+       
+  },4000)
+
   const { user, authIsReady } = useAuthContext();
   return (
-    
+     
     <div className="App ">
       {authIsReady && (
         <BrowserRouter>
