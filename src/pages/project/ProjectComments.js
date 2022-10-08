@@ -3,7 +3,7 @@ import { timestamp } from "../../firebase/config";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { useFirestore } from "../../hooks/useFirestore";
 
-import Avatar from "../../components/Avatar";
+import Avatar from "../../components/avatar/Avatar";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
 
 function ProjectComments({ project }) {

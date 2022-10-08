@@ -1,9 +1,9 @@
 import "./Sidebar.css";
 import React from "react";
 import { NavLink } from "react-router-dom";
-import DashboardIcon from "../assets/add_icon.svg";
-import Avatar from "./Avatar";
-import { useAuthContext } from "../hooks/useAuthContext";
+import DashboardIcon from "../../assets/add_icon.svg";
+import Avatar from "../avatar/Avatar";
+import { useAuthContext } from "../../hooks/useAuthContext";
 
 function Sidebar() {
   const { user } = useAuthContext();

@@ -8,7 +8,7 @@ import { useHistory } from "react-router-dom";
 
 import React, { useEffect } from "react";
 import { useState } from "react";
-import Avatar from "../../components/Avatar";
+import Avatar from "../../components/avatar/Avatar";
 import Header from "../../components/header/Header";
 const categories = [
   { value: "development", label: "development" },

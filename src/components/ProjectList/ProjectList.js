@@ -1,6 +1,6 @@
 import "./ProjectList.css";
 import { Link } from "react-router-dom";
-import Avatar from "./Avatar";
+import Avatar  from "../avatar/Avatar";
 
 import React from "react";
 

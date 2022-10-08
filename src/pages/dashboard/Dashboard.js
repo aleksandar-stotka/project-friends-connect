@@ -3,7 +3,7 @@ import { useCollection } from "../../hooks/useCollection";
 import { useState } from "react";
 
 import React from "react";
-import ProjectList from "../../components/ProjectList";
+import ProjectList from "../../components/ProjectList/ProjectList";
 import ProjectFilter from "./ProjectFilter";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import Footer from "../../components/footer/Footer";
@@ -55,6 +55,8 @@ function Dashboard() {
           changeFilter={changeFilter}
         />
       )}
+
+
       {projects && <ProjectList projects={projects} />}
 
     

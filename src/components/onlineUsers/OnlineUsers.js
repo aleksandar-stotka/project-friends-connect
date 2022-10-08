@@ -1,8 +1,8 @@
 import "./OnlineUsers.css";
-import { useCollection } from "../hooks/useCollection";
+import { useCollection } from "../../hooks/useCollection";
 
 import React from "react";
-import Avatar from "./Avatar";
+import Avatar from "../avatar/Avatar";
 
 function OnlineUsers() {
   const { documents, error } = useCollection("users");
