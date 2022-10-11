@@ -17,6 +17,21 @@
     
 
 }
+.btn-logout {
+  background: #3648c9;
+  padding: 9px 12px;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  font-size: 1.4em;
+  border: none;
+}
+.btn-logout:hover {
+  color: #fff;
+  background-color: #fcde67;
+  transition: ease-out 0.3s;
+}
+
 
 .navbar .logo {
     font-weight: bold;
@@ -33,7 +48,7 @@
     margin-top: -8px;
 }
 .navbar a {
-    color: #333;
+    color: white;
     text-decoration: none;
     margin-left: 20px;
 

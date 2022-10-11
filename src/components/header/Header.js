@@ -21,10 +21,18 @@ const Header = () => {
 ///////////////////
   return <>
   {newBack && <div className="test">
-       tset
+         <div className='photo' >
+          photo
+         </div>
+         <div className='description'>
+          description
+         </div>
+       
+
     </div>}
     {!newBack && <div className="header" data-aos="flip-left" >
     <div className="flesh-content"> </div>
+    
     <div className="header-content"> <h1 >Create your Project</h1></div>
       
      
