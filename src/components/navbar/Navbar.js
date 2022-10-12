@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 import React, { useEffect } from "react";
 import { useLogout } from "../../hooks/useLogout";
 import { useAuthContext } from "../../hooks/useAuthContext";
+import { useGlobalContext } from "../../globalContext/context";
 function Navbar() {
   const { user } = useAuthContext();
   const { logout, isPending } = useLogout();
+  const {newBack} = useGlobalContext()
   
 
   useEffect(() => {
@@ -17,10 +19,13 @@ function Navbar() {
   },[])
   
   return (
+    <>
     <div className="navbar">
       <ul>
         <li className="logo"></li>
-        {!user && (
+       
+        
+        {!user && !newBack && (
           <>
             <li>
               <Link className='btn' to="/login">Login</Link>
@@ -46,6 +51,8 @@ function Navbar() {
         )}
       </ul>
     </div>
+    </>
+    
   );
 }
 
