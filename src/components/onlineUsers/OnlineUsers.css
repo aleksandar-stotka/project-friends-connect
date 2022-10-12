@@ -16,14 +16,14 @@ span {
   margin-bottom: 40px;
   padding-bottom: 10px;
 
-  font-size: 1.6rem;
+  font-size: 2rem;
 }
 .user-list .user-list-item {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   margin: 20px auto;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
 }
 
 .user-list .avatar {
@@ -39,5 +39,5 @@ span {
   padding: 0.1em;
   background: green;
   border-radius: 50%;
-  margin-top: 2px;
+  margin: 5px;
 }

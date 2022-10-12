@@ -22,10 +22,15 @@ const Header = () => {
   return <>
   {newBack && <div className="test">
          <div className='photo' >
-          photo
+        
          </div>
          <div className='description'>
-          description
+          <p>I em Angelevski Aleksandar Front End Developer with 2 years experience.</p>
+          <br></br>
+          <p>This is a small project but intresting i think but usefull.
+          ksmkmmaksmkamskmaska, mmskmskmkamaksmkamskasmkasm,kamsk,asmkamsakms
+          </p>
+           
          </div>
        
 

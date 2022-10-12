@@ -11,7 +11,7 @@
   box-shadow: 3px 3px 5px #ffffff);
   text-decoration: none;
   color: inherit;
-  height:24vh;
+  height:auto;
 }
 .project-list ,h2 {
   font-size: 1.3em;
@@ -34,6 +34,6 @@
   margin-right: 10px;
 }
 .project-list .avatar {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
 }
