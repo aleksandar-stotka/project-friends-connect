@@ -4,7 +4,7 @@
 
 .project-filter button.active {
     
-  color:  #5778fb;
+  color: #2b6777;
 }
 .project-filter {
     margin: 30px auto;
@@ -15,11 +15,12 @@
     padding: 10px;
     background-color: #fff;
     border-radius: 4px;
-    border: 2px solid  #5778fb;
+   
 }
 .project-filter p {
-    font-size: 1.5em;
+    font-size: 1.2em;
     margin-right: 10px;
+    color: #2b6777;
 }
 .project-filter button {
     background: transparent;

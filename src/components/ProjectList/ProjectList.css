@@ -5,7 +5,7 @@
   grid-gap: 20px;
 }
 .project-list a {
-  background-color: #fff;
+  background-color: #f2f2f2;
   padding: 17px;
   border-radius: 6px;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.05);
@@ -15,7 +15,7 @@
 }
 .project-list ,h2 {
   font-size: 1.3em;
-  color: var(--heading-color);
+  color: #52ab98;
 }
 .project-list p {
   color: var(--text-color);
@@ -34,6 +34,6 @@
   margin-right: 10px;
 }
 .project-list .avatar {
-  width: 90px;
-  height: 90px;
+  width: 80px;
+  height: 80px;
 }
