@@ -35,6 +35,8 @@
     font-size:1.4rem;
     background-origin: border-box;
 }
+.new-project {
+color: white;}
 
 .sidebar .links img {
     margin-right: 10px;
