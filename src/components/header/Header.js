@@ -38,7 +38,7 @@ const Header = () => {
     {!newBack && <div className="header" data-aos="flip-left" >
     <div className="flesh-content"> </div>
     
-    <div className="header-content"> <h1 >Create your Project</h1></div>
+    <div className="header-content"> <h1 >Create your Project</h1><h2>for better organization and teams workplace</h2></div>
       
      
       

@@ -30,6 +30,9 @@
     width: 20wh;
     letter-spacing: 9px;
 }
+.header-content  > h2 {
+font-size:1.8rem;
+}
 .flesh-content {
     background: #2b6777;
     width: 30rem;

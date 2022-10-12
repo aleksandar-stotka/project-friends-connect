@@ -16,6 +16,7 @@ function Dashboard() {
   ////if we have document
 
   const projects = documents
+    // eslint-disable-next-line array-callback-return
     ? documents.filter((document) => {
         // eslint-disable-next-line default-case
         switch (currentFilter) {

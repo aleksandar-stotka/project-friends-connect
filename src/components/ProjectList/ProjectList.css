@@ -18,8 +18,8 @@
   color: #52ab98;
 }
 .project-list p {
-  color: var(--text-color);
-  font-size: 1.2em;
+  color: #2b6777;
+  font-size: 1em;
 }
 .project-list .assigned-to {
   margin-top: 20px;
