@@ -51,8 +51,11 @@ grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
 
 }
 .photo{
-  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../../assets/dog.jpg");
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../../assets/tapani.jpg");
    border-radius: 50%;
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position:center;
 }
 
 .description {
