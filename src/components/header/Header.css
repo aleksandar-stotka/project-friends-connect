@@ -6,14 +6,7 @@
     background-position:center;
     background-size:cover;
     transition: ease-in 0.4s;
-    .flesh-content {
-        background:red;
-        width: 30rem;
-        height:40rem;
-        transition: ease-in-out 1s;
-        opacity: 0.5;
-       
-    }
+   
 }
 .header h1 {
     color:var( --bg-color);
@@ -29,6 +22,10 @@
     left:17.5%;
     width: 20wh;
     letter-spacing: 9px;
+    
+    
+    text-align: center;
+
 }
 .header-content  > h2 {
 font-size:1.8rem;
