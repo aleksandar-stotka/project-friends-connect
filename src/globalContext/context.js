@@ -1,12 +1,16 @@
 import React, { useState, useContext, useEffect } from "react";
 import { useLogout } from "../hooks/useLogout";
+import { useCollection } from "../hooks/useCollection";
 
 const AppContext = React.createContext();
 export const AppProvider = ({ children }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [newBack, setNewBack] = useState(true)
 
-
+  ///////////////// collection    ///////////
+  const {documents} = useCollection('projects')
+  console.log(documents,'context')
+  
   const newBackground =   () => {
     
       
@@ -30,7 +34,7 @@ export const AppProvider = ({ children }) => {
  })
 
   return (
-    <AppContext.Provider value={{ isModalOpen, openModal, closeModal, newBack, newBackground }}>
+    <AppContext.Provider value={{ isModalOpen, openModal, closeModal, newBack, newBackground , documents}}>
       {children}
     </AppContext.Provider>
   );
