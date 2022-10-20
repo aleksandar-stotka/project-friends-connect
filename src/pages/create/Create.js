@@ -90,8 +90,7 @@ function Create() {
     <div className="create-form">
     <div data-aos="flip-right" style={{width:'100%', display:'flex', justifyContent:'center', flexDirection:'column',alignItems:'center',textAlign:'center'}}>
   <h1>
-  Create your project and
-  share with friends
+  Visualize your work with a board
     </h1>
     <h2>
       Create group
