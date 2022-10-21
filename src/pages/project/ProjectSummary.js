@@ -3,26 +3,22 @@ import Avatar from "../../components/avatar/Avatar";
 import { useFirestore } from "../../hooks/useFirestore";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { useHistory } from "react-router-dom";
-import { useState } from "react";
+import { useState, } from "react";
+import { Link } from "react-router-dom";
 function ProjectSummary({ project }) {
   const { deleteDocument } = useFirestore("projects");
   const { user } = useAuthContext();
-  const [edit, setEdit] = useState(null)
-
 
   const history = useHistory();
   const handleClick = (e) => {
     deleteDocument(project.id);
     history.push("/");
   };
-  const handleEditClick = (e) => {
-      setEdit([])
-    
-  };
+
   return (
     <div>
       <div className="project-summary">
-        {!edit && <h2 className="page-title">{project.name}</h2>}
+        <h2 className="page-title">{project.name}</h2>
         <p>By {project.createdBy.displayName}</p>
         <p className="due-date">
           Project due by {project.dueDate.toDate().toDateString()}
@@ -35,6 +31,7 @@ function ProjectSummary({ project }) {
               <div key={user.id}>
                 <Avatar className="avatar" src={user.photoURL} />
               </div>
+              
             );
           })}
         </div>
@@ -45,10 +42,17 @@ function ProjectSummary({ project }) {
         </button>
       )}
       {user.uid === project.createdBy.id && (
-        <button className="btn" onClick={handleEditClick}>
-        edit
-        </button>
+        <Link to={`/project/${project.id}`} className="btn">
+          <span>edit</span>
+        </Link>
       )}
+
+         
+        
+
+      
+        
+      
     </div>
   );
 }

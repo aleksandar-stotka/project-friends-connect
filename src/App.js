@@ -14,6 +14,7 @@ import Header from "./components/header/Header";
 import About from "./pages/about/About";
 import { useState } from "react";
 import { useEffect } from "react";
+import EditProject from "./pages/EditProject/EditProject";
 
 function App() {
 
@@ -59,6 +60,11 @@ function App() {
               </Route>
               <Route path="/about">
                <About/>
+              </Route>
+              <Route path="/project/:id">
+                {!user && <Redirect to="/"/>}
+                {user && <EditProject/> }
+               <EditProject/>
               </Route>
             </Switch>
           </div>

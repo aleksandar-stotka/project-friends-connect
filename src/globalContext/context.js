@@ -6,7 +6,10 @@ const AppContext = React.createContext();
 export const AppProvider = ({ children }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [newBack, setNewBack] = useState(true)
+  const [edit, setEdit] = useState(null)
+  
 
+  
   ///////////////// collection    ///////////
   const {documents} = useCollection('projects')
   console.log(documents,'context')

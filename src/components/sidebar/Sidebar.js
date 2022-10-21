@@ -26,7 +26,7 @@ function Sidebar() {
             <li>
               <NavLink to="/create">
                 <img src={DashboardIcon} alt="add project icon" />
-                <span class="new-project">New Project</span>
+                <span className="new-project">New Project</span>
               </NavLink>
             </li>
           </ul>

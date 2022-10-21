@@ -44,7 +44,7 @@ function Dashboard() {
     setCurrentFilter(newFilter);
   };
 
-  console.log(documents);
+
 
   return (
     <div>
