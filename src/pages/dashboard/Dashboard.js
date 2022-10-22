@@ -12,7 +12,7 @@ function Dashboard() {
   const { documents, error } = useCollection("projects");
   const [currentFilter, setCurrentFilter] = useState("all");
   const { user } = useAuthContext();
-
+   console.log(documents)
   ////if we have document
 
   const projects = documents

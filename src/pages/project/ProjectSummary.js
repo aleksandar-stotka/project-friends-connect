@@ -6,6 +6,7 @@ import { useHistory } from "react-router-dom";
 import { useState, } from "react";
 import { Link } from "react-router-dom";
 function ProjectSummary({ project }) {
+  console.log(project,'summary')
   const { deleteDocument } = useFirestore("projects");
   const { user } = useAuthContext();
 
@@ -17,6 +18,7 @@ function ProjectSummary({ project }) {
 
   return (
     <div>
+      
       <div className="project-summary">
         <h2 className="page-title">{project.name}</h2>
         <p>By {project.createdBy.displayName}</p>
