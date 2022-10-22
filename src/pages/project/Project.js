@@ -8,6 +8,7 @@ import ProjectComments from "./ProjectComments";
 function Project() {
   const { id } = useParams();
   const { error, document } = useDocument("projects", id);
+  console.log(document,'project page')
   if (error) {
     return <div className="error">{error}</div>;
   }

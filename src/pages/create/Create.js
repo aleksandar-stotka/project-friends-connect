@@ -22,7 +22,7 @@ function Create() {
   const history = useHistory();
   const { addDocument, response } = useFirestore("projects");
   const { documents } = useCollection("users");
-
+  console.log(documents)
   const [users, setUsers] = useState([]);
 
   const { user } = useAuthContext();

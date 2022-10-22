@@ -12,7 +12,7 @@ export const AppProvider = ({ children }) => {
   
   ///////////////// collection    ///////////
   const {documents} = useCollection('projects')
-  console.log(documents,'context')
+  
   
   const newBackground =   () => {
     

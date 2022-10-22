@@ -64,7 +64,7 @@ function App() {
               <Route path="/project/:id">
                 {!user && <Redirect to="/"/>}
                 {user && <EditProject/> }
-               <EditProject/>
+              
               </Route>
             </Switch>
           </div>
