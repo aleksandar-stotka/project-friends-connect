@@ -6,8 +6,10 @@ import { useDocument } from "../../hooks/useDocument";
 import firebase from "firebase";
 
 function EditProject() {
-  
-  <div>edit</div>
+    return (
+      <div>ksks</div>
+    )
+   
 }
 
 export default EditProject;
