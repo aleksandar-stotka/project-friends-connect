@@ -5,11 +5,12 @@ import { useAuthContext } from "../../hooks/useAuthContext";
 import { useHistory } from "react-router-dom";
 import { useState, } from "react";
 import { Link } from "react-router-dom";
+import EditProject from "../EditProject/EditProject";
 function ProjectSummary({ project }) {
   console.log(project,'summary')
   const { deleteDocument } = useFirestore("projects");
   const { user } = useAuthContext();
-
+  const [editDoc, setEditDoc] = useState(false)
   const history = useHistory();
   const handleClick = (e) => {
     deleteDocument(project.id);
@@ -47,8 +48,9 @@ function ProjectSummary({ project }) {
         <Link to={`/project/${project.id}`} className="btn">
           <span>edit</span>
         </Link>
+        
       )}
-
+      
          
         
 
