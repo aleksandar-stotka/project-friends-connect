@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { projectFirestore } from "../firebase/config";
+import paginate from "../components/utils/utils";
 
 export const useCollection = (collection, _query, _orderBy) => {
   const [documents, setDocuments] = useState(null);
@@ -15,7 +16,7 @@ export const useCollection = (collection, _query, _orderBy) => {
     //let because maybe in the future we want to change something
 
     //
-/////gotovo
+    /////gotovo
     if (query) {
       ref = ref.where(...query);
     }
@@ -23,7 +24,8 @@ export const useCollection = (collection, _query, _orderBy) => {
       ref = ref.orderBy(...orderBy);
     }
 
-    const unsubscribe = ref.onSnapshot(//realtime listener
+    const unsubscribe = ref.onSnapshot(
+      //realtime listener
       ///snapshot is the method , is gona fire function,
       // every time snaphot back from firestore collection
       (snapshot) => {
@@ -32,6 +34,7 @@ export const useCollection = (collection, _query, _orderBy) => {
         snapshot.docs.forEach((doc) => {
           //docs is array of documents on snapShot
           results.push({ ...doc.data(), id: doc.id });
+
           //push new object and that object represent new documents
           ///data is function to get date from documents
           // include properties: name ,created, uid  and so on
@@ -48,7 +51,8 @@ export const useCollection = (collection, _query, _orderBy) => {
     );
 
     // unsubscribe on unmount
-    return () => unsubscribe(); //fire what ever function is return in this hook,
+    return () => unsubscribe();
+    //fire what ever function is return in this hook,
     // invoke unsubscribe method
   }, [collection, query, orderBy]); //whenever collection is change ,
   // now we need real time listener, page-14

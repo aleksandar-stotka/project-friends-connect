@@ -37,3 +37,10 @@
   width: 60px;
   height: 60px;
 }
+.button-container {
+  max-width:30rem;
+  margin:auto;
+  padding:2em;
+  display:flex;
+  justify-content:space-around;
+}

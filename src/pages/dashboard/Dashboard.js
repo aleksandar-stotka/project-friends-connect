@@ -7,17 +7,19 @@ import ProjectList from "../../components/ProjectList/ProjectList";
 import ProjectFilter from "./ProjectFilter";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import Footer from "../../components/footer/Footer";
+import paginate from "../../components/utils/utils";
 
 function Dashboard() {
   const { documents, error } = useCollection("projects");
+
   const [currentFilter, setCurrentFilter] = useState("all");
   const { user } = useAuthContext();
-   console.log(documents)
+
   ////if we have document
 
   const projects = documents
-    // eslint-disable-next-line array-callback-return
-    ? documents.filter((document) => {
+    ? // eslint-disable-next-line array-callback-return
+      documents.filter((document) => {
         // eslint-disable-next-line default-case
         switch (currentFilter) {
           case "all":
@@ -43,12 +45,8 @@ function Dashboard() {
   const changeFilter = (newFilter) => {
     setCurrentFilter(newFilter);
   };
-
-
-
   return (
     <div>
-    
       {error && <p className="error">{error}</p>}
       {documents && (
         <ProjectFilter
@@ -57,10 +55,7 @@ function Dashboard() {
         />
       )}
 
-
       {projects && <ProjectList projects={projects} />}
-
-    
     </div>
   );
 }
