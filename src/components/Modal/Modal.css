@@ -29,10 +29,12 @@ Modal
   display: grid;
   place-items: center;
   position: relative;
-  background: red;
+  background: var(--clr-grey-7);
   width: 100%;
 
   height: 85vh;
+  transition: ease 0.5s;
+  opacity: 1000;
 }
 
 .close-modal-btn {
@@ -41,6 +43,7 @@ Modal
   right: 1rem;
   font-size: 2rem;
   border-color: transparent;
-  color: white;
+  color: red;
   cursor: pointer;
+  border-radius: 50%;
 }

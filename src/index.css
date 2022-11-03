@@ -10,6 +10,10 @@
   --transition: all 0.3s linear;
   --radius: 0.25rem;
   --clr-grey-3: hsl(209, 34%, 30%);
+  --clr-primary-6: hsl(205, 89%, 70%);
+  --clr-red-light: hsl(360, 71%, 66%);
+  --clr-green-light: hsl(125, 71%, 66%);
+  --clr-grey-7: hsl(211, 27%, 70%);
 }
 .btn-modal {
   text-transform: uppercase;

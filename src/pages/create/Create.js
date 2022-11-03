@@ -101,12 +101,12 @@ function Create() {
             textAlign: "center",
           }}
         >
-          <h1>Visualize your work with a board</h1>
+          <h1 className="form-hero">Visualize your work with a board</h1>
           <h2>Create group</h2>
         </div>
         <form onSubmit={handleSubmit}>
           <label>
-            <span>Project Name:</span>
+            <h2 className="label-title">Project Name:</h2>
             <input
               required
               type="text"
@@ -115,7 +115,7 @@ function Create() {
             />
           </label>
           <label>
-            <span>details:</span>
+            <h2>details:</h2>
             <textarea
               required
               type="text"
@@ -124,7 +124,7 @@ function Create() {
             />
           </label>
           <label>
-            <span>date:</span>
+            <h2>date:</h2>
             <input
               required
               type="date"
@@ -132,14 +132,14 @@ function Create() {
               value={dueDate}
             />
             <label>
-              <span>Project category:</span>
+              <h2>Project category:</h2>
               <Select
                 onChange={(option) => setCategory(option)}
                 options={categories}
               />
             </label>
             <label>
-              <span>Assing to:</span>
+              <h2>Assing to:</h2>
 
               <Select
                 options={users}

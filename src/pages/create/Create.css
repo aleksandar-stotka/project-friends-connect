@@ -4,5 +4,13 @@
 }
 .create-form,
 h1 {
-  color: #2b6777;
+  color: var(--text-color);
+}
+.form-hero {
+  color: white;
+}
+.label,
+h2 {
+  color: white;
+  font-size: 1.7rem;
 }
