@@ -5,11 +5,12 @@ import { timestamp } from "../../firebase/config";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { useFirestore } from "../../hooks/useFirestore";
 import { useHistory } from "react-router-dom";
-
+import { useGlobalContext } from "../../globalContext/context";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import Avatar from "../../components/avatar/Avatar";
 import Header from "../../components/header/Header";
+import Modal from "../../components/Modal/Modal";
 const categories = [
   { value: "development", label: "development" },
   { value: "design", label: "Design" },
@@ -22,7 +23,8 @@ function Create() {
   const history = useHistory();
   const { addDocument, response } = useFirestore("projects");
   const { documents } = useCollection("users");
-  console.log(documents)
+  const { closeModal } = useGlobalContext();
+  console.log(documents);
   const [users, setUsers] = useState([]);
 
   const { user } = useAuthContext();
@@ -87,68 +89,76 @@ function Create() {
 
   return (
     <>
-    <div className="create-form">
-    <div data-aos="flip-right" style={{width:'100%', display:'flex', justifyContent:'center', flexDirection:'column',alignItems:'center',textAlign:'center'}}>
-  <h1>
-  Visualize your work with a board
-    </h1>
-    <h2>
-      Create group
-    </h2>
-
-  </div>
-      <form onSubmit={handleSubmit}>
-        <label>
-          <span>Project Name:</span>
-          <input
-            required
-            type="text"
-            onChange={(e) => setName(e.target.value)}
-            value={name}
-          />
-        </label>
-        <label>
-          <span>details:</span>
-          <textarea
-            required
-            type="text"
-            onChange={(e) => setDetails(e.target.value)}
-            value={details}
-          />
-        </label>
-        <label>
-          <span>date:</span>
-          <input
-            required
-            type="date"
-            onChange={(e) => setDueDate(e.target.value)}
-            value={dueDate}
-          />
+      <div className="create-form">
+        <div
+          data-aos="flip-right"
+          style={{
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+            flexDirection: "column",
+            alignItems: "center",
+            textAlign: "center",
+          }}
+        >
+          <h1>Visualize your work with a board</h1>
+          <h2>Create group</h2>
+        </div>
+        <form onSubmit={handleSubmit}>
           <label>
-            <span>Project category:</span>
-            <Select
-              onChange={(option) => setCategory(option)}
-              options={categories}
+            <span>Project Name:</span>
+            <input
+              required
+              type="text"
+              onChange={(e) => setName(e.target.value)}
+              value={name}
             />
           </label>
           <label>
-            <span>Assing to:</span>
-
-            <Select
-              options={users}
-              onChange={(option) => setAssingnedUsers(option)}
-              isMulti
+            <span>details:</span>
+            <textarea
+              required
+              type="text"
+              onChange={(e) => setDetails(e.target.value)}
+              value={details}
             />
           </label>
-        </label>
-        <button style={{ marginBottom: "1em" }} className="btn">
-          Add Event
-        </button>
-        {formError && <p className="error">{formError}</p>}
-      </form>
-    </div>
+          <label>
+            <span>date:</span>
+            <input
+              required
+              type="date"
+              onChange={(e) => setDueDate(e.target.value)}
+              value={dueDate}
+            />
+            <label>
+              <span>Project category:</span>
+              <Select
+                onChange={(option) => setCategory(option)}
+                options={categories}
+              />
+            </label>
+            <label>
+              <span>Assing to:</span>
+
+              <Select
+                options={users}
+                onChange={(option) => setAssingnedUsers(option)}
+                isMulti
+              />
+            </label>
+          </label>
+          <button
+            style={{ marginBottom: "1em" }}
+            className="btn"
+            onClick={closeModal}
+          >
+            Add Event
+          </button>
+          {formError && <p className="error">{formError}</p>}
+        </form>
+      </div>
     </>
-    
   );
 }
 

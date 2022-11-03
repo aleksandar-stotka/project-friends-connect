@@ -1,0 +1,46 @@
+/*
+=============== 
+Modal
+===============
+*/
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  transition: var(--transition);
+  visibility: hidden;
+  z-index: -1;
+}
+
+/* OPEN/CLOSE MODAL */
+.show-modal {
+  visibility: visible;
+  z-index: 1000;
+}
+.modal-container {
+  border-radius: var(--radius);
+
+  max-width: 50rem;
+  text-align: center;
+  display: grid;
+  place-items: center;
+  position: relative;
+  background: red;
+  width: 100%;
+
+  height: 85vh;
+}
+
+.close-modal-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  border-color: transparent;
+  color: white;
+  cursor: pointer;
+}

@@ -1,53 +1,53 @@
 .sidebar {
-    width: 300px;
-    min-width: 300px;
-    background: #2b6777;
-    min-height: 100vh;
-    box-sizing: border-box;
-    position: relative;
-    color:#fff;
+  width: 300px;
+  min-width: 300px;
+  background: #2b6777;
+  min-height: 100vh;
+  box-sizing: border-box;
+  position: relative;
+  color: #fff;
 }
 
 .sidebar-content {
-    position: fixed;
-    width: inherit;
+  position: fixed;
+  width: inherit;
 }
 .sidebar .user {
-    font-weight:bold;
-    text-align: center;
-    letter-spacing: 1px;
-    padding: 40px 30px;
-    border-bottom: 1px solid gray;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 1px;
+  padding: 40px 30px;
+  border-bottom: 1px solid gray;
 }
 .sidebar .links {
-    margin-top: 80px;
-    margin-left: 20px;
+  margin-top: 80px;
+  margin-left: 20px;
 }
 .sidebar .links li {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 .sidebar .links a {
-    display: flex;
-    padding: 10px;
-    text-decoration: none;
-    width: 100%;
-    color: #fff;
-    font-size:1.4rem;
-    background-origin: border-box;
+  display: flex;
+  padding: 10px;
+  text-decoration: none;
+  width: 100%;
+  color: #fff;
+  font-size: 1.4rem;
+  background-origin: border-box;
 }
 .new-project {
-color: #80ff80;}
+  color: #80ff80;
+}
 
 .sidebar .links img {
-    margin-right: 10px;
-    filter: invert(100%)
+  margin-right: 10px;
+  filter: invert(100%);
 }
 .sidebar .links a.active {
-    color: gray;
-    background: var(--bg-color);
-    border-radius: 20px 0 0 20px;
+  color: gray;
+  background: var(--bg-color);
+  border-radius: 20px 0 0 20px;
 }
 .sidebar .links .active img {
-    filter: invert(40%);
+  filter: invert(40%);
 }
-

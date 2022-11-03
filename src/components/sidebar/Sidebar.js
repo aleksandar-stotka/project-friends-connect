@@ -4,8 +4,11 @@ import { NavLink } from "react-router-dom";
 import DashboardIcon from "../../assets/add_icon.svg";
 import Avatar from "../avatar/Avatar";
 import { useAuthContext } from "../../hooks/useAuthContext";
+import { useGlobalContext } from "../../globalContext/context";
+import Modal from "../Modal/Modal";
 
 function Sidebar() {
+  const { openModal } = useGlobalContext();
   const { user } = useAuthContext();
   return (
     <div className="sidebar">
@@ -16,19 +19,16 @@ function Sidebar() {
         </div>
         <nav className="links">
           <ul>
-          
             <li>
               <NavLink to="/">
                 <img src={DashboardIcon} alt="dashborad" />
                 <span>Dashboard</span>
               </NavLink>
             </li>
-            <li>
-              <NavLink to="/create">
-                <img src={DashboardIcon} alt="add project icon" />
-                <span className="new-project">New Project</span>
-              </NavLink>
-            </li>
+
+            <button className="btn-modal" onClick={openModal}>
+              Create
+            </button>
           </ul>
         </nav>
       </div>

@@ -4,6 +4,7 @@ import Avatar from "../avatar/Avatar";
 import React from "react";
 import paginate from "../utils/utils";
 import { useState } from "react";
+import Modal from "../Modal/Modal";
 
 function ProjectList({ projects }) {
   const [visible, setVisible] = useState(6);

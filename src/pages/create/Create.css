@@ -1,7 +1,8 @@
 .create-form {
-    max-width: 600px;
-    margin: auto;
+  max-width: 600px;
+  margin: auto;
 }
-.create-form ,h1{
-   color:#2b6777;
+.create-form,
+h1 {
+  color: #2b6777;
 }

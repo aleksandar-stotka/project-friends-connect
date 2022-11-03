@@ -8,42 +8,37 @@ import Login from "./pages/login/Login";
 import Signup from "./pages/signup/Signup";
 import Navbar from "./components/navbar/Navbar";
 import Sidebar from "./components/sidebar/Sidebar";
-import { useAuthContext } from "./hooks/useAuthContext";  
+import { useAuthContext } from "./hooks/useAuthContext";
 import OnlineUsers from "./components/onlineUsers/OnlineUsers";
 import Header from "./components/header/Header";
 import About from "./pages/about/About";
 import { useState } from "react";
 import { useEffect } from "react";
 import EditProject from "./pages/EditProject/EditProject";
-
+import Modal from "./components/Modal/Modal";
+import { useGlobalContext } from "./globalContext/context";
 function App() {
-
-  setTimeout(() => {
-       
-  },4000)
+  setTimeout(() => {}, 4000);
 
   const { user, authIsReady } = useAuthContext();
+  const { isModalOpen } = useGlobalContext();
   return (
-   
-    <div className="App ">
-       
-     
+    <div className={`${isModalOpen ? "modal-background" : "App"}`}>
       {authIsReady && (
         <BrowserRouter>
           {user && <Sidebar />}
           <div className="container">
             <Navbar />
-
-           
+            <Modal />
 
             <Switch>
-              <Route exact path="/"> 
+              <Route exact path="/">
                 {!user && <Redirect to="/header" />}
                 {user && <Dashboard />}
               </Route>
-              <Route path="/create">
+              <Route path="/modal">
                 {!user && <Redirect to="/login" />}
-                {user && <Create />}
+                {user && <Modal />}
               </Route>
               <Route path="/projects/:id">
                 {!user && <Redirect to="/login" />}
@@ -58,15 +53,17 @@ function App() {
                 {!user && <Signup />}
               </Route>
               <Route path="/header">
-               <Header/>
+                <Header />
               </Route>
               <Route path="/about">
-               <About/>
+                <About />
+              </Route>
+              <Route path="/modal">
+                <Modal />
               </Route>
               <Route path="/project/:id">
-                {!user && <Redirect to="/"/>}
-                {user && <EditProject/> }
-              
+                {!user && <Redirect to="/" />}
+                {user && <EditProject />}
               </Route>
             </Switch>
           </div>
