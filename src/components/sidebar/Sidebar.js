@@ -8,7 +8,7 @@ import { useGlobalContext } from "../../globalContext/context";
 import Modal from "../Modal/Modal";
 
 function Sidebar() {
-  const { openModal } = useGlobalContext();
+  const { opemModal } = useGlobalContext();
   const { user } = useAuthContext();
   return (
     <div className="sidebar">
@@ -25,10 +25,12 @@ function Sidebar() {
                 <span>Dashboard</span>
               </NavLink>
             </li>
-
-            <button className="btn-modal" onClick={openModal}>
-              Create
-            </button>
+            <li>
+              <NavLink to="/create">
+                <img src={DashboardIcon} alt="add project icon" />
+                <span className="new-project">New Project</span>
+              </NavLink>
+            </li>
           </ul>
         </nav>
       </div>

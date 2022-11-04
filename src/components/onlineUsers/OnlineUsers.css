@@ -9,7 +9,7 @@
 .user-list-item,
 span {
   color: #2b6777;
-  font-size:1.4rem;
+  font-size: 1.2rem;
 }
 .user-list h2 {
   text-align: right;
@@ -28,8 +28,8 @@ span {
 
 .user-list .avatar {
   margin-left: 10px;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
 }
 .user-list .online-user {
   display: inline-block;

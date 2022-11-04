@@ -50,6 +50,7 @@ function Dashboard() {
       {error && <p className="error">{error}</p>}
       {documents && (
         <ProjectFilter
+          className="filters"
           currentFilter={currentFilter}
           changeFilter={changeFilter}
         />

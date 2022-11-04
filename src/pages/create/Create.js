@@ -5,12 +5,11 @@ import { timestamp } from "../../firebase/config";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { useFirestore } from "../../hooks/useFirestore";
 import { useHistory } from "react-router-dom";
-import { useGlobalContext } from "../../globalContext/context";
+
 import React, { useEffect } from "react";
 import { useState } from "react";
 import Avatar from "../../components/avatar/Avatar";
 import Header from "../../components/header/Header";
-import Modal from "../../components/Modal/Modal";
 const categories = [
   { value: "development", label: "development" },
   { value: "design", label: "Design" },
@@ -23,7 +22,6 @@ function Create() {
   const history = useHistory();
   const { addDocument, response } = useFirestore("projects");
   const { documents } = useCollection("users");
-  const { closeModal } = useGlobalContext();
   console.log(documents);
   const [users, setUsers] = useState([]);
 
@@ -101,12 +99,12 @@ function Create() {
             textAlign: "center",
           }}
         >
-          <h1 className="form-hero">Visualize your work with a board</h1>
+          <h1>Visualize your work with a board</h1>
           <h2>Create group</h2>
         </div>
         <form onSubmit={handleSubmit}>
           <label>
-            <h2 className="label-title">Project Name:</h2>
+            <span>Project Name:</span>
             <input
               required
               type="text"
@@ -115,7 +113,7 @@ function Create() {
             />
           </label>
           <label>
-            <h2>details:</h2>
+            <span>details:</span>
             <textarea
               required
               type="text"
@@ -124,7 +122,7 @@ function Create() {
             />
           </label>
           <label>
-            <h2>date:</h2>
+            <span>date:</span>
             <input
               required
               type="date"
@@ -132,14 +130,14 @@ function Create() {
               value={dueDate}
             />
             <label>
-              <h2>Project category:</h2>
+              <span>Project category:</span>
               <Select
                 onChange={(option) => setCategory(option)}
                 options={categories}
               />
             </label>
             <label>
-              <h2>Assing to:</h2>
+              <span>Assing to:</span>
 
               <Select
                 options={users}
@@ -148,11 +146,7 @@ function Create() {
               />
             </label>
           </label>
-          <button
-            style={{ marginBottom: "1em" }}
-            className="btn"
-            onClick={closeModal}
-          >
+          <button style={{ marginBottom: "1em" }} className="btn">
             Add Event
           </button>
           {formError && <p className="error">{formError}</p>}

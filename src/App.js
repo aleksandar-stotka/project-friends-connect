@@ -16,14 +16,13 @@ import { useState } from "react";
 import { useEffect } from "react";
 import EditProject from "./pages/EditProject/EditProject";
 import Modal from "./components/Modal/Modal";
-import { useGlobalContext } from "./globalContext/context";
+
 function App() {
   setTimeout(() => {}, 4000);
 
   const { user, authIsReady } = useAuthContext();
-  const { isModalOpen } = useGlobalContext();
   return (
-    <div className={`${isModalOpen ? "modal-background" : "App"}`}>
+    <div className="App ">
       {authIsReady && (
         <BrowserRouter>
           {user && <Sidebar />}
@@ -36,9 +35,9 @@ function App() {
                 {!user && <Redirect to="/header" />}
                 {user && <Dashboard />}
               </Route>
-              <Route path="/modal">
+              <Route path="/create">
                 {!user && <Redirect to="/login" />}
-                {user && <Modal />}
+                {user && <Create />}
               </Route>
               <Route path="/projects/:id">
                 {!user && <Redirect to="/login" />}
