@@ -1,5 +1,5 @@
 .user-list {
-  width: 300px;
+  width: 150px;
   min-width: 250px;
   padding: 30px;
   box-sizing: border-box;
@@ -15,8 +15,8 @@ span {
   text-align: right;
   margin-bottom: 40px;
   padding-bottom: 10px;
-
-  font-size: 2rem;
+  color: #ff8040;
+  font-size: 1.5rem;
 }
 .user-list .user-list-item {
   display: flex;

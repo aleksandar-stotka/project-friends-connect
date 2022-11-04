@@ -1,21 +1,17 @@
 .navbar {
-    width: 100%;
-    padding: 30px ;
-    box-sizing: border-box;
-    margin-bottom: 80px;
-
+  width: 100%;
+  padding: 30px;
+  box-sizing: border-box;
+  margin-bottom: 80px;
+  position: relative;
 }
 
 .navbar ul {
-    display: flex;
-    margin: 0 auto;
-   justify-content:flex-end;
-   
-    
-    width: 100;
-    
-    
+  display: flex;
+  margin: 0 auto;
+  justify-content: flex-end;
 
+  width: 100;
 }
 .btn-logout {
   background: #3648c9;
@@ -32,29 +28,25 @@
   transition: ease-out 0.3s;
 }
 
-
 .navbar .logo {
-    font-weight: bold;
-    color: var(--heading-color);
-    letter-spacing: 1px;
-    display:flex;
-    align-items: center;
- 
-    margin-right: auto;
-    
+  font-weight: bold;
+  color: #ff8040;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  margin-right: auto;
 }
 .navbar .logo img {
- 
-    margin-right: 10px;
-    filter: invert(25%);
-    width: 36px;
-    margin-top: -8px;
-    width:5rem;
-    height:5rem;
+  margin-right: 10px;
+  filter: invert(25%);
+  width: 36px;
+  margin-top: -8px;
+  width: 5rem;
+  height: 5rem;
 }
 .navbar a {
-    color: white;
-    text-decoration: none;
-    margin-left: 20px;
-
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
 }

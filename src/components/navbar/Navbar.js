@@ -7,52 +7,51 @@ import { useGlobalContext } from "../../globalContext/context";
 function Navbar() {
   const { user } = useAuthContext();
   const { logout, isPending } = useLogout();
-  const {newBack} = useGlobalContext()
-  
+  const { newBack } = useGlobalContext();
 
   useEffect(() => {
-    if(logout) {
-      
+    if (logout) {
       // eslint-disable-next-line no-unused-expressions
-      
     }
-  },[])
-  
+  }, []);
+
   return (
     <>
-    <div className="navbar">
-      <ul>
-        <li className="logo"> </li>
-       
-        
-        {!user && !newBack && (
-          <>
+      <div className="navbar">
+        <ul>
+          <li className="logo">Eclipse </li>
+
+          {!user && !newBack && (
+            <>
+              <li>
+                <Link className="btn" to="/login">
+                  Login
+                </Link>
+              </li>
+              <li>
+                <Link className="btn" to="/signup">
+                  Signup
+                </Link>
+              </li>
+            </>
+          )}
+          {user && (
             <li>
-              <Link className='btn' to="/login">Login</Link>
+              {!isPending && (
+                <button className="btn" onClick={logout}>
+                  Logout
+                </button>
+              )}
+              {isPending && (
+                <button className="btn" disabled>
+                  Logging out...
+                </button>
+              )}
             </li>
-            <li>
-              <Link className="btn" to="/signup">Signup</Link>
-            </li>
-          </>
-        )}
-        {user && (
-          <li>
-            {!isPending && (
-              <button className="btn" onClick={logout}>
-                Logout
-              </button>
-            )}
-            {isPending && (
-              <button className="btn" disabled>
-                Logging out...
-              </button>
-            )}
-          </li>
-        )}
-      </ul>
-    </div>
+          )}
+        </ul>
+      </div>
     </>
-    
   );
 }
 
