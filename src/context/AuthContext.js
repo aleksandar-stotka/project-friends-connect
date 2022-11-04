@@ -1,9 +1,7 @@
 import { createContext, useReducer, useEffect } from "react";
 import { projectAuth } from "../firebase/config";
-import { useGlobalContext } from "../globalContext/context";
 
 export const AuthContext = createContext();
-
 
 export const authReducer = (state, action) => {
   switch (action.type) {
@@ -15,39 +13,6 @@ export const authReducer = (state, action) => {
       return { user: action.payload, authIsReady: true };
     default:
       return state;
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
   }
 };
 
