@@ -16,6 +16,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import EditProject from "./pages/EditProject/EditProject";
 import Modal from "./components/Modal/Modal";
+import ChatRoom from "./pages/chatRoom/ChatRoom";
 
 function App() {
   setTimeout(() => {}, 4000);
@@ -50,6 +51,10 @@ function App() {
               <Route path="/signup">
                 {user && <Redirect to="/" />}
                 {!user && <Signup />}
+              </Route>
+              <Route path="/chatroom">
+                {!user && <Redirect to="/" />}
+                {user && <ChatRoom />}
               </Route>
               <Route path="/header">
                 <Header />

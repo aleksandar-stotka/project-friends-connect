@@ -8,6 +8,9 @@ import { projectFirestore } from "../../firebase/config";
 import { AuthContext } from "../../context/AuthContext";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { useFirestore } from "../../hooks/useFirestore";
+import formatDistanceToNow from "date-fns/formatDistanceToNow";
+import NewChatForm from "../newChatForm/NewChatForm";
+import ChatWindow from "../chatWindow/ChatWindow";
 
 function OnlineUsers() {
   const { documents, error } = useCollection("users");
@@ -16,8 +19,6 @@ function OnlineUsers() {
   const [err, setErr] = useState(false);
   ///////////////////////
   const { currentUser } = useAuthContext();
-
-  const { addDocument, response } = useFirestore("chats");
 
   const hadndleSearch = async () => {
     projectFirestore
@@ -38,7 +39,7 @@ function OnlineUsers() {
   const handleKey = (e) => {
     e.code === "Enter" && hadndleSearch();
   };
-  const handleSelect = async () => {
+  /*const handleSelect = async () => {
     const combainID =
       currentUser.uid > user.uid
         ? currentUser.uid + user.uid
@@ -51,16 +52,33 @@ function OnlineUsers() {
       );
       if (!res.exists()) {
         await addDocument(res, "chats", { messages: [] });
+
+        await updateDocument(useCollection("projects", currentUser.uid), {
+          [combainID + "userInfo"]: {
+            uid: user.uid,
+            displayName: user.displayName,
+            photoURL: user.photoURL,
+          },
+          [combainID + ".date"]: serverTimestap(),
+        });
+        await updateDocument(useCollection("projects", currentUser.uid), {
+          [combainID + "userInfo"]: {
+            uid: currentUser.uid,
+            displayName: currentUser.displayName,
+            photoURL: currentUser.photoURL,
+          },
+          [combainID + ".date"]: formatDistanceToNow(),
+        });
       }
     } catch (err) {
       console.log(err);
     }
-  };
+  };*/
   return (
     <>
       {err && <span>User Not found</span>}
       {user && (
-        <div onClick={handleSelect}>
+        <div>
           <img src={user.photoURL} alt="" />
         </div>
       )}
@@ -68,7 +86,7 @@ function OnlineUsers() {
         <div className="search">
           <input
             type="text"
-            placeholder="find a use"
+            placeholder="Find a user"
             onKeyDown={handleKey}
             onChange={(e) => setUsername(e.target.value)}
           />
@@ -83,8 +101,11 @@ function OnlineUsers() {
               {user.online && <span className="online-user"></span>}
               <span>{user.displayName}</span>
               <Avatar src={user.photoURL} />
+              <p>{user.message}</p>
             </div>
           ))}
+        <NewChatForm />
+        <ChatWindow />
       </div>
     </>
   );

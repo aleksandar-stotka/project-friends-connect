@@ -5,6 +5,7 @@ import React from "react";
 import paginate from "../utils/utils";
 import { useState } from "react";
 import Modal from "../Modal/Modal";
+import EditProject from "../../pages/EditProject/EditProject";
 
 function ProjectList({ projects }) {
   const [visible, setVisible] = useState(6);
@@ -45,6 +46,7 @@ function ProjectList({ projects }) {
           Show less
         </button>
       </div>
+      <EditProject project={projects} />
     </>
   );
 }
