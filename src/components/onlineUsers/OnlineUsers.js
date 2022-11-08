@@ -9,8 +9,6 @@ import { AuthContext } from "../../context/AuthContext";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { useFirestore } from "../../hooks/useFirestore";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
-import NewChatForm from "../newChatForm/NewChatForm";
-import ChatWindow from "../chatWindow/ChatWindow";
 
 function OnlineUsers() {
   const { documents, error } = useCollection("users");
@@ -104,8 +102,6 @@ function OnlineUsers() {
               <p>{user.message}</p>
             </div>
           ))}
-        <NewChatForm />
-        <ChatWindow />
       </div>
     </>
   );
