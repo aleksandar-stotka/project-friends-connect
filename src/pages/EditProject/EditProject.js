@@ -8,28 +8,50 @@ import { useCollection } from "../../hooks/useCollection";
 import { projectFirestore } from "../../firebase/config";
 
 function EditProject() {
-  const { documents } = useCollection("projects");
-  console.log(documents, "edit");
+  const { id } = useParams();
 
   //////params
 
-  /*useEffect(() => {
-    documents.child('projects').on("value", (snapshot) => {
-      if(snapshot.val () !== null){
-        setDate({...snapshot.val()})
-      }else {
-        setData({})
+  const [state, setState] = useState("");
+  const [data, setData] = useState({});
+  console.log(state);
+  const handleInputSubmit = (e) => {
+    const { name, value } = e.target;
+    setState({ ...state, [name]: value });
+  };
+  const { name } = state;
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
+  useEffect(() => {
+    const ref = projectFirestore.collection("projects").doc(id);
+
+    const unsubscribe = ref.onSnapshot((snapshot) => {
+      if (snapshot.data()) {
+        setState({
+          ...snapshot.data(),
+          id: snapshot.id,
+        });
       }
     });
-    return () => {
-      setData({})
+    return () => unsubscribe();
+  }, [id]);
+
+  useEffect(() => {
+    if (id) {
+      setData({ ...state, data, id });
+    } else {
+      setData({ ...state });
     }
-   },[id])*/
+
+    return () => setData("");
+  }, []);
 
   return (
     <div>
-      <form>
-        <input />
+      <form onSubmit={handleSubmit}>
+        <input value={name} onChange={handleInputSubmit} />
         <button type="submit">update</button>
       </form>
     </div>
