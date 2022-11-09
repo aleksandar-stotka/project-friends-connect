@@ -5,18 +5,18 @@
 .project-filter button.active {
   color: #2b6777;
 }
-.project-filter {
-  margin: 30px auto;
-}
 
 .project-filter nav {
   display: flex;
   padding: 10px;
+  height: 30px;
   background-color: #fff;
   border-radius: 4px;
+  max-width: 40vw;
+  margin: auto;
 }
 .project-filter p {
-  font-size: 1.2em;
+  font-size: 1em;
   margin-right: 10px;
   color: #2b6777;
 }
@@ -25,8 +25,8 @@
   border: 0;
   font-family: inherit;
   font-weight: bold;
-  color: var(--text-color);
+  color: grey;
   cursor: pointer;
   border-right: 1px solid #e4e4;
-  font-size: 1.4em;
+  font-size: 1.1em;
 }
