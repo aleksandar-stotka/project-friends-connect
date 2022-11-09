@@ -1,3 +1,4 @@
+@import '../../variables/Variables.scss';
 .sidebar {
   width: 250px;
   min-width: 250px;
@@ -6,27 +7,29 @@
   box-sizing: border-box;
   position: relative;
   color: #fff;
-}
-
-.sidebar-content {
+  .sidebar-content {
   position: fixed;
   width: inherit;
 }
-.sidebar .user {
+.user {
   font-weight: bold;
   text-align: center;
   letter-spacing: 1px;
   padding: 40px 30px;
   border-bottom: 1px solid gray;
 }
-.sidebar .links {
+.links {
   margin-top: 80px;
   margin-left: 20px;
 }
-.sidebar .links li {
+.links li {
   margin-top: 10px;
 }
-.sidebar .links a {
+.links img {
+  margin-right: 10px;
+  filter: invert(100%);
+}
+.links a {
   display: flex;
   padding: 10px;
   text-decoration: none;
@@ -38,16 +41,22 @@
 .new-project {
   color: #ff8040;
 }
-
-.sidebar .links img {
-  margin-right: 10px;
-  filter: invert(100%);
-}
-.sidebar .links a.active {
+.links a.active {
   color: gray;
   background: var(--bg-color);
   border-radius: 20px 0 0 20px;
 }
-.sidebar .links .active img {
+ .links .active img {
   filter: invert(40%);
 }
+}
+
+
+
+ 
+
+
+
+
+
+

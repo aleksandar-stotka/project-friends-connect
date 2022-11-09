@@ -2,11 +2,11 @@ import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { useCollection } from "../../hooks/useCollection";
 import { useAuthContext } from "../../hooks/useAuthContext";
-import "./ChatWindow.css";
+
 import { useRef } from "react";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
 import { useState } from "react";
-
+import "./ChatWindow.scss";
 function ChatWindow() {
   const { documents } = useCollection("messages");
   const { user } = useAuthContext();

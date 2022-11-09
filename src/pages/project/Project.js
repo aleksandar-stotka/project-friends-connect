@@ -1,4 +1,4 @@
-import "./Project.css";
+import "./Project.scss";
 import { useParams } from "react-router-dom";
 import { useDocument } from "../../hooks/useDocument";
 import React from "react";

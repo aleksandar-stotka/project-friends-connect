@@ -1,0 +1,23 @@
+$backGroundColor: #fafafa;
+$paragraphColorSmall:#2b6777;
+$textColorMedium:#52ab98;
+$cardsBackgroundColor:#f2f2f2;
+$bodyBack:#c8d8e4;
+
+
+
+//mixing
+@mixin buttonStyle($backGroundcolor,$fontSize,$color,$hover ) {
+     background: $textColorMedium;
+  padding: 9px 12px;
+  border-radius: 4px;
+  color:$color ;
+  cursor: pointer;
+  font-size: $fontSize;
+  border: none; 
+  &:hover {
+     color:$textColorMedium ;
+  background-color:$backGroundColor;
+  transition: ease-out 0.3s;
+  }
+}

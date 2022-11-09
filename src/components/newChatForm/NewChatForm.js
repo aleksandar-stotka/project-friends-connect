@@ -6,6 +6,7 @@ import { timestamp } from "../../firebase/config";
 import { useCollection } from "../../hooks/useCollection";
 import { useFirestore } from "../../hooks/useFirestore";
 import { useRef } from "react";
+import './newChatForm.scss'
 function NewChatForm() {
   const { user } = useAuthContext();
 
@@ -27,7 +28,7 @@ function NewChatForm() {
   };
 
   return (
-    <div>
+    <div className="form-container">
       <form onSubmit={handleSubmit}>
         <textarea
           value={message}

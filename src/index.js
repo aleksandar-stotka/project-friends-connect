@@ -1,8 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+import "./index.scss";
 import App from "./App";
-import "./queries.css";
+import './variables/Variables.scss';
+
 
 import { AuthContextProvider } from "./context/AuthContext";
 import { AppProvider } from "./globalContext/context";

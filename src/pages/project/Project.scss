@@ -1,13 +1,25 @@
+@import "../../variables/Variables.scss";
 .project-details {
   display: grid;
   grid-template-columns: 3fr 2fr;
   align-items: start;
   grid-gap: 60px;
   font-size:0.9em;
+  textarea {
+  padding: 8px 6px;
+  font-size: 1.4em;
+  height: 4vh;
+  color: #777;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 4px;
 }
-
+textarea {
+  height: 18vh;
+}
 .project-summary {
-    background-color: #fff;
+    background-color: $backGroundColor;
     padding:30px;
     border-radius: 4px;
 }
@@ -30,7 +42,7 @@
     font-size: 1.5em;
 }
 .project-summary h4 {
-    color: var(--text-color);
+    color: $textColorMedium;
     font-size: 1.6em;
 }
 .project-summary .assigned-users {
@@ -48,10 +60,7 @@
     margin-bottom: 0px;
    
 }
-.project-comments textarea {
-    min-height: 40px;
-    font-size: 1.5em;
-}
+
 .project-comments h4 {
     color:#2b6777;
     font-size: 2rem;
@@ -61,13 +70,13 @@
     border-radius: 4px;
     border:1px solid #f2f2f2;
     margin-top: 20px;
-    box-shadow: 3px 3px 5px rgba(0,0,0,0,05);
+  
     background-color: #fff
 }
 .comment-author {
     display: flex;
     align-items: center;
-    color: var(--title-color)
+    color: green;
 }
 .comment-author .avatar {
     width:40px;
@@ -75,7 +84,7 @@
     margin-right:10px;
 }
 .comment-date {
-    color: var(--text-color);
+    color: green;
     font-size: 0.9em;
     margin-top: 4px 0 10px;
 }
@@ -84,3 +93,6 @@
     font-size: 1.4em;
 
 }
+}
+
+

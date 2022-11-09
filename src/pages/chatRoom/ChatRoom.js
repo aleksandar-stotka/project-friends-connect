@@ -5,7 +5,7 @@ import ChatWindow from "../../components/chatWindow/ChatWindow";
 import { projectFirestore } from "../../firebase/config";
 import { useState } from "react";
 import { useRef } from "react";
-import "./ChatRoom.css";
+import "./ChatRoom.scss";
 function ChatRoom() {
   return (
     <div className="chat-window">

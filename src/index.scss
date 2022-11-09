@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import './variables/Variables.scss';
 
-/* variables */
 :root {
   --heading-color: #bcbcbc;
   --text-color: #c8d8e4;
@@ -15,34 +15,14 @@
   --clr-green-light: hsl(125, 71%, 66%);
   --clr-grey-7: hsl(211, 27%, 70%);
 }
-.btn-modal {
-  text-transform: uppercase;
-  background: var(--clr-grey-3);
-  color: var(--clr-white);
-  padding: 0.375rem 0.75rem;
-  letter-spacing: var(--spacing);
-  display: inline-block;
-  transition: var(--transition);
-  font-size: 1rem;
-  font-weight: bold;
-  border: 2px solid;
-  cursor: pointer;
-  box-shadow: 0 1px 3px rgba(39, 2, 2, 0.2);
-  border-radius: var(--radius);
-  margin: 0.5rem;
-  width: 15rem;
-}
-.btn-modal:hover {
-  color: var(--clr-black);
-  background: transparent;
-}
+
 
 /* base styles */
 body {
   font-family: Poppins, sans-serif;
   margin: 0;
   font-size: 1.1em;
-  background: var(--bg-color);
+  background:$bodyBack;
 }
 ul,
 li,
@@ -59,11 +39,7 @@ ul {
 }
 
 /* layout */
-.page-title {
-  font-size: 1em;
-  color: var(--heading-color);
-  display: inline-block;
-}
+
 .btn {
   background: #52ab98;
   padding: 9px 12px;
@@ -74,34 +50,11 @@ ul {
   border: none;
 }
 .btn:hover {
-  color: #53ab98;
-  background-color: #ffffff;
-  transition: ease-out 0.3s;
+ 
 }
 
 /* forms */
-label {
-  display: block;
-  margin: 24px auto;
-}
-label span {
-  display: block;
-  margin-bottom: 6px;
-}
-input,
-textarea {
-  padding: 8px 6px;
-  font-size: 1.4em;
-  height: 4vh;
-  color: #777;
-  width: 100%;
-  box-sizing: border-box;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-textarea {
-  height: 18vh;
-}
+
 .error {
   color: red;
   background: pink;

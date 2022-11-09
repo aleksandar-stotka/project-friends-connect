@@ -1,4 +1,4 @@
-import "./Sidebar.css";
+import "./Sidebar.scss";
 import React from "react";
 import { NavLink } from "react-router-dom";
 import DashboardIcon from "../../assets/add_icon.svg";

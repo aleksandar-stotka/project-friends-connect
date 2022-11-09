@@ -1,10 +1,10 @@
-import "./ProjectList.css";
+import "./ProjectList.scss";
 import { Link } from "react-router-dom";
 import Avatar from "../avatar/Avatar";
 import React from "react";
 import paginate from "../utils/utils";
 import { useState } from "react";
-import Modal from "../Modal/Modal";
+
 import EditProject from "../../pages/EditProject/EditProject";
 
 function ProjectList({ projects }) {
@@ -39,10 +39,10 @@ function ProjectList({ projects }) {
         ))}
       </div>
       <div className="button-container">
-        <button className="btn" onClick={showMoreItems}>
+        <button  onClick={showMoreItems}>
           Show More
         </button>
-        <button className="btn" onClick={showLessItems}>
+        <button onClick={showLessItems}>
           Show less
         </button>
       </div>

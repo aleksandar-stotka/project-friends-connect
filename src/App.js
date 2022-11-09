@@ -15,11 +15,11 @@ import About from "./pages/about/About";
 import { useState } from "react";
 import { useEffect } from "react";
 import EditProject from "./pages/EditProject/EditProject";
-import Modal from "./components/Modal/Modal";
+
 import ChatRoom from "./pages/chatRoom/ChatRoom";
 
 function App() {
-  setTimeout(() => {}, 4000);
+  setTimeout(() => {}, 5000);
 
   const { user, authIsReady } = useAuthContext();
   return (
@@ -29,7 +29,7 @@ function App() {
           {user && <Sidebar />}
           <div className="container">
             <Navbar />
-            <Modal />
+           
 
             <Switch>
               <Route exact path="/">
@@ -62,9 +62,7 @@ function App() {
               <Route path="/about">
                 <About />
               </Route>
-              <Route path="/modal">
-                <Modal />
-              </Route>
+              
               <Route path="/project/:id">
                 {!user && <Redirect to="/" />}
                 {user && <EditProject />}

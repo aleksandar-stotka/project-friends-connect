@@ -1,0 +1,31 @@
+@import "../../variables/Variables.scss";
+.create-form {
+  max-width: 600px;
+  margin: auto;
+  label {
+  display: block;
+  margin: 24px auto;
+}
+label span {
+  display: block;
+  margin-bottom: 6px;
+}
+input,
+textarea {
+  padding: 8px 6px;
+  font-size: 1.4em;
+  height: 4vh;
+  color: #777;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+textarea {
+  height: 18vh;
+}
+
+}
+
+
+

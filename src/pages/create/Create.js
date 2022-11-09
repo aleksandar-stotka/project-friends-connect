@@ -1,4 +1,4 @@
-import "./Create.css";
+import "./Create.scss";
 import Select from "react-select";
 import { useCollection } from "../../hooks/useCollection";
 import { timestamp } from "../../firebase/config";
@@ -99,8 +99,7 @@ function Create() {
             textAlign: "center",
           }}
         >
-          <h1>Visualize your work with a board</h1>
-          <h2>Create group</h2>
+         
         </div>
         <form onSubmit={handleSubmit}>
           <label>
