@@ -16,10 +16,12 @@ import { useState } from "react";
 import { useEffect } from "react";
 import EditProject from "./pages/EditProject/EditProject";
 import PersonalProjects from "./pages/personalProjects/PersonalProjects";
+import { useCollection } from "./hooks/useCollection";
 
 import ChatRoom from "./pages/chatRoom/ChatRoom";
 
 function App() {
+  const { documents } = useCollection("projects");
   setTimeout(() => {}, 5000);
 
   const { user, authIsReady } = useAuthContext();
@@ -27,10 +29,9 @@ function App() {
     <div className="App ">
       {authIsReady && (
         <BrowserRouter>
-          {user && <Sidebar />}
+          {user && <Sidebar project={documents} />}
           <div className="container">
             <Navbar />
-           
 
             <Switch>
               <Route exact path="/">
@@ -63,12 +64,12 @@ function App() {
               <Route path="/about">
                 <About />
               </Route>
-              
+
               <Route path="/project/:id">
                 {!user && <Redirect to="/" />}
                 {user && <EditProject />}
               </Route>
-              <Route path="/personal">
+              <Route path="/project/:id">
                 {!user && <Redirect to="/" />}
                 {user && <PersonalProjects />}
               </Route>
