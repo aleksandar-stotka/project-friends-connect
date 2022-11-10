@@ -19,7 +19,10 @@ function Navbar() {
     <>
       <div className="navbar">
         <ul>
-          <li className="logo">Eclipse </li>
+          <li className="logo">
+            Eclipse{" "}
+            <img src="https://img.freepik.com/free-vector/call-center-background-flat-style_23-2147954908.jpg?t=st=1668070161~exp=1668070761~hmac=70abdaa198e99b3d657216acec64ce6d80bfb535a153a465ee91bc9b2958662e" />{" "}
+          </li>
 
           {!user && !newBack && (
             <>

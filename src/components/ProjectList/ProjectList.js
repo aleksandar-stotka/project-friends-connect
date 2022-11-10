@@ -5,8 +5,6 @@ import React from "react";
 import paginate from "../utils/utils";
 import { useState } from "react";
 
-import EditProject from "../../pages/EditProject/EditProject";
-
 function ProjectList({ projects }) {
   const [visible, setVisible] = useState(6);
 
@@ -39,14 +37,9 @@ function ProjectList({ projects }) {
         ))}
       </div>
       <div className="button-container">
-        <button  onClick={showMoreItems}>
-          Show More
-        </button>
-        <button onClick={showLessItems}>
-          Show less
-        </button>
+        <button onClick={showMoreItems}>Show More</button>
+        <button onClick={showLessItems}>Show less</button>
       </div>
-      <EditProject project={projects} />
     </>
   );
 }
