@@ -6,8 +6,7 @@ import React from "react";
 import ProjectList from "../../components/ProjectList/ProjectList";
 import ProjectFilter from "./ProjectFilter";
 import { useAuthContext } from "../../hooks/useAuthContext";
-import Footer from "../../components/footer/Footer";
-import paginate from "../../components/utils/utils";
+
 
 function Dashboard() {
   const { documents, error } = useCollection("projects");

@@ -2,19 +2,25 @@ import { useState } from "react";
 import { timestamp } from "../../firebase/config";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { useFirestore } from "../../hooks/useFirestore";
-
+import { useHistory } from "react-router-dom";
 import Avatar from "../../components/avatar/Avatar";
+import { useParams } from "react-router-dom";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
 
 function ProjectComments({ project }) {
-  console.log(project.comments);
-
+  console.log(project.comments[1], "projects comments"); //no exited id
+  const history = useHistory();
+  const { id } = useParams();
   //////////////////////////////////////////////////////
+  const { deleteDocument } = useFirestore("projects");
+
   const { updateDocument, response } = useFirestore("projects");
-  const { removeComments } = useFirestore("projects");
   const [newComment, setNewComment] = useState("");
 
   const { user } = useAuthContext();
+
+  
+ 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,20 +29,23 @@ function ProjectComments({ project }) {
       photoURL: user.photoURL,
       content: newComment,
       createdAt: timestamp.fromDate(new Date()),
-
-      id: Math.random(),
+      
+      id: Math.random()
     };
     console.log(commentToAdd);
 
     await updateDocument(project.id, {
       comments: [...project.comments, commentToAdd],
     });
-    console.log(commentToAdd);
+
+    
     if (!response.error) {
       setNewComment("");
     }
+    console.log(commentToAdd,'commentToAdd');
   };
-
+  //*done
+  //now comments.id
   return (
     <div className="project-comments">
       <h4>Project Comments</h4>
@@ -56,7 +65,11 @@ function ProjectComments({ project }) {
                         addSuffix: true,
                       })}
                   </p>
+                 
                 </div>
+               
+
+
                 <div className="comment-content">
                   <p>{comment.content}</p>
                 </div>

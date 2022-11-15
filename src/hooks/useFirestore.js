@@ -104,6 +104,16 @@ export const useFirestore = (collection) => {
     }
   };
 
+  const deleteComments = async (id) => {
+    dispatch({ type: "IS_PENDING" });
+    try {
+      await ref.doc(id).delete();
+      dispatchIfNotCancelled({ type: "DELETE_COMMENTS" });
+    } catch (err) {
+      dispatchIfNotCancelled({ type: "ERROR", payload: "could not delete" });
+    }
+  };
+
   useEffect(() => {
     return () => setIsCancelled(true);
   }, []);
@@ -113,5 +123,6 @@ export const useFirestore = (collection) => {
     deleteDocument,
     response,
     updateDocument,
+    deleteComments,
   };
 };

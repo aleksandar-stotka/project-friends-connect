@@ -11,9 +11,7 @@ function ProjectList({ projects }) {
   const showMoreItems = () => {
     setVisible((prevValue) => prevValue + 3);
   };
-  const showLessItems = () => {
-    setVisible((prevValue) => prevValue - 3);
-  };
+
   console.log(projects);
   paginate(projects);
   return (
@@ -38,7 +36,6 @@ function ProjectList({ projects }) {
       </div>
       <div className="button-container">
         <button onClick={showMoreItems}>Show More</button>
-        <button onClick={showLessItems}>Show less</button>
       </div>
     </>
   );

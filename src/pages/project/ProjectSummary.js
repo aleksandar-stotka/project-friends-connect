@@ -3,14 +3,16 @@ import Avatar from "../../components/avatar/Avatar";
 import { useFirestore } from "../../hooks/useFirestore";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { useHistory } from "react-router-dom";
-import { useState, } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import EditProject from "../EditProject/EditProject";
+ 
 function ProjectSummary({ project }) {
-  console.log(project,'summary')
+  console.log(project, "summary");
+ 
   const { deleteDocument } = useFirestore("projects");
   const { user } = useAuthContext();
-  const [editDoc, setEditDoc] = useState(false)
+  console.log(user.uid, "uid");
+  const [editDoc, setEditDoc] = useState(false);
   const history = useHistory();
   const handleClick = (e) => {
     deleteDocument(project.id);
@@ -19,7 +21,6 @@ function ProjectSummary({ project }) {
 
   return (
     <div>
-      
       <div className="project-summary">
         <h2 className="page-title">{project.name}</h2>
         <p>By {project.createdBy.displayName}</p>
@@ -34,7 +35,6 @@ function ProjectSummary({ project }) {
               <div key={user.id}>
                 <Avatar className="avatar" src={user.photoURL} />
               </div>
-              
             );
           })}
         </div>
@@ -44,19 +44,7 @@ function ProjectSummary({ project }) {
           Mark as Complete
         </button>
       )}
-      {user.uid === project.createdBy.id && (
-        <Link to={`/project/${project.id}`} className="btn">
-          <span>edit</span>
-        </Link>
-        
-      )}
-      
-         
-        
-
-      
-        
-      
+    
     </div>
   );
 }

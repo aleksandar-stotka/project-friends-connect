@@ -4,11 +4,14 @@ import { useDocument } from "../../hooks/useDocument";
 import React from "react";
 import ProjectSummary from "./ProjectSummary";
 import ProjectComments from "./ProjectComments";
+import { useFirestore } from "../../hooks/useFirestore";
 
 function Project() {
-  const { id } = useParams();
+  const { id } = useParams(); //find
+
   const { error, document } = useDocument("projects", id);
-  console.log(document,'project page')
+  
+  
   if (error) {
     return <div className="error">{error}</div>;
   }
