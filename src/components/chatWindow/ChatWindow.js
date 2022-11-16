@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { useCollection } from "../../hooks/useCollection";
 import { useAuthContext } from "../../hooks/useAuthContext";
-
+import Avatar from "../avatar/Avatar";
 import { useRef } from "react";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
 import { useState } from "react";
@@ -12,6 +12,7 @@ function ChatWindow() {
   const { user } = useAuthContext();
   const messagesEndRef = useRef(null);
 
+    
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
@@ -33,6 +34,7 @@ function ChatWindow() {
                         addSuffix: true,
                       })}
                   </p>
+                 <Avatar src={doc.photo} />
                   <span className="name">{doc.name}:</span>
                   <span className="message">{doc.message}</span>
                 </div>

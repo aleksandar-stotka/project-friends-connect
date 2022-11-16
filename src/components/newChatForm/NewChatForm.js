@@ -21,6 +21,9 @@ function NewChatForm() {
       name: user.displayName,
       message: message,
       createdAt: timestamp.fromDate(new Date()),
+      id:user.uid,
+      photo:user.photoURL
+
     };
     await addDocument(chat);
     setMessage("");
