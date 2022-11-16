@@ -16,7 +16,7 @@ function Sidebar({ project }) {
           <Avatar src={user.photoURL} />
           <p>Hey {user.displayName}</p>
         </div>
-        <nav className="links">
+        <nav className="links"> 
           <ul>
             <li>
               <NavLink to="/">

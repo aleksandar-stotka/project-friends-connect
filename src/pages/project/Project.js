@@ -5,6 +5,7 @@ import React from "react";
 import ProjectSummary from "./ProjectSummary";
 import ProjectComments from "./ProjectComments";
 import { useFirestore } from "../../hooks/useFirestore";
+import PersonalProjects from "../personalProjects/PersonalProjects";
 
 function Project() {
   const { id } = useParams(); //find
@@ -22,6 +23,7 @@ function Project() {
     <div className="project-details">
       <ProjectSummary project={document} />
       <ProjectComments project={document} />
+    
     </div>
   );
 }

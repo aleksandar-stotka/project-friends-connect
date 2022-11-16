@@ -12,7 +12,7 @@ function ProjectList({ projects }) {
     setVisible((prevValue) => prevValue + 3);
   };
 
-  console.log(projects);
+  
   paginate(projects);
   return (
     <>

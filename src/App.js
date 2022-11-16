@@ -14,7 +14,6 @@ import Header from "./components/header/Header";
 import About from "./pages/about/About";
 import { useState } from "react";
 import { useEffect } from "react";
-import EditProject from "./pages/EditProject/EditProject";
 import PersonalProjects from "./pages/personalProjects/PersonalProjects";
 import { useCollection } from "./hooks/useCollection";
 
@@ -65,11 +64,7 @@ function App() {
                 <About />
               </Route>
 
-              <Route path="/project/:id">
-                {!user && <Redirect to="/" />}
-                {user && <EditProject />}
-              </Route>
-              <Route path="/project/:id">
+              <Route path="/personal">
                 {!user && <Redirect to="/" />}
                 {user && <PersonalProjects />}
               </Route>

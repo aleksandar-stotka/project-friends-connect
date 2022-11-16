@@ -1,18 +1,39 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useCollection } from "../../hooks/useCollection";
 import { useAuthContext } from "../../hooks/useAuthContext";
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
-import Avatar from "../../components/avatar/Avatar";
+import { Link, useParams } from "react-router-dom/cjs/react-router-dom.min";
+import { useState } from "react";
+import { projectFirestore } from "../../firebase/config";
+import { useDocument } from "../../hooks/useDocument";
 
-function PersonalProjects() {
+function PersonalProjects({ project }) {
+  console.log(project.createdBy.id,'from [ersonal')
+  const { id } = useParams();
   const { documents } = useCollection("projects");
-  console.log(documents, "docs");
+  const {user} = useAuthContext()
+  const { error, document } = useDocument("projects", id);
+    
 
-  const { user } = useAuthContext();
+  // Create a query against the collection.  const {id} = useParams()
+  
+  
+  
+  useEffect(() => {
+      
 
-  console.log(user.displayName);
 
-  return <></>;
+  }, []);
+
+  return (
+    <div className="cartpage">
+       <div className="cart">
+          {documents &&  documents.map(doc => {
+            return <div>{doc.name}</div>
+          })}
+        
+        </div>
+    </div>
+  );
 }
 
 export default PersonalProjects;

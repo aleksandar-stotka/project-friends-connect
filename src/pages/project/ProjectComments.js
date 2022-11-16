@@ -8,7 +8,7 @@ import { useParams } from "react-router-dom";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
 
 function ProjectComments({ project }) {
-  console.log(project.comments[1], "projects comments"); //no exited id
+  console.log(project.comments, "from comments");
   const history = useHistory();
   const { id } = useParams();
   //////////////////////////////////////////////////////
@@ -19,9 +19,6 @@ function ProjectComments({ project }) {
 
   const { user } = useAuthContext();
 
-  
- 
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     const commentToAdd = {
@@ -29,8 +26,8 @@ function ProjectComments({ project }) {
       photoURL: user.photoURL,
       content: newComment,
       createdAt: timestamp.fromDate(new Date()),
-      
-      id: Math.random()
+
+      id: user.uid,
     };
     console.log(commentToAdd);
 
@@ -38,11 +35,10 @@ function ProjectComments({ project }) {
       comments: [...project.comments, commentToAdd],
     });
 
-    
     if (!response.error) {
       setNewComment("");
     }
-    console.log(commentToAdd,'commentToAdd');
+    console.log(commentToAdd, "commentToAdd");
   };
   //*done
   //now comments.id
@@ -65,10 +61,7 @@ function ProjectComments({ project }) {
                         addSuffix: true,
                       })}
                   </p>
-                 
                 </div>
-               
-
 
                 <div className="comment-content">
                   <p>{comment.content}</p>
@@ -89,6 +82,7 @@ function ProjectComments({ project }) {
         </label>
         <button className="btn">Add Comment</button>
       </form>
+  
     </div>
   );
 }
