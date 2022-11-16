@@ -11,18 +11,18 @@ import { useState } from "react";
 import Avatar from "../../components/avatar/Avatar";
 import Header from "../../components/header/Header";
 const categories = [
+  { value: "mine", label: "Mine" },
   { value: "development", label: "development" },
   { value: "design", label: "Design" },
   { value: "sales", label: "Sales" },
   { value: "marketing", label: "Marketing" },
-  { value: "mine", label: "Mine" },
 ];
 
 function Create() {
   const history = useHistory();
   const { addDocument, response } = useFirestore("projects");
   const { documents } = useCollection("users");
-  console.log(documents);
+
   const [users, setUsers] = useState([]);
 
   const { user } = useAuthContext();
@@ -60,6 +60,11 @@ function Create() {
       photoURL: user.photoURL,
       id: user.uid,
     };
+
+    
+     
+  
+
     const assingnedUsersList = assingnedUsers.map((u) => {
       return {
         displayName: u.value.displayName,
@@ -69,13 +74,14 @@ function Create() {
     });
 
     const project = {
+      
       name,
       details,
       category: category.value,
       dueDate: timestamp.fromDate(new Date(dueDate)),
       comments: [],
-      createdBy,
-
+      createdBy, 
+      
       assingnedUsersList,
     };
 
@@ -98,9 +104,7 @@ function Create() {
             alignItems: "center",
             textAlign: "center",
           }}
-        >
-         
-        </div>
+        ></div>
         <form onSubmit={handleSubmit}>
           <label>
             <span>Project Name:</span>
@@ -146,7 +150,7 @@ function Create() {
             </label>
           </label>
           <button style={{ marginBottom: "1em" }} className="btn">
-            Add Event
+            Add Project
           </button>
           {formError && <p className="error">{formError}</p>}
         </form>
