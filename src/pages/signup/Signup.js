@@ -12,22 +12,17 @@ function Signup() {
   const [thumbnail, setThumbnail] = useState(null);
   const [thumbnailError, setThumbnailError] = useState(null);
   const { signup, isPending, error } = useSignup();
-   ///////
-   const {openModal} = useGlobalContext()
+  ///////
+  const { openModal } = useGlobalContext();
 
   const handleFileChange = (e) => {
     ///first reset
     setThumbnail(null); ///first null than we see waht user select on this event(e)
     let selected = e.target.files[0];
     console.log(selected); ///files return array on files
-      //////// modal
+    //////// modal
 
-     
-;
-
-  
- 
-      ///////
+    ///////
     if (!selected) {
       setThumbnailError("please select file");
       return;
@@ -54,48 +49,50 @@ function Signup() {
     Aos.init({ duration: 2500 });
   }, []);
   return (
-    <div className="form-container" style={{display:'flex', justifyContent:'center',width:'100%'}}>
- <form className="auth-form" onSubmit={handleSubmit}  data-aos="flip-left">
-      <h2>Sing up</h2>
-      <label>
-        <span>email:</span>
-        <input
-          type="email"
-          onChange={(e) => setEmail(e.target.value)}
-          value={email}
-        />
-      </label>
-      <label>
-        <span>password:</span>
-        <input
-          type="password"
-          onChange={(e) => setPassword(e.target.value)}
-          value={password}
-        />
-      </label>
-      <label>
-        <span>display name</span>
-        <input
-          type="text"
-          onChange={(e) => setDisplayName(e.target.value)}
-          value={displayName}
-        />
-        {thumbnailError && <div className="error">{thumbnailError}</div>}
-      </label>
-      <label>
-        <span>profile thumbnail</span>
-        <input required type="file" onChange={handleFileChange} />
-      </label>
-      {!isPending && <button className="btn">Sign up</button>}
-      {isPending && (
-        <button className="btn" disabled>
-          loading...
-        </button>
-      )}
-      {error && <div className="error">{error}</div>}
-    </form>
+    <div
+      className="form-container"
+      style={{ display: "flex", justifyContent: "center", width: "100%" }}
+    >
+      <form className="auth-form" onSubmit={handleSubmit} data-aos="flip-left">
+        <h2>Sing up</h2>
+        <label>
+          <span>email:</span>
+          <input
+            type="email"
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
+          />
+        </label>
+        <label>
+          <span>password:</span>
+          <input
+            type="password"
+            onChange={(e) => setPassword(e.target.value)}
+            value={password}
+          />
+        </label>
+        <label>
+          <span>display name</span>
+          <input
+            type="text"
+            onChange={(e) => setDisplayName(e.target.value)}
+            value={displayName}
+          />
+          {thumbnailError && <div className="error">{thumbnailError}</div>}
+        </label>
+        <label>
+          <span>profile thumbnail</span>
+          <input required type="file" onChange={handleFileChange} />
+        </label>
+        {!isPending && <button className="btn">Sign up</button>}
+        {isPending && (
+          <button className="btn" disabled>
+            loading...
+          </button>
+        )}
+        {error && <div className="error">{error}</div>}
+      </form>
     </div>
-   
   );
 }
 

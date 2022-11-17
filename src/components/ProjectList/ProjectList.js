@@ -13,7 +13,7 @@ function ProjectList({ projects }) {
   };
 
   
-  paginate(projects);
+ 
   return (
     <>
       <div className="project-list ">
@@ -31,6 +31,7 @@ function ProjectList({ projects }) {
                 ))}
               </ul>
             </div>
+            
           </Link>
         ))}
       </div>

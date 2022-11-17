@@ -4,25 +4,31 @@ import { useFirestore } from "../../hooks/useFirestore";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { useHistory, useParams } from "react-router-dom";
 import { useState } from "react";
+import { timestamp } from "../../firebase/config";
 import { Link } from "react-router-dom";
 import { projectFirestore } from "../../firebase/config";
 
 function ProjectSummary({ project }) {
-  console.log(project.createdBy.id, "createb by");
+  console.log(project.dueDate, "createb by");
 
   const { id } = useParams();
   const { deleteDocument, updateDocument } = useFirestore("projects");
-  const [name,setName] = useState(project.name)
-  const [details,setDesc] = useState(project.details)
+  const [name, setName] = useState(project.name);
+  const [details, setDesc] = useState(project.details);
+  const [dueDate, setDueDate] = useState('');
   const { user } = useAuthContext();
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
   console.log(user.uid, "uid");
 
   const handleUpdate = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     await updateDocument(project.id, {
-               name,
-               details
-               
+      name,
+      details,
+      
+    }).then(() => {
+      setIsModalOpen(false)
     })
   };
 
@@ -30,6 +36,12 @@ function ProjectSummary({ project }) {
   const handleClick = (e) => {
     deleteDocument(project.id);
     history.push("/");
+  };
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+  const closeModal = () => {
+    setIsModalOpen(false);
   };
 
   return (
@@ -52,18 +64,42 @@ function ProjectSummary({ project }) {
           })}
         </div>
       </div>
-      { user.uid === project.createdBy.id && <div>
-      <input onChange={(e) => setName(e.target.value)} value={name}/>
-      <input onChange={(e) => setDesc(e.target.value)} value={details}/>
-      
-      <button onClick={handleUpdate}>update</button>
-      </div>}
-      
       {user.uid === project.createdBy.id && (
+        <div>
+      
+           <button style={{margin:'1em'}} onClick={openModal}>edit</button>
+           {user.uid === project.createdBy.id && (
         <button className="btn" onClick={handleClick}>
           Mark as Complete
         </button>
       )}
+
+          
+          <div
+      className={`${
+        isModalOpen ? 'modal-overlay show-modal' : 'modal-overlay'
+      }`}
+    >
+      <div className='modal-container'>
+        <div className="edit-form">
+        <span>Project Name:</span>
+        <input onChange={(e) => setName(e.target.value)} value={name} />
+        <span>details:</span>
+          <textarea onChange={(e) => setDesc(e.target.value)} value={details} />
+        
+        <button style={{margin:"1em"}} onClick={handleUpdate}>update</button>
+
+        </div>
+       
+        <button className='close-modal-btn' onClick={closeModal}>
+       X
+        </button>
+      </div>
+    </div>
+        </div>
+      )}
+
+     
     </div>
   );
 }
