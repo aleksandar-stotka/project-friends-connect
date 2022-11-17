@@ -7,6 +7,8 @@ import { useRef } from "react";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
 import { useState } from "react";
 import "./ChatWindow.scss";
+
+
 function ChatWindow() {
   const { documents } = useCollection("messages");
   const { user } = useAuthContext();
@@ -21,6 +23,8 @@ function ChatWindow() {
   }, [documents]);
   return (
     <>
+    
+    
       <div className="conatiner">
         <div className="messages">
           {documents &&
