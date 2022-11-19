@@ -3,6 +3,8 @@ import ReactDOM from "react-dom";
 import "./index.scss";
 import App from "./App";
 import './variables/Variables.scss';
+import "./index.css"
+import "tailwindcss/tailwind.css";
 
 
 import { AuthContextProvider } from "./context/AuthContext";
