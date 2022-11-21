@@ -27,7 +27,7 @@ function ProjectList({ projects }) {
       
       setVisible((prevValue) => prevValue - 3 );
       if(visible < 6) {
-        setVisible(6)
+        setVisible(3)
 
       }
       
