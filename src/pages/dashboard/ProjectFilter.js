@@ -12,7 +12,7 @@ function ProjectFilter({ currentFilter, changeFilter }) {
     changeFilter(newFilter);
   };
 
-  return (
+  return ( 
     <div className="project-filter ">
       <nav>
         <p>Filter by:</p>
