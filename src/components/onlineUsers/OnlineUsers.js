@@ -7,8 +7,6 @@ import { useState } from "react";
 import { projectFirestore } from "../../firebase/config";
 import { AuthContext } from "../../context/AuthContext";
 import { useAuthContext } from "../../hooks/useAuthContext";
-import { useFirestore } from "../../hooks/useFirestore";
-import formatDistanceToNow from "date-fns/formatDistanceToNow";
 
 function OnlineUsers() {
   const { documents, error } = useCollection("users");
@@ -16,27 +14,28 @@ function OnlineUsers() {
   const [user, setUser] = useState(null);
   const [err, setErr] = useState(false);
   ///////////////////////
-  const { currentUser } = useAuthContext();
-
+  let userCaseName =  username.charAt(0).toUpperCase() + username.slice(1).toLowerCase();
+  //now make type username with UperrCase and LowerCase
   const hadndleSearch = async () => {
-    projectFirestore
+   await projectFirestore
       .collection("users")
-      .where("displayName", "==", username)
+      .where("displayName", "==", userCaseName)
       .get(projectFirestore)
       .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
           setUser(doc.data());
           console.log(doc.id, " => ", doc.data());
-        });
+        }); 
       })
       .catch((error) => {
         console.log("Error getting documents: ", error);
-      });
+      })
   };
 
   const handleKey = (e) => {
     e.code === "Enter" && hadndleSearch();
   };
+
   /*const handleSelect = async () => {
     const combainID =
       currentUser.uid > user.uid
@@ -78,6 +77,7 @@ function OnlineUsers() {
       {user && (
         <div>
           <img src={user.photoURL} alt="" />
+        
         </div>
       )}
       <div className="user-list">

@@ -1,7 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
-import { useLogout } from "../hooks/useLogout";
 import { useCollection } from "../hooks/useCollection";
-import { useHistory } from "react-router-dom";
 
 const AppContext = React.createContext();
 export const AppProvider = ({ children }) => {
