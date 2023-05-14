@@ -52,7 +52,7 @@ function EditProject() {
     <div>
       <form onSubmit={handleSubmit}>
         <input value={name} onChange={handleInputSubmit} />
-        <button type="submit">update</button>
+        <button className="underline" type="submit">update</button>
       </form>
     </div>
   );

@@ -39,7 +39,7 @@ function ChatWindow() {
                       })}
                   </p>
                  <Avatar src={doc.photo} />
-                  <span className="name">{doc.name}:</span>
+                  <span className="name underline">{doc.name}:</span>
                   <span className="message">{doc.message}</span>
                 </div>
               );
