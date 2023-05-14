@@ -15,7 +15,7 @@ function NewChatForm() {
   const [message, setMessage] = useState("");
   const [data, setData] = useState({});
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e) => { 
     e.preventDefault();
     const chat = {
       name: user.displayName,
