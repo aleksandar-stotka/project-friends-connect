@@ -27,7 +27,7 @@ export const AppProvider = ({ children }) => {
   useEffect(() => {
     newBackground();
   });
-
+ //only use documents for important 
   return (
     <AppContext.Provider
       value={{
