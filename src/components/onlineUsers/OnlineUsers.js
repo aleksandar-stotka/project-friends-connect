@@ -77,7 +77,7 @@ function OnlineUsers() {
       {user && (
         <div>
           <img src={user.photoURL} alt="" />
-        
+        <p>{user.displayName}</p>
         </div>
       )}
       <div className="user-list">
