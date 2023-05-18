@@ -6,11 +6,12 @@ import Avatar from "../avatar/Avatar";
 import { useState } from "react";
 import { projectFirestore } from "../../firebase/config";
 import { AuthContext } from "../../context/AuthContext";
-import { useAuthContext } from "../../hooks/useAuthContext";
+import { useGlobalContext } from "../../globalContext/context";
 
 function OnlineUsers() {
   const { documents, error } = useCollection("users");
   const [username, setUsername] = useState("");
+  const {show,setShow} = useState(true)
   const [user, setUser] = useState(null);
   const [err, setErr] = useState(false);
   ///////////////////////
@@ -75,9 +76,11 @@ function OnlineUsers() {
     <>
       {err && <span>User Not found</span>}
       {user && (
+        
         <div>
           <img src={user.photoURL} alt="" />
         <p>{user.displayName}</p>
+        
         </div>
       )}
       <div className="user-list">
