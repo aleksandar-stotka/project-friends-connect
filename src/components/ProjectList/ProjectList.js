@@ -7,11 +7,11 @@ import { useState } from "react";
 import Project from "./../../pages/project/Project";
 
 function ProjectList({ projects }) {
-  console.log(projects.length, "lenght");
-
+  console.log(projects);
+  
   const [visible, setVisible] = useState(6);
 
-  console.log(visible, "cud");
+  
   const currentLengh = projects.length;
 
   const showMoreItems = () => {
@@ -37,7 +37,11 @@ function ProjectList({ projects }) {
               <ul>
                 {project.assingnedUsersList.map((user) => (
                   <li key={user.photoURL}>
-                    <Avatar src={user.photoURL} />
+                  
+                    <p>By {project.createdBy.displayName}</p>
+                  
+                    <h4>assingnedUsersList: <br></br> {user.displayName}</h4>  <Avatar src={user.photoURL} />
+                
                   </li>
                 ))}
               </ul>

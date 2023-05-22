@@ -21,7 +21,9 @@ function PersonalProjects({ project }) {
       <div className="cart">
         {documents &&
           documents.map((doc) => {
-            return <div>{doc.name}</div>;
+            return <div>
+              <h2>{doc.name}</h2>
+              </div>;
           })}
       </div>
     </div>
