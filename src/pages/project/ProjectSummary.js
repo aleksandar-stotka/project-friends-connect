@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import { projectFirestore } from "../../firebase/config";
 
 function ProjectSummary({ project }) {
-  console.log(project.dueDate, "createb by");
+  console.log(project.createdBy, "createb by");
 
   const { id } = useParams();
   const { deleteDocument, updateDocument } = useFirestore("projects");
