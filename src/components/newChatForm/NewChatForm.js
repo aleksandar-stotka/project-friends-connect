@@ -28,7 +28,12 @@ function NewChatForm() {
     await addDocument(chat);
     setMessage("");
     console.log(chat, "chat");
+
+
+
   };
+
+  
 
   return (
     <div className="form-container">

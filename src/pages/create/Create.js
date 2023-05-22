@@ -6,7 +6,7 @@ import { useAuthContext } from "../../hooks/useAuthContext";
 import { useFirestore } from "../../hooks/useFirestore";
 import { useHistory } from "react-router-dom";
 
-import React, { useEffect } from "react";
+import React, { useEffect ,useRef} from "react";
 import { useState } from "react";
 import Avatar from "../../components/avatar/Avatar";
 import Header from "../../components/header/Header";
@@ -33,8 +33,12 @@ function Create() {
   const [category, setCategory] = useState("");
   const [assingnedUsers, setAssingnedUsers] = useState([]);
   const [formError, setFormError] = useState(null);
-
+  const messagesEndRef = useRef(null);
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
   useEffect(() => {
+    scrollToBottom()
     if (documents) {
       const options = documents.map((user) => {
         return { value: user, label: user.displayName };
@@ -93,7 +97,7 @@ function Create() {
 
   return (
     <>
-      <div className="create-form">
+      <div className="create-form" ref={messagesEndRef}>
         <div
           data-aos="flip-right"
           style={{
