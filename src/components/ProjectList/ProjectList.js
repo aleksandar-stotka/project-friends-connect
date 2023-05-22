@@ -28,7 +28,7 @@ function ProjectList({ projects }) {
   return (
     <>
       <div className="project-list ">
-        {projects.length === 0 && <p>No projects yet</p>}
+        {projects.length === 0 && <p>No projects yeet</p>}
         {projects.slice(0, visible).map((project) => (
           <Link to={`/projects/${project.id}`} key={project.id}>
             <h2>{project.name}</h2>
