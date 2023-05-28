@@ -14,10 +14,11 @@ import Header from "./components/header/Header";
 import About from "./pages/about/About";
 import { useState } from "react";
 import { useEffect } from "react";
-import PersonalProjects from "./pages/personalProjects/PersonalProjects";
+import PersonalProjects from "./pages/personalProjects/UserProjects";
 import { useCollection } from "./hooks/useCollection";
 
 import ChatRoom from "./pages/chatRoom/ChatRoom";
+import UserProjects from "./pages/personalProjects/UserProjects";
 
 function App() {
   const { documents } = useCollection("projects");
@@ -68,7 +69,7 @@ function App() {
 
               <Route path="/personal">
                 {!user && <Redirect to="/" />}
-                {user && <PersonalProjects />}
+                {user && <UserProjects />}
               </Route>
             </Switch>
           </div>

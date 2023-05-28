@@ -7,15 +7,16 @@ import ProjectList from "../../components/ProjectList/ProjectList";
 import ProjectFilter from "./ProjectFilter";
 import { useAuthContext } from "../../hooks/useAuthContext";
 
-
 function Dashboard() {
   const { documents, error } = useCollection("projects");
 
   const [currentFilter, setCurrentFilter] = useState("all");
   const { user } = useAuthContext();
+   
+   console.log(documents,"dashboard")  
 
- 
-  
+  console.log(user.uid,"dashboard");
+
   ////if we have document
 
   const projects = documents
