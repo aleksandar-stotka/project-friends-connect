@@ -4,7 +4,6 @@ import { useState } from "react";
 
 const useChatCollection = (collection) => {
   const [error, setError] = useState(null);
-  const [documents, seDocuments] = useState(null);
 
   const addDoc = async (doc) => {
     setError(null);

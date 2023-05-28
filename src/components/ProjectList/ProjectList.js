@@ -12,7 +12,7 @@ function ProjectList({ projects }) {
   const [visible, setVisible] = useState(6);
 
   
-  const currentLengh = projects.length;
+  const currentLenght = projects.length;
 
   const showMoreItems = () => {
     setVisible((prevValue) => prevValue + 3);
@@ -48,7 +48,7 @@ function ProjectList({ projects }) {
             </div>  
           </Link>
         ))}
-        {visible > currentLengh && <p>no more Project to show</p>}
+        {visible > currentLenght && <p>no more Project to show</p>}
       </div>
 
       <div className="button-container">

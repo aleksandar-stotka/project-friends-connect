@@ -17,7 +17,7 @@ function Login() {
     login(email, password, "login");
   };
   useEffect(() => {
-    Aos.init({ duration: 2500 });
+    Aos.init({ duration: 2000 });
   }, []);
 
   return (

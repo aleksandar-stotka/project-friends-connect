@@ -1,14 +1,18 @@
 import React, { useState, useContext, useEffect } from "react";
 import { useCollection } from "../hooks/useCollection";
-
+import { AuthContext } from "../context/AuthContext";
 const AppContext = React.createContext();
+
 export const AppProvider = ({ children }) => {
+ 
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [newBack, setNewBack] = useState(true);
   const [edit, setEdit] = useState(null);
-
+ 
   ///////////////// collection    ///////////
   const { documents } = useCollection("projects");
+  console.log(documents,"context")
   const newBackground = () => {
     setTimeout(() => {
       setNewBack(false);
@@ -35,6 +39,7 @@ export const AppProvider = ({ children }) => {
         newBack,
         newBackground,
         documents,
+       
       }}
     >
       {children}
