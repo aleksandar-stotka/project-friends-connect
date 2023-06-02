@@ -17,7 +17,7 @@ function Project() {
     return <div className="error">{error}</div>;
   }
   if (!document) {
-    return <div className="loading">loading.z..</div>;
+    return <div className="loading">loading...</div>;
   }
   return (
     <div className="project-details">
