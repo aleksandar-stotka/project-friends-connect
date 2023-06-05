@@ -4,8 +4,7 @@ import { useDocument } from "../../hooks/useDocument";
 import React from "react";
 import ProjectSummary from "./ProjectSummary";
 import ProjectComments from "./ProjectComments";
-import { useFirestore } from "../../hooks/useFirestore";
-import PersonalProjects from "../personalProjects/UserProjects";
+
 
 function Project() {
   const { id } = useParams(); //find
