@@ -6,7 +6,6 @@ import { useHistory, useParams } from "react-router-dom";
 import { useState } from "react";
 import { timestamp } from "../../firebase/config";
 import { Link } from "react-router-dom";
-import { projectFirestore } from "../../firebase/config";
 
 function ProjectSummary({ project }) {
   console.log(project.createdBy, "createb by");
