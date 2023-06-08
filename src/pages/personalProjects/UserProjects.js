@@ -1,38 +1,48 @@
-import React, { useEffect, useState } from "react";
-import firebase from "firebase/app";
-import { useParams } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import firebase from 'firebase';
+import 'firebase/firestore';
+import { useCollection } from '../../hooks/useCollection';
 
-import { projectFirestore } from "../../firebase/config";
-import { useDocument } from "../../hooks/useDocument";
-import { id } from "date-fns/locale";
-import { useCollection } from "../../hooks/useCollection";
 
-const UserProjects = () => {
- 
+const ProjectList = () => {
+  const [projects, setProjects] = useState([]);
+  console.log(projects,'pro')
 
- // Assuming the user is already authenticated and the user's unique identifier is available
-const userId = firebase.auth().currentUser.uid;
-console.log(userId)
+  useEffect(() => {
+    const fetchProjects = async () => {
+      const user = firebase.auth().currentUser;
+      const createdBy = user ? user.uid : null;
 
-const {documents} = useCollection("projects")
-console.log(documents,"created by")
-// Retrieve projects for the authenticated user
- useEffect(() => {
-  if(documents) {
-    alert("yes")
-  }else alert("no")
-     
- },[documents])
+      if (createdBy) {
+        try {
+          const projectsRef = firebase.firestore().collection('projects');
+          const snapshot = await projectsRef.where('createdBy', '==', createdBy).get();
+          
+          const projectsData = snapshot.docs.map((doc) => ({
+            id: doc.id,
+            ...doc.data(),
+          }));
+          
+          setProjects(projectsData);
+        } catch (error) {
+          console.error('Error fetching projects:', error);
+        }
+      }
+    };
 
+    fetchProjects();
+  }, []);
 
   return (
     <div>
-      <h2>My Projects</h2>
-      {documents && documents.map((doc)=> doc.createdBy.id)}
-      
-     
+      {projects.map((project) => (
+        <div key={project.id}>
+          <h3>{project.name}</h3>
+          <p>Created by: {project.createdBy}</p>
+        </div>
+      ))}
     </div>
   );
 };
 
-export default UserProjects;
+export default ProjectList;
