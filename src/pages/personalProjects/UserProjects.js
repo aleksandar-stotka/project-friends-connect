@@ -1,42 +1,38 @@
-import React, { useEffect, useState } from 'react';
-import firebase from 'firebase/app';
-import { projectFirestore } from '../../firebase/config';
+import React, { useEffect, useState } from "react";
+import firebase from "firebase/app";
+import { useParams } from "react-router-dom";
 
-const Dashboard = () => {
-  const [projects, setProjects] = useState([]);
+import { projectFirestore } from "../../firebase/config";
+import { useDocument } from "../../hooks/useDocument";
+import { id } from "date-fns/locale";
+import { useCollection } from "../../hooks/useCollection";
 
-  useEffect(() => {
-    // Retrieve the currently logged-in user's ID
-    const userId = firebase.auth().currentUser.uid;
+const UserProjects = () => {
+ 
 
-    // Access the Firestore collection and query for the user's projects
-    const projectsRef = projectFirestore.collection('projects');
-    const query = projectsRef.where('userId', '==', userId);
+ // Assuming the user is already authenticated and the user's unique identifier is available
+const userId = firebase.auth().currentUser.uid;
+console.log(userId)
 
-    // Subscribe to the query snapshot
-    const unsubscribe = query.onSnapshot((snapshot) => {
-      const projectsData = [];
-      snapshot.forEach((doc) => {
-        projectsData.push({ id: doc.id, ...doc.data() });
-      });
-      setProjects(projectsData);
-    });
+const {documents} = useCollection("projects")
+console.log(documents,"created by")
+// Retrieve projects for the authenticated user
+ useEffect(() => {
+  if(documents) {
+    alert("yes")
+  }else alert("no")
+     
+ },[documents])
 
-    // Unsubscribe from the query when the component unmounts
-    return () => unsubscribe();
-  }, []);
 
   return (
     <div>
       <h2>My Projects</h2>
-      {projects.map((project) => (
-        <div key={project.id}>
-          <h3>{project.name}</h3>
-          {project.details}
-        </div>
-      ))}
+      {documents && documents.map((doc)=> doc.createdBy.id)}
+      
+     
     </div>
   );
 };
 
-export default Dashboard;
+export default UserProjects;
