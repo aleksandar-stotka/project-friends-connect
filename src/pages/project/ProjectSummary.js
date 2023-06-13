@@ -4,17 +4,14 @@ import { useFirestore } from "../../hooks/useFirestore";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { useHistory, useParams } from "react-router-dom";
 import { useState } from "react";
-import { timestamp } from "../../firebase/config";
-import { Link } from "react-router-dom";
+
 
 function ProjectSummary({ project }) {
   console.log(project.createdBy, "createb by");
 
-  const { id } = useParams();
   const { deleteDocument, updateDocument } = useFirestore("projects");
   const [name, setName] = useState(project.name);
   const [details, setDesc] = useState(project.details);
-  const [dueDate, setDueDate] = useState('');
   const { user } = useAuthContext();
   const [isModalOpen, setIsModalOpen] = useState(false)
 

@@ -4,15 +4,11 @@ import { useAuthContext } from "../../hooks/useAuthContext";
 import { useFirestore } from "../../hooks/useFirestore";
 import { useHistory } from "react-router-dom";
 import Avatar from "../../components/avatar/Avatar";
-import { useParams } from "react-router-dom";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
 
 function ProjectComments({ project }) {
-  console.log(project.comments, "from comments");
-  const history = useHistory();
-  const { id } = useParams();
+
   //////////////////////////////////////////////////////
-  const { deleteDocument } = useFirestore("projects");
 
   const { updateDocument, response } = useFirestore("projects");
   const [newComment, setNewComment] = useState("");
