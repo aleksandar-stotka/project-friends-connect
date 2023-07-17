@@ -11,47 +11,34 @@ const ProjectList = () => {
 
  const {documents} = useCollection("projects")
  console.log(documents)
-  /////
+  ///////////////////////////////////////////
 
-  useEffect(() => {
-    const fetchProjects = async () => {
+   
       const user = firebase.auth().currentUser;
-      console.log(user.uid,"user")
+      console.log(user,"user")
       const createdBy = user ? user.uid : null;
       console.log(createdBy,"created")
-      if (createdBy) {
-        try {
-          const projectsRef = firebase.firestore().collection('projects');
-          const snapshot = await projectsRef.where('user', '==', createdBy).get();
-          
-          const projectsData = snapshot.docs.map((doc) => ({
-            id: doc.id,
-            ...doc.data(),
-          }));
-          
-          setProjects(projectsData);
-        } catch (error) {
-          console.error('Error fetching projects:', error);
-        }
-      }
-    };
+      
+ 
 
-    fetchProjects();
-  }, []);
+     
+      return (
+        <>
+          <p>{user.displayName}</p>
+          <img src={user.photoURL} alt="user image"/>
+          <h1>{user.uid}</h1>
+          {user.uid == createdBy && documents && documents.map(doc => (
+            <p>{doc.createdBy.id}</p>
+          ))}
+           
+        </>
+      )
+    
 
-  return (
-    <div>
-      {documents && documents.map((project) => (
-        <div key={project.id}>
-          <p>Created by: {project.createdBy.displayName}</p>
-          <h1>{project.details}</h1>
-        </div>
-      ))}
-       <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-    </div>
-  );
+   
+ 
+
+  
 };
 
 export default ProjectList;
