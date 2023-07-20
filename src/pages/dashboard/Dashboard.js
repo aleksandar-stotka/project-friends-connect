@@ -13,9 +13,7 @@ function Dashboard() {
   const [currentFilter, setCurrentFilter] = useState("all");
   const { user } = useAuthContext();
    
-   console.log(documents,"dashboard")  
-
-  console.log(user.uid,"dashboard");
+ 
 
   ////if we have document
 

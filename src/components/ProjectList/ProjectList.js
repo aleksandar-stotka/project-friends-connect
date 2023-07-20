@@ -1,17 +1,13 @@
 import "./ProjectList.scss";
 import { Link } from "react-router-dom";
 import Avatar from "../avatar/Avatar";
-import React, { useEffect } from "react";
-import paginate from "../utils/utils";
 import { useState } from "react";
-import Project from "./../../pages/project/Project";
 
 function ProjectList({ projects }) {
   console.log(projects);
   
   const [visible, setVisible] = useState(6);
    
-  const currentLenght = projects.length;
 
 
 

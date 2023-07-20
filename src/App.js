@@ -12,9 +12,7 @@ import { useAuthContext } from "./hooks/useAuthContext";
 import OnlineUsers from "./components/onlineUsers/OnlineUsers";
 import Header from "./components/header/Header";
 import About from "./pages/about/About";
-import { useState } from "react";
-import { useEffect } from "react";
-import PersonalProjects from "./pages/personalProjects/UserProjects";
+
 import { useCollection } from "./hooks/useCollection";
 
 import ChatRoom from "./pages/chatRoom/ChatRoom";
@@ -67,7 +65,7 @@ function App() {
                 <About />
               </Route>
 
-              <Route path="/personal">
+              <Route path="/personal">1
                 {!user && <Redirect to="/" />}
                 {user && <UserProjects />}
               </Route>

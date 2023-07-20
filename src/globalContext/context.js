@@ -11,7 +11,7 @@ export const AppProvider = ({ children }) => {
   const [edit, setEdit] = useState(null);
  
   ///////////////// collection    ///////////
-  const { documents } = useCollection("projects");
+const { documents } = useCollection("projects");
   console.log(documents,"context")
   const newBackground = () => {
     setTimeout(() => {

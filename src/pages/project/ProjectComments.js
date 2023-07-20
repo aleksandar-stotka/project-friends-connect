@@ -25,7 +25,6 @@ function ProjectComments({ project }) {
 
       id: user.uid,
     };
-    console.log(commentToAdd);
 
     await updateDocument(project.id, {
       comments: [...project.comments, commentToAdd],

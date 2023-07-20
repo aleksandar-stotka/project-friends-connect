@@ -3,9 +3,7 @@ import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { timestamp } from "../../firebase/config";
-import { useCollection } from "../../hooks/useCollection";
 import { useFirestore } from "../../hooks/useFirestore";
-import { useRef } from "react";
 import './newChatForm.scss'
 function NewChatForm() {
   const { user } = useAuthContext();
@@ -13,7 +11,6 @@ function NewChatForm() {
   const { addDocument } = useFirestore("messages");
 
   const [message, setMessage] = useState("");
-  const [data, setData] = useState({});
 
   const handleSubmit = async (e) => { 
     e.preventDefault();
