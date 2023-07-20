@@ -28,6 +28,7 @@ function ProjectSummary({ project }) {
     })
   };
 
+  
   const history = useHistory();
   const handleClick = (e) => {
     deleteDocument(project.id);
