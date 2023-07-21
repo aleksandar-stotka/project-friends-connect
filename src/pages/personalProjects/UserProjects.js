@@ -1,35 +1,37 @@
-import React, { useEffect, useState } from "react";
-import firebase from "firebase";
-import "firebase/firestore";
-import { useCollection } from "../../hooks/useCollection";
-
-const ProjectList = () => {
+import React, { useState, useEffect } from 'react';
+import { useAuthContext } from '../../hooks/useAuthContext';// Custom Auth Context
+import { firestore } from 'firebase/firebase'; // Firebase Firestore Config
+import { useCollection } from '../../hooks/useCollection';
+function UserProjects() {
+  const { currentUser } = useAuthContext();
+  const {documents} = useCollection("projects") // Custom Auth Hook to get current user
   const [projects, setProjects] = useState([]);
-  console.log(projects, "pro");
+  console.log(projects,"userProjects")
 
-  //////////////  find collection --
+  useEffect(() => {
+    if (currentUser) {
+      const userProjectsRef = firestore.useCollection('projects').where('userId', '==', currentUser.uid);
+      const unsubscribe = userProjectsRef.onSnapshot((snapshot) => {
+        const userProjects = snapshot.docs.map((doc) => doc.data());
 
-  const { documents } = useCollection("projects");
-  console.log(document, "user Projects");
-  ///////////////////////////////////////////
+        setProjects(userProjects);
+      });
 
-  const user = firebase.auth().currentUser;
-  console.log(user, "user");
-  const createdBy = user ? user.uid : null;
-  console.log(createdBy, "created");
+      return () => unsubscribe(); // Clean up the listener when the component unmounts
+    }
+  }, [currentUser]);
+
 
   return (
-    <>
-      <p>{user.displayName}</p>
-      <img src={user.photoURL} alt="user image" />
-      <h1>{user.uid}</h1>{" "}
-      {/* GiRtIxGh85Ps2l2SFl2CINy1izU2
-       */}
-      {user.uid == createdBy &&
-        documents &&
-        documents.map((doc) => <p key={doc.id}>{doc.createdBy.id} {/*GiRtIxGh85Ps2l2SFl2CINy1izU2*/}</p>)}
-    </>
+    <div>
+      <h1>Your Projects</h1>
+      <ul>
+        {projects && projects.map((project) => (
+          <li key={project.id}>{project.details }</li>
+        ))}
+      </ul>
+    </div>
   );
-};
+}
 
-export default ProjectList;
+export default UserProjects;
