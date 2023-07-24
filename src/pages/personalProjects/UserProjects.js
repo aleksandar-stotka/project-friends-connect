@@ -9,7 +9,7 @@ function UserProjects() {
 
     if(num === 0) return
 
-    countDown(num - 1)
+    countDown(num - 2)
 
    }
 
