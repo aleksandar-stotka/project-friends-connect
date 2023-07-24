@@ -24,7 +24,6 @@ function NewChatForm() {
     };
     await addDocument(chat);
     setMessage("");
-    console.log(chat, "chat");
 
 
 

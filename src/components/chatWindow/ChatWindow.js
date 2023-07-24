@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import PropTypes from "prop-types";
 import { useCollection } from "../../hooks/useCollection";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import Avatar from "../avatar/Avatar";
