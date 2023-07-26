@@ -1,27 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import firebase from 'firebase';
+import { useCollection } from '../../hooks/useCollection';
+ 
+const UserProjects = () => {
+  const user = firebase.auth().currentUser;
+  console.log(user.uid,"user")
+  const createdBy = user ? user.uid : null;
 
-
-function UserProjects() {
-
-
-   const countDown = (num) => {
-    console.log(num)
-
-    if(num === 0) return
-
-    countDown(num - 55)
-
-   }
-
-   countDown(5)
-
-
+  console.log(createdBy,"created")
 
   return (
-    <div>
-      
-    </div>
-  );
+    <div>helo</div>
+  )
+
 }
 
-export default UserProjects;
+
+
+
+export default UserProjects
