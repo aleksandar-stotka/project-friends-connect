@@ -5,7 +5,6 @@ import { timestamp } from "../../firebase/config";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { useFirestore } from "../../hooks/useFirestore";
 import { useHistory } from "react-router-dom";
-import firebase from "firebase";
 
 
 import React, { useEffect ,useRef} from "react";
@@ -38,13 +37,7 @@ function Create() {
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
-  const userCurrent = firebase.auth().currentUser;
-  const userUid = firebase.auth().currentUser.uid
-
-  console.log(userUid,"user uid")
-  console.log(userCurrent, "user");
-  const createdBy = user ? user.uid : null;
-  console.log(createdBy, "created");
+  
 
   //i got both user uid and user createdID
 
