@@ -4,10 +4,9 @@ import { NavLink } from "react-router-dom";
 import DashboardIcon from "../../assets/add_icon.svg";
 import Avatar from "../avatar/Avatar";
 import { useAuthContext } from "../../hooks/useAuthContext";
-import { useGlobalContext } from "../../globalContext/context";
-import { useCollection } from "../../hooks/useCollection";
 
-function Sidebar({ project }) {
+
+function Sidebar() {
   const { user } = useAuthContext();
   return (
     <div className="sidebar">

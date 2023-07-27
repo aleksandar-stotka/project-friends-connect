@@ -1,17 +1,14 @@
 import "./OnlineUsers.scss";
 import { useCollection } from "../../hooks/useCollection";
-import { Link } from "react-router-dom";
 import React from "react";
 import Avatar from "../avatar/Avatar";
 import { useState } from "react";
 import { projectFirestore } from "../../firebase/config";
-import { AuthContext } from "../../context/AuthContext";
-import { useGlobalContext } from "../../globalContext/context";
+
 
 function OnlineUsers() {
   const { documents, error } = useCollection("users");
   const [username, setUsername] = useState("");
-  const {show,setShow} = useState(true)
   const [user, setUser] = useState(null);
   const [err, setErr] = useState(false);
   ///////////////////////
@@ -37,41 +34,7 @@ function OnlineUsers() {
     e.code === "Enter" && hadndleSearch();
   };
 
-  /*const handleSelect = async () => {
-    const combainID =
-      currentUser.uid > user.uid
-        ? currentUser.uid + user.uid
-        : user.uid + currentUser.uid;
-    try {
-      const res = await projectFirestore.collection(
-        projectFirestore,
-        "chats",
-        combainID
-      );
-      if (!res.exists()) {
-        await addDocument(res, "chats", { messages: [] });
-
-        await updateDocument(useCollection("projects", currentUser.uid), {
-          [combainID + "userInfo"]: {
-            uid: user.uid,
-            displayName: user.displayName,
-            photoURL: user.photoURL,
-          },
-          [combainID + ".date"]: serverTimestap(),
-        });
-        await updateDocument(useCollection("projects", currentUser.uid), {
-          [combainID + "userInfo"]: {
-            uid: currentUser.uid,
-            displayName: currentUser.displayName,
-            photoURL: currentUser.photoURL,
-          },
-          [combainID + ".date"]: formatDistanceToNow(),
-        });
-      }
-    } catch (err) {
-      console.log(err);
-    }
-  };*/
+ 
   return (
     <>
       {err && <span>User Not found</span>}

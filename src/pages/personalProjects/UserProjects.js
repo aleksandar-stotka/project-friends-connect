@@ -7,20 +7,22 @@ const UserProjects = () => {
   const {documents} = useCollection("projects")
   const {user} = useAuthContext()
   
-  console.log(user.uid,"user")
 
-  const project = documents && documents.map(doc => doc.createdBy.id)
+  const mapCreatedById = documents && documents.map(doc => doc.createdBy.id)
+  const findUserId = user.uid
   
-console.log(project)
+  const objectId = {
+    createId: mapCreatedById,
+    userUid:findUserId
+  }
+  console.log(objectId,"object")
+console.log(mapCreatedById,"createdById")
+console.log(findUserId,"find user id")
   
  return (
   <div>
-    {documents && documents.map((doc) => {
-      return (
-        <p>{doc.createdBy.displayName}</p>
-      )
-
-    })}
+   
+    <p>{user.displayName}</p>
 
   </div>
  )
