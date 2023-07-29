@@ -18,6 +18,8 @@ const UserProjects = () => {
   }
  
  
+  const userMapDocuments = documents && documents.filter((doc) => doc.createdBy.id === user.uid);
+  console.log(userMapDocuments,"usermap")
 
   
 
@@ -28,13 +30,15 @@ const UserProjects = () => {
  return (
   <div>
      
-   {documents &&  mapCreatedById.map(doc => {
-    if(doc === findUserId) {
-      return (
-        <p>{doc.name}</p>
-      )
-
-    }
+   {documents &&  userMapDocuments.map(doc => {
+        return (
+          <>
+           <p>{doc.details}</p>
+          <h1>{doc.name}</h1>
+          </>
+         
+          
+        )
    
    })}
 
