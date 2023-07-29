@@ -7,7 +7,7 @@ const UserProjects = () => {
   
 
   const mapCreatedById = documents && documents.map(doc => doc.createdBy.id)
-  console.log(mapCreatedById[0],"map")
+  console.log(mapCreatedById,"map")
   const findUserId = user.uid
 
      
@@ -28,10 +28,14 @@ const UserProjects = () => {
  return (
   <div>
      
-   {mapCreatedById.map(doc => {
-    return (
-      <p>{doc[0]}</p>
-    )
+   {documents &&  mapCreatedById.map(doc => {
+    if(doc === findUserId) {
+      return (
+        <p>{doc.name}</p>
+      )
+
+    }
+   
    })}
 
   </div>
