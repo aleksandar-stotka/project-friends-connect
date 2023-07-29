@@ -4,7 +4,6 @@ import { useAuthContext } from "../../hooks/useAuthContext";
 import Avatar from "../avatar/Avatar";
 import { useRef } from "react";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
-import { useState } from "react";
 import "./ChatWindow.scss";
 
 

@@ -1,46 +1,43 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { useState, useEffect } from "react";
-import { useAuthContext } from "../../hooks/useAuthContext";
+import React, { useState } from "react";
 import { timestamp } from "../../firebase/config";
+import { useAuthContext } from "../../hooks/useAuthContext";
 import { useFirestore } from "../../hooks/useFirestore";
-import './newChatForm.scss'
+import "./newChatForm.scss";
+
 function NewChatForm() {
   const { user } = useAuthContext();
-
   const { addDocument } = useFirestore("messages");
-
   const [message, setMessage] = useState("");
 
-  const handleSubmit = async (e) => { 
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const chat = {
       name: user.displayName,
       message: message,
       createdAt: timestamp.fromDate(new Date()),
-      id:user.uid,
-      photo:user.photoURL
-
+      id: user.uid,
+      photo: user.photoURL,
     };
-    await addDocument(chat);
-    setMessage("");
 
-
-
+    try {
+      await addDocument(chat);
+      console.log("Chat message added successfully:", chat);
+      setMessage("");
+    } catch (error) {
+      console.error("Error adding chat message:", error);
+    }
   };
-
-  
 
   return (
     <div className="form-container">
       <form onSubmit={handleSubmit}>
         <textarea
           value={message}
-          placeholder="Type a message "
+          placeholder="Type a message"
           onChange={(e) => setMessage(e.target.value)}
         ></textarea>
         <button className="btn" type="submit">
-          enter
+          Enter
         </button>
       </form>
     </div>
