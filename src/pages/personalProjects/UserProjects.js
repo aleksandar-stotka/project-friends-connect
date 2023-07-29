@@ -1,5 +1,6 @@
 import { useCollection } from '../../hooks/useCollection';
 import { useAuthContext } from '../../hooks/useAuthContext';
+import Avatar from '../../components/avatar/Avatar';
  
 const UserProjects = () => {
   const {documents} = useCollection("projects")
@@ -32,15 +33,35 @@ const UserProjects = () => {
      
    {documents &&  userMapDocuments.map(doc => {
         return (
-          <>
-           <p>{doc.details}</p>
+          
+         <div key={doc.id}>
+          <p key={doc.id}>{doc.details}</p>
           <h1>{doc.name}</h1>
-          </>
+          <h4>{doc.displayName}</h4>
+            <p>Due by {doc.dueDate.toDate().toDateString()}</p>
+            {doc.assingnedUsersList.map((user) => (
+                  <li key={user.photoURL}>
+                  
+                    <p>By {doc.createdBy.displayName}</p>
+                  
+                    <h4>assingnedUsersList: <br></br> {user.displayName}</h4>  <Avatar src={user.photoURL} />
+                
+                  </li>
+                ))}
+         </div> 
+          
+
+          
+         
+          
+          
+         
          
           
         )
    
    })}
+   
 
   </div>
  )

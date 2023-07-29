@@ -35,6 +35,12 @@ function Sidebar() {
                 <span className="new-project">New Project</span>
               </NavLink>
             </li>
+            <li>
+              <NavLink to="/personal">
+                <img src={DashboardIcon} alt="add project icon" />
+                <span className="new-project">personal projects</span>
+              </NavLink>
+            </li>
           </ul>
         </nav>
       </div>
