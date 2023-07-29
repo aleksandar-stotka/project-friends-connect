@@ -1,6 +1,0 @@
-   //createdBy == user.id
-                   
-     
-  
-      
-       
