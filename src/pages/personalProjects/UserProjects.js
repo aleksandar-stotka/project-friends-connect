@@ -7,18 +7,16 @@ const UserProjects = () => {
   
 
   const mapCreatedById = documents && documents.map(doc => doc.createdBy.id)
-  console.log(mapCreatedById,"map")
+  console.log(mapCreatedById[0],"map")
   const findUserId = user.uid
 
-  
-    
+     
   
   const objectId = {
     createId: mapCreatedById,
     userUid:findUserId
   }
-  const userProject = objectId.filter(item => item.createdBy.uid === user.uid)
-  console.log(userProject)
+ 
  
 
   
@@ -30,7 +28,11 @@ const UserProjects = () => {
  return (
   <div>
      
-   
+   {mapCreatedById.map(doc => {
+    return (
+      <p>{doc[0]}</p>
+    )
+   })}
 
   </div>
  )
