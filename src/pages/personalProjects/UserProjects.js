@@ -7,16 +7,10 @@ const UserProjects = () => {
   const {user} = useAuthContext()
   
 
-  const mapCreatedById = documents && documents.map(doc => doc.createdBy.id)
-  console.log(mapCreatedById,"map")
-  const findUserId = user.uid
+  
 
      
   
-  const objectId = {
-    createId: mapCreatedById,
-    userUid:findUserId
-  }
  
  
   const userMapDocuments = documents && documents.filter((doc) => doc.createdBy.id === user.uid);
@@ -25,7 +19,6 @@ const UserProjects = () => {
   
 
 
-  console.log(objectId,"object")
 
   
  return (
