@@ -2,7 +2,7 @@ import React from 'react'
 import './Header.scss'
 import "aos/dist/aos.css";
 import Aos from "aos";
-import {useState, useEffect} from 'react'
+import { useEffect} from 'react'
 import "aos/dist/aos.css"
 import { useGlobalContext } from '../../globalContext/context';
 

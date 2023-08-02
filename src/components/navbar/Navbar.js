@@ -1,6 +1,5 @@
 import "./Navbar.css";
 import { Link } from "react-router-dom";
-import React, { useEffect } from "react";
 import { useLogout } from "../../hooks/useLogout";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { useGlobalContext } from "../../globalContext/context";
@@ -9,11 +8,7 @@ function Navbar() {
   const { logout, isPending } = useLogout();
   const { newBack } = useGlobalContext();
 
-  useEffect(() => {
-    if (logout) {
-      // eslint-disable-next-line no-unused-expressions
-    }
-  }, []);
+  
 
   return (
     <>
@@ -21,7 +16,7 @@ function Navbar() {
         <ul>
           <li className="logo">
             Eclipse{" "}
-            <img src="https://img.freepik.com/free-vector/call-center-background-flat-style_23-2147954908.jpg?t=st=1668070161~exp=1668070761~hmac=70abdaa198e99b3d657216acec64ce6d80bfb535a153a465ee91bc9b2958662e" />{" "}
+            <img src="https://img.freepik.com/free-vector/call-center-background-flat-style_23-2147954908.jpg?t=st=1668070161~exp=1668070761~hmac=70abdaa198e99b3d657216acec64ce6d80bfb535a153a465ee91bc9b2958662e" alt="img" />{" "}
           </li>
 
           {!user && !newBack && (

@@ -84,6 +84,7 @@ function Create() {
     const project = {
       
       name,
+      
       details,
       category: category.value,
       dueDate: timestamp.fromDate(new Date(dueDate)),

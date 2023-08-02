@@ -1,6 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
 import { useCollection } from "../hooks/useCollection";
-import { AuthContext } from "../context/AuthContext";
 const AppContext = React.createContext();
 
 export const AppProvider = ({ children }) => {

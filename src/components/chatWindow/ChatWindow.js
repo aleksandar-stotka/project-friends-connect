@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { useCollection } from "../../hooks/useCollection";
-import { useAuthContext } from "../../hooks/useAuthContext";
 import Avatar from "../avatar/Avatar";
 import { useRef } from "react";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
@@ -9,7 +8,6 @@ import "./ChatWindow.scss";
 
 function ChatWindow() {
   const { documents } = useCollection("messages");
-  const { user } = useAuthContext();
   const messagesEndRef = useRef(null);
 
     

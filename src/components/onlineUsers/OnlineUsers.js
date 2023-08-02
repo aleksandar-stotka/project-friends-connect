@@ -10,7 +10,7 @@ function OnlineUsers() {
   const { documents, error } = useCollection("users");
   const [username, setUsername] = useState("");
   const [user, setUser] = useState(null);
-  const [err, setErr] = useState(false);
+  const [err] = useState(false);
   ///////////////////////
   let userCaseName =  username.charAt(0).toUpperCase() + username.slice(1).toLowerCase();
   //now make type username with UperrCase and LowerCase
