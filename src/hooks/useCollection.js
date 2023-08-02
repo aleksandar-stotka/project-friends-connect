@@ -58,3 +58,17 @@ export const useCollection = (collection, _query, _orderBy) => {
 
   return { documents, error };
 };
+/*rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+       match /users/{user_id} {
+         allow read, create: if request.auth != null
+         allow update: if request.auth.uid == user_id
+       }
+       match /projects/{project_id} {
+          allow read, create, update: if request.auth != null
+          allow delete: if request.auth.uid == resource.data.createdBy.id;
+
+       }
+  }
+}*/
