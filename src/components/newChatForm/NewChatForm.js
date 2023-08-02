@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { timestamp } from "../../firebase/config";
 import { useFirestore } from "../../hooks/useFirestore";
+import "./newChatForm.scss"
 function NewChatForm() {
   const { user } = useAuthContext();
 
