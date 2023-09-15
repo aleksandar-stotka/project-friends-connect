@@ -16,7 +16,11 @@ const UserProjects = () => {
   const userMapDocuments = documents && documents.filter((doc) => doc.createdBy.id === user.uid);
   console.log(userMapDocuments,"usermap")
 
-  
+    if(userMapDocuments <= 0) {
+      return (
+        <p>no project</p>
+      )
+    }  
 
 
 
