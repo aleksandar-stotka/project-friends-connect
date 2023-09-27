@@ -28,7 +28,7 @@ const UserProjects = () => {
 
   
  return (
-  <div className="project-list ">
+  <div className="personal-list ">
      
    {documents &&  userMapDocuments.map(project => {
         return (
