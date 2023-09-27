@@ -22,7 +22,7 @@ const Header = () => {
           <div className="header-content">
             {" "}
             <h1>Create your Project</h1>
-            <h2>for better organization and teams workplace aas</h2>
+            <h2>for better organization and teams workplace </h2>
           </div>
         </div>
     </>
