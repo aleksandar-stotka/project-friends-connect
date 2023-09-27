@@ -16,7 +16,7 @@ const { documents } = useCollection("projects");
     setTimeout(() => {
       setNewBack(false);
       console.log("set");
-    }, 4000);
+    }, 5000);
   };
   const openModal = () => {
     setIsModalOpen(true);
