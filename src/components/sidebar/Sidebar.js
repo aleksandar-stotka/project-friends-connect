@@ -24,10 +24,7 @@ function Sidebar() {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/chatroom">
-                <img src={DashboardIcon} alt="add project icon" />
-                <span className="new-project">Chat Room</span>
-              </NavLink>
+            
             </li>
             <li>
               <NavLink to="/create">
