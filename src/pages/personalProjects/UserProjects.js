@@ -35,15 +35,18 @@ const UserProjects = () => {
           
           <Link to={`/projects/${project.id}`} key={project.id}>
           <h2>{project.name}</h2>
+          <p>By {project.createdBy.displayName}</p>
           <p>Due by {project.dueDate.toDate().toDateString()}</p>
           <div className="assigned-to">
+         
+
             <ul>
+              <h2>assingnedUsersList:</h2>
               {project.assingnedUsersList.map((user) => (
                 <li key={user.photoURL}>
                 
-                  <p>By {project.createdBy.displayName}</p>
                 
-                  <h4>assingnedUsersList: <br></br> {user.displayName}</h4>  <Avatar src={user.photoURL} />
+                  <h4> <br></br> {user.displayName}</h4>  <Avatar src={user.photoURL} />
               
                 </li>
               ))}
