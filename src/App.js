@@ -13,6 +13,7 @@ import OnlineUsers from "./components/onlineUsers/OnlineUsers";
 import Header from "./components/header/Header";
 import About from "./pages/about/About";
 
+
 import { useCollection } from "./hooks/useCollection";
 
 import ChatRoom from "./pages/chatRoom/ChatRoom";
@@ -25,6 +26,7 @@ function App() {
   const { user, authIsReady } = useAuthContext();
   return (
     <div className="App ">
+      
    
         
       {authIsReady && (
