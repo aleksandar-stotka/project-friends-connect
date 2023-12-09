@@ -14,7 +14,9 @@ function Dashboard() {
   const { user } = useAuthContext();
    
  
-
+  /*if (user.uid === u.id) {
+    assignedToMe = true;
+  }*/
   ////if we have document
 
   const projects = documents
@@ -35,6 +37,7 @@ function Dashboard() {
           case "development":
           case "design":
           case "sales":
+            case 'mine' :
           case "marketing":
             console.log(document.category, currentFilter);
             return document.category === currentFilter;
