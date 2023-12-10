@@ -14,9 +14,9 @@ function Navbar() {
 
   return (
     <>
-      <nav  >
+      <nav className="relative "  >
       
-        <ul  className='align-element justify-between 	 py-4 flex  sm:flex-row sm:gap-x-16 sm:items-center sm:py-8 gap-x-3'>
+        <ul  className='align-element justify-between  	 py-4 flex  sm:flex-row sm:gap-x-16 sm:items-center sm:py-8 gap-x-3'>
           <div>
           {user && <Sidebar/>}
           </div>

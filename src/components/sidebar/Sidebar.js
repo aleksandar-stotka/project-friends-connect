@@ -16,7 +16,7 @@ function Sidebar() {
   
       <div >
         
-        <nav className="" > 
+        <nav > 
           <ul className="  flex justify-end gap-5 " >
             <li>
               <NavLink to="/">

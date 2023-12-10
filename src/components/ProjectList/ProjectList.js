@@ -28,24 +28,32 @@ function ProjectList({ projects }) {
       <div className=" grid grid-cols-4 sm:cols-2 gap-4 p-2 ">
         {projects.length === 0 && <p>No projects yet</p>}
         {projects.slice(0, visible).map((project) => (
-          <Link className="max-w-sm rounded overflow-hidden shadow-md text-center " to={`/projects/${project.id}`} key={project.id}>
-            <h2>{project.name}</h2>
-            <p>By {project.createdBy.displayName}</p>
+          <Link className="max-w-sm w-full lg:max-w-full lg:flex" to={`/projects/${project.id}`} key={project.id}>
+             <div className="border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+              <div className="mb-8">
+              <h2 className="text-gray-900 font-bold text-xl mb-2">{project.name}</h2>
+            <p className="text-gray-900 leading-none">By {project.createdBy.displayName}</p>
+            <p className="text-gray-700 text-base">{project.details}</p>
 
             <p>Due by {project.dueDate.toDate().toDateString()}</p>
-            <div className="assigned-to">
+                
+              </div>
+            
+            <div className="flex items-center">
               <ul>
                 <h2>assingnedUsersList: </h2>
                 {project.assingnedUsersList.map((user) => (
                   <li key={user.photoURL}>
                   
                   
-                    <h4><br></br> {user.displayName}</h4>  <Avatar src={user.photoURL} />
+                    <h4><br></br> {user.displayName}</h4>  <img className="w-10 h-10 rounded-full mr-4" src={user.photoURL} />
                 
                   </li>
                 ))}
               </ul>
-            </div>  
+            </div> 
+             </div>
+             
           </Link>
         ))}
       </div>
