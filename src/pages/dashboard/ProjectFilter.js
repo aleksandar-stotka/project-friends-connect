@@ -13,9 +13,11 @@ function ProjectFilter({ currentFilter, changeFilter }) {
   };
 
   return ( 
-    <div className="project-filter ">
-      <nav>
-        <p>Filter by:</p>
+    <div>
+      <nav className="bg-emerald-100 ">
+        <div  className='align-element py-4 flex flex-col sm:flex-row sm:gap-x-16 sm:items-center sm:py-8'>
+ 
+             <p>Filter by:</p>
         {filterList.map((f) => (
           <button
             key={f}
@@ -25,6 +27,12 @@ function ProjectFilter({ currentFilter, changeFilter }) {
             {f}
           </button>
         ))}
+            
+        
+       
+
+        </div>
+      
       </nav>
     </div>
   );

@@ -1,25 +1,27 @@
 import "./Sidebar.scss";
 import React from "react";
 import { NavLink } from "react-router-dom";
-import DashboardIcon from "../../assets/add_icon.svg";
-import Avatar from "../avatar/Avatar";
 import { useAuthContext } from "../../hooks/useAuthContext";
+import { CgAdd } from "react-icons/cg";
+import { MdDashboard } from "react-icons/md";
+import { MdOutlinePersonalInjury } from "react-icons/md";
+
+
+
 
 
 function Sidebar() {
-  const { user } = useAuthContext();
+ 
   return (
-    <div className="sidebar">
-      <div className="sidebar-content">
-        <div className="user">
-          <Avatar src={user.photoURL} />
-          <p>Hey {user.displayName}</p>
-        </div>
-        <nav className="links"> 
-          <ul>
+  
+      <div >
+        
+        <nav className="" > 
+          <ul className="  flex-col justify-end gap-5 " >
             <li>
               <NavLink to="/">
-                <img src={DashboardIcon} alt="dashborad" />
+              <MdDashboard />
+
                 <span>Dashboard</span>
               </NavLink>
             </li>
@@ -28,20 +30,23 @@ function Sidebar() {
             </li>
             <li>
               <NavLink to="/create">
-                <img src={DashboardIcon} alt="add project icon" />
+              <CgAdd />
+
                 <span className="new-project">New Project</span>
               </NavLink>
             </li>
             <li>
               <NavLink to="/personal">
-                <img src={DashboardIcon} alt="add project icon" />
+              <MdOutlinePersonalInjury />
+
                 <span className="new-project">personal projects</span>
               </NavLink>
+              
             </li>
           </ul>
         </nav>
       </div>
-    </div>
+   
   );
 }
 

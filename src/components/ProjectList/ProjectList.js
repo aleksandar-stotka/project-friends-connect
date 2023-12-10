@@ -25,10 +25,10 @@ function ProjectList({ projects }) {
   
   return (
     <>
-      <div className="project-list ">
+      <div className=" grid grid-cols-2 sm:cols-3 gap-4 p-5 ">
         {projects.length === 0 && <p>No projects yet</p>}
         {projects.slice(0, visible).map((project) => (
-          <Link to={`/projects/${project.id}`} key={project.id}>
+          <Link className="max-w-sm rounded overflow-hidden shadow-lg " to={`/projects/${project.id}`} key={project.id}>
             <h2>{project.name}</h2>
             <p>By {project.createdBy.displayName}</p>
 

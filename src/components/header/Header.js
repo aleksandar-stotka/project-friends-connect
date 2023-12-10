@@ -16,13 +16,13 @@ const Header = () => {
     <>
      
     
-        <div className="header" data-aos="flip-left">
+        <div  data-aos="flip-left">
           <div className="flesh-content"> </div>
 
           <div className="header-content">
             {" "}
-            <h1>Create your Project</h1>
-            <h2>for better organization and teams workplace </h2>
+            <h1 className="text-green-950 font-bold	text-5xl p-5">Create your Project</h1>
+            <h2 className="">for better organization and teams workplace </h2>
           </div>
         </div>
     </>

@@ -28,12 +28,12 @@ const UserProjects = () => {
 
   
  return (
-  <div className="personal-list ">
+  <div className='grid grid-cols-2 sm:cols-3 gap-4 '>
      
    {documents &&  userMapDocuments.map(project => {
         return (
           
-          <Link to={`/projects/${project.id}`} key={project.id}>
+          <Link className="max-w-sm rounded overflow-hidden shadow-lg p-5" to={`/projects/${project.id}`} key={project.id}>
           <h2>{project.name}</h2>
           <p>By {project.createdBy.displayName}</p>
           <p>Due by {project.dueDate.toDate().toDateString()}</p>

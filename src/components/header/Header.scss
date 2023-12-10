@@ -1,19 +1,5 @@
 @import '../../variables/Variables.scss';
-.header {
-    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("https://s37564.pcdn.co/wp-content/uploads/2021/06/how-to-get-more-from-your-business-plan-scaled-1-1568x1095.jpeg.optimal.jpeg");
-    height:40rem;
-    width:100%;
-    background-repeat: no-repeat;
-    background-position:center;
-    background-size:cover;
-    transition: ease-in 0.4s;
-    h1 {
-      color:$backGroundColor;
-    font-size:6rem;
 
-    }
-    
-}
  
 .title  {
     opacity: 0;
@@ -26,14 +12,9 @@
     width: 20wh;
     letter-spacing: 9px;
 }
-.header-content   {
-  h2 {
-    color:$backGroundColor;
-  }
 
-}
 .flesh-content {
-    background: #2b6777;
+    background: rgb(34 211 238);
     width: 30rem;
     height:40rem;
     transition: ease-in-out 1s;

@@ -80,7 +80,7 @@ import "aos/dist/aos.css";
         </label>
         <label>
           <span>profile thumbnail</span>
-          <input required type="file" onChange={handleFileChange} />
+          <input className="p-5 w-10" required type="file" onChange={handleFileChange} />
         </label>
         {!isPending && <button className="btn">Sign up</button>}
         {isPending && (

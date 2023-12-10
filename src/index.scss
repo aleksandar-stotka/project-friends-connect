@@ -3,19 +3,9 @@
 /* src/tailwind.css */
 
 
-:root {
-  
-  --bg-color: #c8d8e4;
-  
-}
 
 /* base styles */
-body {
-  font-family: Poppins, sans-serif;
-  margin: 0;
-  font-size: 1.1em;
-  background:$bodyBack;
-}
+
 ul,
 li,
 p,
@@ -33,15 +23,6 @@ ul {
 
 /* layout */
 
-.btn {
-  background: #52ab98;
-  padding: 9px 12px;
-  border-radius: 4px;
-  color: #ffffff;
-  cursor: pointer;
-  font-size: 1.2em;
-  border: none;
-}
 
 
 /* forms */

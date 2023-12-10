@@ -46,15 +46,8 @@ function OnlineUsers() {
         
         </div>
       )}
-      <div className="user-list">
-        <div className="search">
-          <input
-            type="text"
-            placeholder="Find a user"
-            onKeyDown={handleKey}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        </div>
+      <div className="grid">
+        
         <h2>All Users</h2>
         {error && <div className="error">{error}</div>}
         {documents &&

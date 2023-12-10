@@ -25,15 +25,17 @@ function App() {
 
   const { user, authIsReady } = useAuthContext();
   return (
-    <div className="App ">
-      
-   
+    <div className="items-center	p-5 ">
+       
+    
         
       {authIsReady && (
         <BrowserRouter>
-          {user && <Sidebar project={documents} />}
+           <Navbar />
+        
           <div className="container">
-            <Navbar />
+          
+            
 
             <Switch>
               <Route exact path="/">
