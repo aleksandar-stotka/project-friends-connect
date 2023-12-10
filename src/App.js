@@ -31,8 +31,8 @@ function App() {
         
       {authIsReady && (
         <BrowserRouter>
-           <Navbar />
-        
+           <Navbar /> 
+           
           <div className="container">
           
             

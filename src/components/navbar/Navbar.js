@@ -16,10 +16,13 @@ function Navbar() {
     <>
       <nav  >
       
-        <ul  className='align-element p-5 	 py-4 flex flex-col sm:flex-row sm:gap-x-16 sm:items-center sm:py-8 gap-x-3'>
+        <ul  className='align-element justify-between 	 py-4 flex  sm:flex-row sm:gap-x-16 sm:items-center sm:py-8 gap-x-3'>
+          <div>
+          {user && <Sidebar/>}
+          </div>
         
-
-          {!user && !newBack && (
+            <div>
+            {!user && !newBack && (
             <>
               <li>
                 <Link className="bg-cyan-600	 hover:bg-cyan-300 text-white font-bold py-2 px-4 rounded " to="/login">
@@ -51,7 +54,11 @@ function Navbar() {
         </div>
             </li>
           )}
-              <Sidebar/>
+            
+
+            </div>
+
+         
                   
 
         </ul>
