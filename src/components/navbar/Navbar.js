@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useLogout } from "../../hooks/useLogout";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { useGlobalContext } from "../../globalContext/context";
+import { FaUsers, FaUsersCog } from "react-icons/fa";
 import Avatar from "../avatar/Avatar";
 import Sidebar from "../sidebar/Sidebar";
 function Navbar() {
@@ -20,6 +21,10 @@ function Navbar() {
           <div>
           {user && <Sidebar/>}
           </div>
+          <div>
+          <FaUsersCog className="w-10 h-12" />
+
+          </div>
         
             <div>
             {!user && !newBack && (
@@ -36,6 +41,8 @@ function Navbar() {
               </li>
             </>
           )}
+         
+
           {user && (
             <li>
               {!isPending && (

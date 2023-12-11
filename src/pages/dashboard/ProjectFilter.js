@@ -22,7 +22,7 @@ function ProjectFilter({ currentFilter, changeFilter }) {
           <button
             key={f}
             onClick={() => handleClick(f)}
-            className={currentFilter === f ? "active" : ""}
+            className="tracking-wider"
           >
             {f}
           </button>

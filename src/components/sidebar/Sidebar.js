@@ -20,7 +20,7 @@ function Sidebar() {
           <ul className="  flex justify-end gap-5 " >
             <li>
               <NavLink to="/">
-              <MdDashboard />
+              <MdDashboard className="w-10 h-6" />
 
                 <span>Dashboard</span>
               </NavLink>
@@ -30,14 +30,14 @@ function Sidebar() {
             </li>
             <li>
               <NavLink to="/create">
-              <CgAdd />
+              <CgAdd className="w-10 h-6"  />
 
                 <span className="new-project">New Project</span>
               </NavLink>
             </li>
             <li>
               <NavLink to="/personal">
-              <MdOutlinePersonalInjury />
+              <MdOutlinePersonalInjury className="w-10 h-6"  />
 
                 <span className="new-project">Personal projects</span>
               </NavLink>
