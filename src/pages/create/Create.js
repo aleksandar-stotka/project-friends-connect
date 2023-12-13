@@ -96,7 +96,7 @@ function Create() {
 
     await addDocument(project);
     if (!response.error) {
-      history.push("/");
+      history.push("/dashboard");
     }
   };
 
