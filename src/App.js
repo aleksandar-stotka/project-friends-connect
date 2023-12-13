@@ -6,18 +6,19 @@ import Create from "./pages/create/Create";
 import Project from "./pages/project/Project";
 import Login from "./pages/login/Login";
 import Signup from "./pages/signup/Signup";
-import Navbar from "./components/navbar/Navbar";
-import Sidebar from "./components/sidebar/Sidebar";
+
 import { useAuthContext } from "./hooks/useAuthContext";
 import OnlineUsers from "./components/onlineUsers/OnlineUsers";
 import Header from "./components/header/Header";
 import About from "./pages/about/About";
-
+import Sidebar from "./components/sidebar/Sidebar";
 
 import { useCollection } from "./hooks/useCollection";
 
 import ChatRoom from "./pages/chatRoom/ChatRoom";
 import UserProjects from "./pages/personalProjects/UserProjects";
+import Home from "./pages/Home/Home";
+import Navbar from "./components/navbar/Navbar";
 
 function App() {
   const { documents } = useCollection("projects");
@@ -31,20 +32,26 @@ function App() {
      
       {authIsReady && (
         <BrowserRouter>
-           <Navbar /> 
+        
           
-          <div className="min-h-screen flex items-center justify-center ">
+          <div >
           
             
          
-          
          
 
             <Switch>
-              <Route exact path="/">
-                {!user && <Redirect to="/header" />}
+            <Route exact path="/">
+               <Header/>
+              </Route>
+            <Route exact path="/home">
+               <Home/>
+              </Route>
+              <Route  path="/dashboard">
+                {!user && <Redirect to="/dashboard" />}
                 {user && <Dashboard />}
               </Route>
+            
               <Route path="/create">
                 {!user && <Redirect to="/login" />}
                 {user && <Create />}
@@ -54,15 +61,15 @@ function App() {
                 {user && <Project />}
               </Route>
               <Route path="/login">
-                {user && <Redirect to="/" />}
+                {user && <Redirect to="/home" />}
                 {!user && <Login />}
               </Route>
               <Route path="/signup">
-                {user && <Redirect to="/" />}
+                {user && <Redirect to="/home" />}
                 {!user && <Signup />}
               </Route>
               <Route path="/chatroom">
-                {!user && <Redirect to="/" />}
+                {!user && <Redirect to="/home" />}
                 {user && <ChatRoom />}
               </Route>
               <Route path="/header">
@@ -73,18 +80,19 @@ function App() {
               </Route>
 
               <Route path="/personal">
-                {!user && <Redirect to="/" />}
+                {!user && <Redirect to="/home" />}
                 {user && <UserProjects />}
               </Route>
             </Switch>
           </div>
-          {user && <OnlineUsers />}
-          {user && <Sidebar/>}
+       
+        
         </BrowserRouter>
       )}
      
     </div>
   );
+  //{user && <OnlineUsers />}
 }
 
 export default App;

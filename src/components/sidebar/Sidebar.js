@@ -15,11 +15,11 @@ function Sidebar() {
   return (
     <div class="flex min-h-screen">
   
-  <aside className="text-black w-96   md:w-20 lg:w-64 fixed top-0 left-0 h-full  transition-all duration-300 z-30">
+  <aside className="text-black w-96   md:w-20 lg:w-64 fixed top-0 left-0  transition-all duration-300 z-30">
     <div className="p-4">
-      <h2 className="text-xl text-center font-semibold mb-4">Sidebar</h2>
+     
       <ul>
-      <NavLink to="/">
+      <NavLink to="/dashboard">
               <MdDashboard className="w-10 h-6" />
 
                 <span>Dashboard</span>

@@ -10,66 +10,60 @@ function Navbar() {
   const { logout, isPending } = useLogout();
   const { newBack } = useGlobalContext();
 
-  
-
   return (
     <>
-      <nav className="relative "  >
-      
-        <ul  className='align-element justify-between  	 py-4 flex  sm:flex-row sm:gap-x-16 sm:items-center sm:py-8 gap-x-3'>
+      <nav className="relative ">
+        <ul className="align-element justify-between  	 py-4 flex  sm:flex-row sm:gap-x-16 sm:items-center sm:py-8 gap-x-3">
+          <div></div>
           <div>
-          
+            <FaUsersCog className="w-10 h-12" />
           </div>
-          <div>
-          <FaUsersCog className="w-10 h-12" />
 
-          </div>
-        
-            <div>
+          <div>
             {!user && !newBack && (
-            <>
+              <>
+                <li>
+                  <Link
+                    className="bg-cyan-600	 hover:bg-cyan-300 text-white font-bold py-2 px-4 rounded "
+                    to="/login"
+                  >
+                    Login
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="bg-cyan-600	 hover:bg-cyan-300 text-white font-bold py-2 px-4 rounded "
+                    to="/signup"
+                  >
+                    Signup
+                  </Link>
+                </li>
+              </>
+            )}
+
+            {user && (
               <li>
-                <Link className="bg-cyan-600	 hover:bg-cyan-300 text-white font-bold py-2 px-4 rounded " to="/login">
-                  Login
-                </Link>
+                {!isPending && (
+                  <button
+                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                    onClick={logout}
+                  >
+                    Logout
+                  </button>
+                )}
+                {isPending && (
+                  <button className="btn" disabled>
+                    Logging out...
+                  </button>
+                )}
+                <div className="p-5 flex mx-5">
+                  <Avatar src={user.photoURL} />
+                  <p className="p-5">Hey {user.displayName}</p>
+                </div>
               </li>
-              <li>
-                <Link className="bg-cyan-600	 hover:bg-cyan-300 text-white font-bold py-2 px-4 rounded " to="/signup">
-                  Signup
-                </Link>
-              </li>
-            </>
-          )}
-         
-
-          {user && (
-            <li>
-              {!isPending && (
-                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={logout}>
-                  Logout
-                </button>
-              )}
-              {isPending && (
-                <button className="btn" disabled>
-                  Logging out...
-                </button>
-              )}
-              <div className="p-5 flex mx-5" >
-              <Avatar src={user.photoURL} />
-          <p className="p-5">Hey {user.displayName}</p>
-        </div>
-            </li>
-          )}
-            
-
-            </div>
-
-         
-                  
-
+            )}
+          </div>
         </ul>
-
-       
       </nav>
     </>
   );
