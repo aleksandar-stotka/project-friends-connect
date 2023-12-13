@@ -15,7 +15,7 @@ function ProjectFilter({ currentFilter, changeFilter }) {
   return ( 
     <div>
       <nav >
-        <div  className='align-element py-4 flex flex-col sm:flex-row sm:gap-x-16 sm:items-center sm:py-8'>
+        <div  className='align-element py-4 flex flex-col sm:flex-row sm:gap-x-16 sm:items-center sm:py-8 z-40'>
  
              <p>Filter by:</p>
         {filterList.map((f) => (

@@ -47,7 +47,7 @@ function Dashboard() {
     setCurrentFilter(newFilter);
   };
   return (
-    <div>
+    <div >
       {error && <p className="error">{error}</p>}
       {documents && (
         <ProjectFilter
@@ -56,8 +56,10 @@ function Dashboard() {
           changeFilter={changeFilter}
         />
       )}
-
+     <div className="">
       {projects && <ProjectList projects={projects} />}
+     </div>
+      
     </div>
   );
 }

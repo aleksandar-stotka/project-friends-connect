@@ -28,7 +28,7 @@ const UserProjects = () => {
 
   
  return (
-  <div className='grid grid-cols-2 sm:cols-3 gap-4 '>
+  <div className='grid grid-cols-2 sm:cols-3 gap-4 container '>
      
    {documents &&  userMapDocuments.map(project => {
         return (

@@ -25,7 +25,7 @@ function ProjectList({ projects }) {
   
   return (
     <>
-      <div className=" grid lg:grid-cols-4 sm:cols-2 gap-4 p-2 ">
+      <div className=" grid lg:grid-cols-4 gap-4 p- min-h-screen flex items-center justify-center ">
         {projects.length === 0 && <p>No projects yet</p>}
         {projects.slice(0, visible).map((project) => (
           <Link className="max-w-sm w-full lg:max-w-full lg:flex" to={`/projects/${project.id}`} key={project.id}>

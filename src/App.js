@@ -25,17 +25,20 @@ function App() {
 
   const { user, authIsReady } = useAuthContext();
   return (
-    <div className="items-center	p-5 ">
+    <div >
        
     
-        
+     
       {authIsReady && (
         <BrowserRouter>
            <Navbar /> 
-           
-          <div className="container">
+          
+          <div className="min-h-screen flex items-center justify-center ">
           
             
+         
+          
+         
 
             <Switch>
               <Route exact path="/">
@@ -76,8 +79,10 @@ function App() {
             </Switch>
           </div>
           {user && <OnlineUsers />}
+          {user && <Sidebar/>}
         </BrowserRouter>
       )}
+     
     </div>
   );
 }

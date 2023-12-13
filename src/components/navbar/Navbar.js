@@ -5,7 +5,6 @@ import { useAuthContext } from "../../hooks/useAuthContext";
 import { useGlobalContext } from "../../globalContext/context";
 import { FaUsers, FaUsersCog } from "react-icons/fa";
 import Avatar from "../avatar/Avatar";
-import Sidebar from "../sidebar/Sidebar";
 function Navbar() {
   const { user } = useAuthContext();
   const { logout, isPending } = useLogout();
@@ -19,7 +18,7 @@ function Navbar() {
       
         <ul  className='align-element justify-between  	 py-4 flex  sm:flex-row sm:gap-x-16 sm:items-center sm:py-8 gap-x-3'>
           <div>
-          {user && <Sidebar/>}
+          
           </div>
           <div>
           <FaUsersCog className="w-10 h-12" />
