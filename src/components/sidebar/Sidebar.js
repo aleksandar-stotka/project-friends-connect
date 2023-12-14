@@ -13,7 +13,7 @@ import { MdOutlinePersonalInjury } from "react-icons/md";
 function Sidebar() {
  
   return (
-    <div class="flex min-h-screen">
+    <div className="flex min-h-screen">
   
   <aside className="text-black w-96   md:w-20 lg:w-64 fixed top-0 left-0  transition-all duration-300 z-30">
     <div className="p-4">

@@ -24,7 +24,7 @@ function Dashboard() {
         switch (currentFilter) {
           case "all":
             return true;
-          case "mine":
+         
             let assignedToMe = false;
             document.assingnedUsersList.forEach((u) => {
               if (user.uid === u.id) {
@@ -56,7 +56,7 @@ function Dashboard() {
           changeFilter={changeFilter}
         />
       )}
-     <div className="">
+     <div >
       {projects && <ProjectList projects={projects} />}
      </div>
       

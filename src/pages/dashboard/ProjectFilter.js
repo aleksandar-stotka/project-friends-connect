@@ -22,7 +22,7 @@ function ProjectFilter({ currentFilter, changeFilter }) {
           <button
             key={f}
             onClick={() => handleClick(f)}
-            className="tracking-wider"
+            className="text-custom-blueBtn p-3"
           >
             {f}
           </button>
