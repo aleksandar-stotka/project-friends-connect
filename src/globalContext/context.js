@@ -15,7 +15,6 @@ const { documents } = useCollection("projects");
   const newBackground = () => {
     setTimeout(() => {
       setNewBack(false);
-      console.log("set");
     }, 5000);
   };
   const openModal = () => {

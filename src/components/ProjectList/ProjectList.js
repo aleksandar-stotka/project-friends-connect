@@ -4,6 +4,7 @@ import Avatar from "../avatar/Avatar";
 import { useState } from "react";
 import { FaArrowDown } from "react-icons/fa";
 import { FaArrowUp } from "react-icons/fa";
+import AssingnedList from "../assingnedList/AssingnedList";
 
 function ProjectList({ projects }) {
   console.log(projects);
@@ -50,7 +51,7 @@ function ProjectList({ projects }) {
                   <h2>assingnedUsersList: </h2> 
                  
                    <button onMouseOver={() => setAsigned(!assigned)}>
-                    {assigned ? (
+                    {assigned  ? (
                       <FaArrowUp/>
 
                     ) : (
@@ -59,25 +60,16 @@ function ProjectList({ projects }) {
                     )}
 
                    </button>
-                
+                    
                  
              
-                  {assigned === index && project.assingnedUsersList.map((user, index) => (
-                    <li className=" transition-all duration-500 ease-in-out" key={user.photoURL}>
-                      <h4>
-                        <br></br> {user.displayName}
-                      </h4>{" "}
-                      <img
-                        className="w-10 h-10 rounded-full mr-4"
-                        src={user.photoURL}
-                      />
-                    </li>
-                  ))}
+                  {assigned && <AssingnedList projects={projects}/>}
                 </ul>
               </div>
             
           </Link>
         ))}
+        <AssingnedList projects={projects} assigned={assigned}/>
       </div>
 
       <div className="button-container">
