@@ -10,8 +10,8 @@ function ProjectList({ projects }) {
   console.log(projects);
 
   const [visible, setVisible] = useState(6);
-  const [assigned, setAsigned] = useState(false)
 
+ 
   const showMoreItems = () => {
     setVisible((prevValue) => prevValue + 3);
   };
@@ -48,30 +48,25 @@ function ProjectList({ projects }) {
 
               <div >
                 <ul>
-                  <h2>assingnedUsersList: </h2> 
                  
-                   <button onMouseOver={() => setAsigned(!assigned)}>
-                    {assigned  ? (
-                      <FaArrowUp/>
-
-                    ) : (
-                      <FaArrowDown/>
-
-                    )}
-
-                   </button>
-                    
                  
+                <h1>assingnedUsersList: </h1> 
+                      
+                  { project.assingnedUsersList.map((user, index) => (
+                     <AssingnedList {...user} key={user.id}  />
+                      
+                  ))}
              
-                  {assigned && <AssingnedList projects={projects}/>}
                 </ul>
               </div>
+             
             
           </Link>
         ))}
-        <AssingnedList projects={projects} assigned={assigned}/>
+        
+          
       </div>
-
+     
       <div className="button-container">
         <button onClick={showMoreItems}>Show More</button>
         <button onClick={showLess}>Show Less</button>
