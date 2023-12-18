@@ -2,7 +2,6 @@ import { useState } from "react";
 import { timestamp } from "../../firebase/config";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { useFirestore } from "../../hooks/useFirestore";
-import { useHistory } from "react-router-dom";
 import Avatar from "../../components/avatar/Avatar";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
 

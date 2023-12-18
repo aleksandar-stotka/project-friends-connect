@@ -1,40 +1,17 @@
 import React, { useState } from "react";
 import { FaArrowDown } from "react-icons/fa";
 import { FaArrowUp } from "react-icons/fa";
+import { useAuthContext } from "../../hooks/useAuthContext";
 
 
 
 
-export default function AssingnedList({displayName,photoURL,id}) {
+
+export default function AssingnedList({displayName,photoURL,id,index}) {
 
 
   
-   const [assigned,setAsigned] = useState(false)
-
-
-  
-      
-
-  return <div>
-
-    
-   {assigned && <ul>
-    <h2>{displayName}</h2>
-    <img className="rounded-full h-10 w-11" src={photoURL} />
-
-  </ul>}
-
    
-     <button onMouseOver={() => setAsigned(!assigned)}>
-      {assigned  ? (
-        <FaArrowUp/>
-
-      ) : (
-        <FaArrowDown/>
- 
-      )}
-
-     </button>
      
     
       
@@ -45,5 +22,23 @@ export default function AssingnedList({displayName,photoURL,id}) {
  
 
     
-  </div>;
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const toggleExpand = () => {
+    setIsExpanded(!isExpanded);
+  };
+
+  return (
+    <div>
+      {isExpanded && (
+        <ul>
+          <h2>{displayName}</h2>
+          <img className="rounded-full h-10 w-10" src={photoURL} alt={displayName} />
+        </ul>
+      )}
+      <button onMouseOver={toggleExpand}>
+        {isExpanded ? <FaArrowUp /> : <FaArrowDown />}
+      </button>
+    </div>
+  );
 }

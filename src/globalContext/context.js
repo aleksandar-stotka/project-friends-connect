@@ -8,7 +8,19 @@ export const AppProvider = ({ children }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [newBack, setNewBack] = useState(true);
   const [edit, setEdit] = useState(null);
- 
+  const [visible, setVisible] = useState(6);
+  
+    ///show more
+  const showMoreItems = () => {
+    setVisible((prevValue) => prevValue + 3);
+  };
+
+  const showLess = () => {
+    setVisible((prevValue) => prevValue - 3);
+    if (visible < 6) {
+      setVisible(3);
+    }
+  };
   ///////////////// collection    ///////////
 const { documents } = useCollection("projects");
   console.log(documents,"context")
@@ -37,6 +49,9 @@ const { documents } = useCollection("projects");
         newBack,
         newBackground,
         documents,
+        showMoreItems,
+        showLess,
+        visible
        
       }}
     >

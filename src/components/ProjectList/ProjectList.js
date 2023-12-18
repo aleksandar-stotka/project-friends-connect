@@ -5,23 +5,17 @@ import { useState } from "react";
 import { FaArrowDown } from "react-icons/fa";
 import { FaArrowUp } from "react-icons/fa";
 import AssingnedList from "../assingnedList/AssingnedList";
-
+import { useGlobalContext } from "../../globalContext/context";
 function ProjectList({ projects }) {
+
+  
+  const {visible, showMoreItems,showLess} = useGlobalContext()
+  const [isExpanded, setIsExpanded] = useState(false);
+
   console.log(projects);
-
-  const [visible, setVisible] = useState(6);
-
  
-  const showMoreItems = () => {
-    setVisible((prevValue) => prevValue + 3);
-  };
 
-  const showLess = () => {
-    setVisible((prevValue) => prevValue - 3);
-    if (visible < 6) {
-      setVisible(3);
-    }
-  };
+
 
   return (
     <>
@@ -46,19 +40,6 @@ function ProjectList({ projects }) {
                 <p>Due by {project.dueDate.toDate().toDateString()}</p>
               </div>
 
-              <div >
-                <ul>
-                 
-                 
-                <h1>assingnedUsersList: </h1> 
-                      
-                  { project.assingnedUsersList.map((user, index) => (
-                     <AssingnedList {...user} key={user.id}  />
-                      
-                  ))}
-             
-                </ul>
-              </div>
              
             
           </Link>

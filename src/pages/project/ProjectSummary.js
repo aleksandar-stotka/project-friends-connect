@@ -32,7 +32,7 @@ function ProjectSummary({ project }) {
   const history = useHistory();
   const handleClick = (e) => {
     deleteDocument(project.id);
-    history.push("/");
+    history.push("/"  );
   };
   const openModal = () => {
     setIsModalOpen(true);

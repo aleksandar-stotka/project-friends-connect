@@ -58,7 +58,7 @@ function Dashboard() {
       )}
      <div >
       {projects && <ProjectList projects={projects} />}
-     </div>
+    </div>
       
     </div>
   );
