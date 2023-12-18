@@ -8,7 +8,7 @@ export const AppProvider = ({ children }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [newBack, setNewBack] = useState(true);
   const [edit, setEdit] = useState(null);
-  const [visible, setVisible] = useState(6);
+  const [visible, setVisible] = useState(12);
   
     ///show more
   const showMoreItems = () => {
@@ -17,7 +17,7 @@ export const AppProvider = ({ children }) => {
 
   const showLess = () => {
     setVisible((prevValue) => prevValue - 3);
-    if (visible < 6) {
+    if (visible < 12) {
       setVisible(3);
     }
   };

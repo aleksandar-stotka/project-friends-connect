@@ -42,7 +42,7 @@ function ProjectSummary({ project }) {
   };
 
   return (
-    <div>
+    <div >
       <div className="project-summary">
         <h2 className="page-title">{project.name}</h2>
         <p>By {project.createdBy.displayName}</p>
@@ -54,8 +54,9 @@ function ProjectSummary({ project }) {
         <div className="assigned-users">
           {project.assingnedUsersList.map((user) => {
             return (
-              <div key={user.id}>
+              <div key={user.id} className="m-2 ">
                 <Avatar className="avatar" src={user.photoURL} />
+                <h3>{user.displayName}</h3>
               </div>
             );
           })}

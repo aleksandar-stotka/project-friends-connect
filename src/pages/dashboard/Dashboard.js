@@ -47,7 +47,7 @@ function Dashboard() {
     setCurrentFilter(newFilter);
   };
   return (
-    <div >
+    <div className="container mx-auto" >
       {error && <p className="error">{error}</p>}
       {documents && (
         <ProjectFilter

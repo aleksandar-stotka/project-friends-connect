@@ -34,6 +34,7 @@ function ProjectList({ projects }) {
                 </h2>
                 <p className="text-gray-900 leading-none">
                   By {project.createdBy.displayName}
+                  
                 </p>
                 <p className="text-gray-700 text-base">{project.details}</p>
 

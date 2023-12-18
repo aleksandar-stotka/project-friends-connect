@@ -19,7 +19,7 @@ function Project() {
     return <div className="loading">loading...</div>;
   }
   return (
-    <div className="project-details">
+    <div className="project-details container mx-auto p-5">
       <ProjectSummary project={document} />
       <ProjectComments project={document} />
     

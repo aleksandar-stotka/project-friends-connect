@@ -89,7 +89,7 @@ function Create() {
       category: category.value,
       dueDate: timestamp.fromDate(new Date(dueDate)),
       comments: [],
-      createdBy, 
+      createdBy,
       
       assingnedUsersList,
     };
