@@ -11,6 +11,7 @@ module.exports = {
         'custom-lightGrey': '#9DB2BF',
         'custom-background': '#DDE6ED',
         'custom-deepBlue': '#27374D',
+        'first-element': '#FA8072'
         // Add more custom colors as needed
       },
     },

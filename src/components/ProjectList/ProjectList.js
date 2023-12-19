@@ -12,9 +12,7 @@ function ProjectList({ projects }) {
 
   
   const {visible, showMoreItems,showLess} = useGlobalContext()
-  const [isExpanded, setIsExpanded] = useState(false);
-  const currentDate = new Date()
-  const [date, setDate] = useState(currentDate)
+  
   console.log(projects);
  
 
@@ -22,14 +20,16 @@ function ProjectList({ projects }) {
 
   return (
     <>
-      <div className=" grid lg:grid-cols-4 gap-4   ">
+      <div className=" grid lg:grid-cols-3 gap-4 md:grid-cols-3 sm:grid-cols-2  ">
       {projects.length === 0 && <p>No projects yet</p>}
 {projects
   .slice(0, visible)
   .sort((a, b) => b.createdAt.toDate() - a.createdAt.toDate()) // Sort by date
   .map((project, index) => (
     <Link
-      className="max-w-sm rounded overflow-hidden shadow-lg p-5 h-auto"
+      className={`max-w-sm rounded overflow-hidden shadow-lg p-5  ${
+        index === 0 ? 'bg-custom-lightGrey' : 'custom-background' // Apply 'first-element' class to the first project
+      }`}
       to={`/projects/${project.id}`}
       key={project.id}
     >
@@ -49,6 +49,7 @@ function ProjectList({ projects }) {
       </div>
     </Link>
   ))}
+
 
         
           
