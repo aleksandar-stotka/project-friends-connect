@@ -1,9 +1,11 @@
 import React, { useState, useContext, useEffect } from "react";
 import { useCollection } from "../hooks/useCollection";
+
 const AppContext = React.createContext();
 
 export const AppProvider = ({ children }) => {
  
+  const { deleteDocument, updateDocument } = useFirestore("projects");
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [newBack, setNewBack] = useState(true);
@@ -22,6 +24,7 @@ export const AppProvider = ({ children }) => {
     }
   };
   ///////////////// collection    ///////////
+  
 const { documents } = useCollection("projects");
   console.log(documents,"context")
   const newBackground = () => {
@@ -29,6 +32,7 @@ const { documents } = useCollection("projects");
       setNewBack(false);
     }, 5000);
   };
+  /////////// Modal
   const openModal = () => {
     setIsModalOpen(true);
   };
@@ -36,6 +40,7 @@ const { documents } = useCollection("projects");
   const closeModal = () => {
     setIsModalOpen(false);
   };
+  ///////////////////////////
   useEffect(() => {
     newBackground();
   });

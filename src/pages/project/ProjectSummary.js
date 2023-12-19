@@ -16,6 +16,7 @@ function ProjectSummary({ project }) {
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   console.log(user.uid, "uid");
+  
 
   const handleUpdate = async (e) => {
     e.preventDefault();
@@ -32,7 +33,7 @@ function ProjectSummary({ project }) {
   const history = useHistory();
   const handleClick = (e) => {
     deleteDocument(project.id);
-    history.push("/"  );
+    history.push("/dashboard"  );
   };
   const openModal = () => {
     setIsModalOpen(true);
@@ -70,6 +71,7 @@ function ProjectSummary({ project }) {
         <button className="btn" onClick={handleClick}>
           Mark as Complete
         </button>
+
       )}
 
           

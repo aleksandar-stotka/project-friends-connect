@@ -1,17 +1,17 @@
 import { useState } from "react";
-import {useCollection} from "../../hooks/useCollection";
+import { useCollection } from "../../hooks/useCollection";
 import React from "react";
 import ProjectList from "../../components/ProjectList/ProjectList";
 import ProjectFilter from "./ProjectFilter";
 import { useAuthContext } from "../../hooks/useAuthContext";
 
+import OnlineUsers from "../../components/onlineUsers/OnlineUsers";
 function Dashboard() {
   const { documents, error } = useCollection("projects");
 
   const [currentFilter, setCurrentFilter] = useState("all");
   const { user } = useAuthContext();
-   
- 
+
   /*if (user.uid === u.id) {
     assignedToMe = true;
   }*/
@@ -24,7 +24,7 @@ function Dashboard() {
         switch (currentFilter) {
           case "all":
             return true;
-         
+
             let assignedToMe = false;
             document.assingnedUsersList.forEach((u) => {
               if (user.uid === u.id) {
@@ -35,7 +35,7 @@ function Dashboard() {
           case "development":
           case "design":
           case "sales":
-            case 'mine' :
+          case "mine":
           case "marketing":
             console.log(document.category, currentFilter);
             return document.category === currentFilter;
@@ -47,7 +47,7 @@ function Dashboard() {
     setCurrentFilter(newFilter);
   };
   return (
-    <div className="container mx-auto" >
+    <div className="container mx-auto">
       {error && <p className="error">{error}</p>}
       {documents && (
         <ProjectFilter
@@ -56,10 +56,13 @@ function Dashboard() {
           changeFilter={changeFilter}
         />
       )}
-     <div >
-      {projects && <ProjectList projects={projects} />}
-    </div>
-      
+      <div className="grid lg:grid-cols-3 gap-5">
+        <div className="col-span-2">{projects && <ProjectList projects={projects} />}</div>
+
+        <div className="col-span-1">
+          <OnlineUsers />
+        </div>
+      </div>
     </div>
   );
 }

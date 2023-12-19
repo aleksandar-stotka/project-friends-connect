@@ -41,6 +41,9 @@ function ProjectList({ projects }) {
           By {project.createdBy.displayName}
         </p>
         <p className="text-gray-700 text-base">{project.details}</p>
+        <h2>Assingned Users List:</h2><p>{project.assingnedUsersList
+.length} users</p>
+        
         <p>Due by {project.createdAt.toDate().toDateString()}</p>
         {project.createdAt &&
           formatDistanceToNow(project.createdAt.toDate(), {
