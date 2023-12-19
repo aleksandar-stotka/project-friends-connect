@@ -31,6 +31,7 @@ function Create() {
   const [details, setDetails] = useState("");
   const [dueDate, setDueDate] = useState("");
   const [category, setCategory] = useState("");
+  const [createdDate, setC] = useState("");
   const [assingnedUsers, setAssingnedUsers] = useState([]);
   const [formError, setFormError] = useState(null);
   const messagesEndRef = useRef(null);
@@ -90,7 +91,7 @@ function Create() {
       dueDate: timestamp.fromDate(new Date(dueDate)),
       comments: [],
       createdBy,
-      
+      createdAt: new Date().toISOString(),
       assingnedUsersList,
     };
 
