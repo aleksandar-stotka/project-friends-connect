@@ -1,20 +1,26 @@
 import React, { useState, useContext, useEffect, useReducer } from "react";
 import { useCollection } from "../hooks/useCollection";
-import { HANDLE_PAGE } from "../actions/actions";
+import { HANDLE_PAGE,SET_DOCUMENTS } from "../actions/actions";
 import reducer from "../reducer/reducer";
 const AppContext = React.createContext();
 
 
 const initialState = {
   isLoading: true,
-  hits: [],
-  query: "react",
+  doc:[],
   page: 0,
   nbPages: 0,
 };
 
 export const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
+  const { documents } = useCollection("projects");
+ 
+ 
+  
+    
+  
+      
 
  
  ////////////////////////////////////////////////
@@ -35,8 +41,7 @@ export const AppProvider = ({ children }) => {
     }
   };
   ///////////////// collection    ///////////
-const { documents } = useCollection("projects");
-  console.log(documents,"context")
+  console.log(documents,"context, pro")
   const newBackground = () => {
     setTimeout(() => {
       setNewBack(false);
@@ -71,7 +76,9 @@ const handlePage = (value) => {
         documents,
         showMoreItems,
         showLess,
-        visible
+        visible,
+        handlePage,
+        ...state
        
       }}
     >
