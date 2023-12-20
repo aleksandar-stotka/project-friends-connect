@@ -1,10 +1,23 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext, useEffect, useReducer } from "react";
 import { useCollection } from "../hooks/useCollection";
+import { HANDLE_PAGE } from "../actions/actions";
+import reducer from "../reducer/reducer";
 const AppContext = React.createContext();
 
-export const AppProvider = ({ children }) => {
- 
 
+const initialState = {
+  isLoading: true,
+  hits: [],
+  query: "react",
+  page: 0,
+  nbPages: 0,
+};
+
+export const AppProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+ 
+ ////////////////////////////////////////////////
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [newBack, setNewBack] = useState(true);
   const [edit, setEdit] = useState(null);
@@ -40,6 +53,12 @@ const { documents } = useCollection("projects");
   useEffect(() => {
     newBackground();
   });
+/////////////////////////////
+const handlePage = (value) => {
+  dispatch({ type: HANDLE_PAGE, payload: value });
+};
+//////////////////////////////////////
+
  //only use documents for important 
   return (
     <AppContext.Provider
