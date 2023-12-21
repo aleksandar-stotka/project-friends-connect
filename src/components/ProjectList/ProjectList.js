@@ -2,12 +2,9 @@ import "./ProjectList.scss";
 import { Link } from "react-router-dom";
 import Avatar from "../avatar/Avatar";
 import { useState } from "react";
-import { FaArrowDown } from "react-icons/fa";
-import { FaArrowUp } from "react-icons/fa";
-import AssingnedList from "../assingnedList/AssingnedList";
+
 import { useGlobalContext } from "../../globalContext/context";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
-import Buttons from "../buttons/Buttons";
 
 function ProjectList({ projects }) {
 
@@ -31,6 +28,19 @@ function ProjectList({ projects }) {
 
   return (
     <>
+     <div className="flex justify-center mt-4 p-5">
+     {pageNumbers.map((number) => (
+       <button
+         key={number}
+         onClick={() => paginate(number)}
+         className={`mx-1 py-1 px-3 rounded ${
+           currentPage === number ? 'bg-blue-500 text-white' : 'bg-gray-300'
+         }`}
+       >
+         {number}
+       </button>
+     ))}
+   </div>
     <div className="grid lg:grid-cols-3 gap-4 md:grid-cols-3 sm:grid-cols-2 ">
       {projects.length === 0 && <p>No projects yet</p>}
       {/* Display projects based on pagination */}
@@ -65,19 +75,7 @@ function ProjectList({ projects }) {
       {/* Pagination buttons */}
      
     </div>
-     <div className="flex justify-center mt-4">
-     {pageNumbers.map((number) => (
-       <button
-         key={number}
-         onClick={() => paginate(number)}
-         className={`mx-1 py-1 px-3 rounded ${
-           currentPage === number ? 'bg-blue-500 text-white' : 'bg-gray-300'
-         }`}
-       >
-         {number}
-       </button>
-     ))}
-   </div>
+    
     </>
     
   );

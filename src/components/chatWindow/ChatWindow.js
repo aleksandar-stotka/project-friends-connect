@@ -16,7 +16,7 @@ function ChatWindow() {
   };
   useEffect(() => {
     scrollToBottom();
-  }, [documents]);
+  }, [documents]); 
   return (
     <>
     
