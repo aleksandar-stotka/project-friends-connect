@@ -5,15 +5,9 @@ import reducer from "../reducer/reducer";
 const AppContext = React.createContext();
 
 
-const initialState = {
-  isLoading: true,
-  doc:[],
-  page: 0,
-  nbPages: 0,
-};
+
 
 export const AppProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, initialState);
   const { documents } = useCollection("projects");
  
  
@@ -59,9 +53,7 @@ export const AppProvider = ({ children }) => {
     newBackground();
   });
 /////////////////////////////
-const handlePage = (value) => {
-  dispatch({ type: HANDLE_PAGE, payload: value });
-};
+
 //////////////////////////////////////
 
  //only use documents for important 
@@ -77,8 +69,7 @@ const handlePage = (value) => {
         showMoreItems,
         showLess,
         visible,
-        handlePage,
-        ...state
+       
        
       }}
     >
