@@ -8,7 +8,6 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: 'Ubuntu', sans-serif;
-  background-image: url("./assets/blue-back.jpg");
   background-repeat: no-repeat;
   background-position: center;
 }

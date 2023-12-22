@@ -47,19 +47,20 @@ function ProjectList({ projects }) {
       {currentProjects.map((project, index) => (
         <Link
           className={`max-w-sm rounded overflow-hidden shadow-lg p-5 ${
-            index === 0 ? 'bg-custom-lightGrey' : 'custom-background' // Apply 'first-element' class to the first project
+            index === 0 ? 'bg-first-element' : 'bg-custom-background' // Apply 'first-element' class to the first project
           }`}
           to={`/projects/${project.id}`}
           key={project.id}
         >
            <div className="mb-8">
-                <h2 className="text-white font-bold text-xl mb-2 h-auto">
+                <h2 className="text-custom-text ont-bold text-xl mb-2 h-auto">
                   {project.name}
                 </h2>
-                <p className="text-gray-900 leading-none">
+                <p className="name-color">
                   By {project.createdBy.displayName}
                 </p>
-                <p className="text-gray-700 text-base">{project.details}</p>
+                
+                <p className="text-custom-sec-text text-base">{project.details}</p>
                 <h2>Assingned Users List:</h2>
                 <p>{project.assingnedUsersList.length} users</p>
 
