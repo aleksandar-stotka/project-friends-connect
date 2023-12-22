@@ -59,11 +59,11 @@ function OnlineUsers() {
         {error && <div className="error">{error}</div>}
         {documents &&
           documents.map((user) => (
-            // eslint-disable-next-line react/jsx-no-undef
+            // eslint-disable-next-line react/jsx-no-undef 
 
             <div key={user.id} className="user-list-item">
-              {user.online && <span className="online-user"></span>}
-              <span>{user.displayName}</span>
+              {user.online && <span className="bg-on-line rounded-full h-3 w-3 m-1"></span>}
+              <span className="text-white">{user.displayName}</span>
               <Avatar src={user.photoURL} />
               <p>{user.message}</p>
             </div>

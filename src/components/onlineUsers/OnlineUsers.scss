@@ -3,36 +3,23 @@
   min-width: 250px;
   padding: 30px;
   box-sizing: border-box;
-  background: rgb(254, 254, 254);
-  color: var(--heading-color);
   .online-user {
   display: inline-block;
   margin-left: 10px;
   width: 10px;
   height: 10px;
   padding: 0.1em;
-  background: green;
   border-radius: 50%;
   margin: 5px;
 }
 
-span {
-  color: #2b6777;
-  font-size: 1.2rem;
-}
-h2 {
-  text-align: right;
-  margin-bottom: 40px;
-  padding-bottom: 10px;
-  color: #ff8040;
-  font-size: 1.5rem;
-}
+
+
 .user-list-item {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   margin: 20px auto;
-  font-size: 1.4rem;
 }
 .avatar {
   margin-left: 10px;
