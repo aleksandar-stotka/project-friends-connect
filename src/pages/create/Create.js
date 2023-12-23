@@ -103,7 +103,7 @@ function Create() {
 
   return (
     <>
-      <div className="create-form" ref={messagesEndRef}>
+      <div className="flex items-center justify-center min-h-screen w-[50rem]" ref={messagesEndRef}>
         <div
           data-aos="flip-right"
           style={{
@@ -115,51 +115,68 @@ function Create() {
             textAlign: "center",
           }}
         ></div>
-        <form onSubmit={handleSubmit}>
-          <label>
+        <form onSubmit={handleSubmit} className="max-w-md mx-auto bg-white rounded-lg shadow-md w-[60rem] p-6">
+          <div className="mb-4">
+          <label className="block text-gray-700 font-semibold mb-2">
             <span>Project Name:</span>
-            <input
+            <input className="w-full border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500" placeholder="Enter project name"
               required
               type="text"
               onChange={(e) => setName(e.target.value)}
               value={name}
             />
           </label>
-          <label>
+          </div>
+           <div className="mb-4">
+           <label className="block text-gray-700 font-semibold mb-2">
             <span>details:</span>
             <textarea
               required
               type="text"
               onChange={(e) => setDetails(e.target.value)}
               value={details}
+              className="w-full border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500" placeholder="Enter project description"
             />
           </label>
-          <label>
-            <span>date:</span>
+
+           </div>
+            <div className="mb-4">
+               <label className="block text-gray-700 font-semibold mb-2">
+               <span>date:</span>
             <input
               required
               type="date"
               onChange={(e) => setDueDate(e.target.value)}
               value={dueDate}
             />
-            <label>
+               </label>
+            </div>
+            <div className="mb-4">
+            <label className="block text-gray-700 font-semibold mb-2">  
               <span>Project category:</span>
-              <Select
+              <Select className="w-full border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500"
                 onChange={(option) => setCategory(option)}
                 options={categories}
               />
             </label>
-            <label>
+              
+            </div>
+            <div className="mb-4">
+              
+            <label className="block text-gray-700 font-semibold mb-2">
               <span>Assing to:</span>
 
-              <Select
+              <Select className="w-full border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500"
                 options={users}
                 onChange={(option) => setAssingnedUsers(option)}
                 isMulti
               />
             </label>
-          </label>
-          <button style={{ marginBottom: "1em" }} className="btn">
+
+            </div>
+          
+           
+          <button style={{ marginBottom: "1em" }} className="block text-gray-700 font-semibold mb-2">
             Add Project
           </button>
           {formError && <p className="error">{formError}</p>}

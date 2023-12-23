@@ -12,7 +12,7 @@ function Navbar() {
 
   return (
     <>
-      <nav className="relative ">
+      <nav className=" ">
         <ul className="align-element justify-between  	 py-4 flex  sm:flex-row sm:gap-x-16 sm:items-center sm:py-8 gap-x-3">
           <div>
             <FaUsersCog className="w-10 h-12" />
@@ -44,7 +44,7 @@ function Navbar() {
               <li>
                 {!isPending && (
                   <button
-                    className="bg-blue-500  font-bold py-2 px-4 rounded"
+                    className="bg-blue-500  text-white  font-bold py-2 px-4 rounded"
                     onClick={logout}
                   >
                     Logout

@@ -1,13 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useCollection } from "../../hooks/useCollection";
 import React from "react";
 import ProjectList from "../../components/ProjectList/ProjectList";
 import ProjectFilter from "./ProjectFilter";
 import { useAuthContext } from "../../hooks/useAuthContext";
 
+
+
 import OnlineUsers from "../../components/onlineUsers/OnlineUsers";
 function Dashboard() {
   const { documents, error } = useCollection("projects");
+  const messagesEndRef = useRef(null);
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+
 
   const [currentFilter, setCurrentFilter] = useState("all");
   const { user } = useAuthContext();
@@ -46,6 +54,10 @@ function Dashboard() {
   const changeFilter = (newFilter) => {
     setCurrentFilter(newFilter);
   };
+  useEffect(() => {
+    scrollToBottom()
+
+  },[])
   return (
     <div className="container mx-auto">
       {error && <p className="error">{error}</p>}

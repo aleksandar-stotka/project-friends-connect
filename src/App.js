@@ -24,7 +24,7 @@ function App() {
       
       {authIsReady && (
         <BrowserRouter>
-        {user && <Sidebar/>}
+        <Home/>
           <div>
             <Switch>
               <Route exact path="/">

@@ -9,12 +9,13 @@ export default function Home() {
 
   return (
     <div>
-      <div className='w-full py-4'>
+      <div className=''>
       <Navbar/>
       
-      
+     
       </div>
       <div>
+      {user && <Sidebar/>}
         
       </div>
      
