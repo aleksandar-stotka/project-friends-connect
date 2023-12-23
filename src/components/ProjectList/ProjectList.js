@@ -56,7 +56,7 @@ function ProjectList({ projects }) {
                 <h2 className="text-custom-text ont-bold text-xl mb-2 h-auto">
                   {project.name}
                 </h2>
-                <p className="name-color">
+                <p className="text-filter-color">
                   By {project.createdBy.displayName}
                 </p>
                 

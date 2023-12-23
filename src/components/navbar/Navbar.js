@@ -14,7 +14,6 @@ function Navbar() {
     <>
       <nav className="relative ">
         <ul className="align-element justify-between  	 py-4 flex  sm:flex-row sm:gap-x-16 sm:items-center sm:py-8 gap-x-3">
-          <div></div>
           <div>
             <FaUsersCog className="w-10 h-12" />
           </div>
@@ -24,7 +23,7 @@ function Navbar() {
               <>
                 <li>
                   <Link
-                    className="bg-cyan-600	 hover:bg-cyan-300 text-white font-bold py-2 px-4 rounded "
+                    className="bg-cyan-600	 hover:bg-cyan-300  font-bold py-2 px-4 rounded "
                     to="/login"
                   >
                     Login
@@ -32,7 +31,7 @@ function Navbar() {
                 </li>
                 <li>
                   <Link
-                    className="bg-cyan-600	 hover:bg-cyan-300 text-white font-bold py-2 px-4 rounded "
+                    className="bg-cyan-600	 hover:bg-cyan-300  font-bold py-2 px-4 rounded "
                     to="/signup"
                   >
                     Signup
@@ -45,7 +44,7 @@ function Navbar() {
               <li>
                 {!isPending && (
                   <button
-                    className="bg-custom-blueBtn hover:custom-lightGrey text-white font-bold py-2 px-4 rounded"
+                    className="bg-blue-500  font-bold py-2 px-4 rounded"
                     onClick={logout}
                   >
                     Logout
@@ -58,7 +57,7 @@ function Navbar() {
                 )}
                 <div className="p-5 flex mx-5">
                   <Avatar src={user.photoURL} />
-                  <p className="p-5">Hey {user.displayName}</p>
+                  <p className="p-5 text-black">Hey {user.displayName}</p>
                 </div>
               </li>
             )}

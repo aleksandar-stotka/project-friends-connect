@@ -9,9 +9,9 @@ export default function Home() {
 
   return (
     <div>
-      <div>
+      <div className='w-full py-4'>
       <Navbar/>
-      {user && <Sidebar/>}
+      
       
       </div>
       <div>
