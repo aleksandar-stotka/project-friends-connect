@@ -7,12 +7,12 @@ module.exports = {
     extend: {
        colors: {
         // Define your custom colors here
-        'custom-sec-text': '#3730a3 ',
+        'custom-sec-text-filter': '#9AD0C2 ',
         'on-line': '#a7f3d0',
-        'custom-background': '#F5F5F5',
-        'custom-text': '#333333',
+        'custom-background': '#2D9596',
+        'custom-text': '#9AD0C2',
         'name-color': '#2A363B ',
-         'filter-color' : '#9d174d'
+         'filter-color' : '#9AD0C2'
         // Add more custom colors as needed
       },
     },

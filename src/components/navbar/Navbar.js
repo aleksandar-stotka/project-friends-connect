@@ -13,7 +13,7 @@ function Navbar() {
   return (
     <>
       <nav className=" ">
-        <ul className="align-element justify-between  	 py-4 flex  sm:flex-row sm:gap-x-16 sm:items-center sm:py-8 gap-x-3">
+        <ul className="align-element justify-between  	  flex  sm:flex-row sm:gap-x-16 sm:items-center sm:py-8 gap-x-3">
           <div>
             <FaUsersCog className="w-10 h-12" />
           </div>

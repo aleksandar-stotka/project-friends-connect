@@ -34,7 +34,7 @@ function ProjectList({ projects }) {
          key={number}
          onClick={() => paginate(number)}
          className={`mx-1 py-1 px-3 rounded ${
-           currentPage === number ? 'bg-blue-500 text-white' : 'bg-gray-300'
+           currentPage === number ? 'bg-custom-background text-white' : 'bg-gray-300'
          }`}
        >
          {number}
@@ -46,21 +46,21 @@ function ProjectList({ projects }) {
       {/* Display projects based on pagination */}
       {currentProjects.map((project, index) => (
         <Link
-          className={`max-w-sm rounded overflow-hidden shadow-lg p-5 ${
-            index === 0 ? 'bg-first-element' : 'bg-custom-background' // Apply 'first-element' class to the first project
+          className={`max-w-sm rounded  overflow-hidden shadow-lg p-5 ${
+            index === 0 ? 'bg-custom-background text-white' : 'text-custom-text' // Apply 'first-element' class to the first project
           }`}
           to={`/projects/${project.id}`}
           key={project.id}
         >
            <div className="mb-8">
-                <h2 className="text-custom-text ont-bold text-xl mb-2 h-auto">
+                <h2 className=" font-bold text-xl mb-2 h-auto">
                   {project.name}
                 </h2>
-                <p className="text-filter-color">
+                <p className="">
                   By {project.createdBy.displayName}
                 </p>
                 
-                <p className="text-custom-sec-text text-base">{project.details}</p>
+                <p >{project.details}</p>
                 <h2>Assingned Users List:</h2>
                 <p>{project.assingnedUsersList.length} users</p>
 

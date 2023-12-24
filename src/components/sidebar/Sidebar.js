@@ -8,7 +8,7 @@ import { MdOutlinePersonalInjury } from "react-icons/md";
 
 function Sidebar() {
   return (
-    <div className="flex   flex justify-center ">
+    <div className="flex   flex justify-center z-0 ">
       <aside className="text-black     lg:w-[40rem] fixed bottom-0 w-[50rem] bg-gray-800 text-white py-4  bg-opacity-75   transition-all duration-300 z-30">
         <div className="p-4">
           <ul className="flex justify-between ">
