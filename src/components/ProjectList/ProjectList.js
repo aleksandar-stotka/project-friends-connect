@@ -53,7 +53,7 @@ function ProjectList({ projects }) {
           key={project.id}
         >
            <div className="mb-8">
-                <h2 className=" font-bold text-xl mb-2 h-auto">
+                <h2 className=" font-bold text-xl mb-2 ">
                   {project.name}
                 </h2>
                 <p className="">
