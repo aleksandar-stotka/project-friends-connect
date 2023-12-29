@@ -1,3 +1,6 @@
 .your-globe-element-class:hover {
     cursor: default; /* or 'pointer' if you want the standard mouse pointer */
 }
+#globe-image {
+    filter: brightness(200%); /* Adjust the percentage as needed to make it white or lighter */
+}

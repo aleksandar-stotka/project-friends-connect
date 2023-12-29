@@ -9,13 +9,11 @@ import Signup from "./pages/signup/Signup";
 import Sidebar from "./components/sidebar/Sidebar";
 
 import { useAuthContext } from "./hooks/useAuthContext";
-import Header from "./components/header/Header";
 import About from "./pages/about/About";
 
 import ChatRoom from "./pages/chatRoom/ChatRoom";
 import UserProjects from "./pages/personalProjects/UserProjects";
 import Home from "./pages/Home/Home";
-import Navbar from "./components/navbar/Navbar";
 
 function App() {
   const { user, authIsReady } = useAuthContext();
@@ -24,18 +22,16 @@ function App() {
       
       {authIsReady && (
         <BrowserRouter>
-       <Navbar/>
+      
        <Sidebar/>
           <div>
             <Switch>
-              <Route exact path="/">
-                <Header />
-              </Route>
+              
               <Route exact path="/home">
                 <Home />
               </Route>
               <Route path="/dashboard">
-                {!user && <Redirect to="/dashboard" />}
+                {!user && <Redirect to="/login" />}
                 {user && <Dashboard />}
               </Route>
               <Route path="/create">
@@ -59,9 +55,7 @@ function App() {
                 {!user && <Redirect to="/home" />}
                 {user && <ChatRoom />}
               </Route>
-              <Route path="/header">
-                <Header />
-              </Route>
+             
               <Route path="/about">
                 <About />
               </Route>

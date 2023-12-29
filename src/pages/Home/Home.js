@@ -1,53 +1,80 @@
-import React, { useEffect, useRef } from 'react';
-import Globe from 'react-globe.gl';
-import Navbar from '../../components/navbar/Navbar';
-import Sidebar from '../../components/sidebar/Sidebar';
-import { useAuthContext } from '../../hooks/useAuthContext';
-import './Home.css'
+import React, { useEffect, useRef } from "react";
+import Globe from "react-globe.gl";
+import Sidebar from "../../components/sidebar/Sidebar";
+import { useAuthContext } from "../../hooks/useAuthContext";
+import "./Home.css";
+import Navbar from "../../components/navbar/Navbar";
 
 export default function Home() {
   const { user } = useAuthContext();
   const globeEl = useRef();
- 
-   
+
   useEffect(() => {
     const globe = globeEl.current;
     globe.controls().autoRotate = true; // Auto-rotate the globe
     globe.controls().autoRotateSpeed = 0.5; // Adjust rotation speed
-    globe.controls().enableZoom = false; // Disable zooming with scroll
+    globe.controls().enableZoom = false; 
+    // Disable zooming with scroll
+  
+    const textDiv = document.createElement('div');
+    textDiv.innerText = 'Your Text Here';
+    textDiv.style.position = 'absolute';
+    textDiv.style.top = '50%'; // Adjust the vertical position as needed
+    textDiv.style.left = '50%'; // Adjust the horizontal position as needed
+    textDiv.style.transform = 'translate(-50%, -50%)'; // Center the text
+    textDiv.style.backgroundColor = 'transparent'; // Make the background transparent
+    textDiv.style.color = 'white'; // Set text color
+    textDiv.style.fontSize = '40px'; // Set text size
+
+    // Append the text div to a parent container or the document body
+    document.body.appendChild(textDiv); // You can customize the parent container as needed
+
+    // Optionally, you can update the text content based on user interactions or data
+    // textDiv.innerText = 'New Text Content';
+
+    // Clean up the text div when the component unmounts
+    return () => {
+      document.body.removeChild(textDiv);
+    };
   }, []);
+  
 
   // Define a white color for both land and oceans
 
   return (
-    <div className="h-screen bg-blue overflow-hidden">
-       <div className="absolute left-1 top-1/2 transform -translate-y-1/2 text-white-500 font-bold text-lg pl-5">
-          Project Friends Connect
-        </div>
+    <>
+     <div className="h-screen bg-blue overflow-hidden=">
+    
+       
       {user && <Sidebar />}
       <div className="relative flex items-center justify-center h-full">
-      <div className="absolute left-0 top-1/2 transform -translate-y-1/2 text-blue-500 font-bold text-lg pl-5">
-          Project Friends Connect
-        </div>
-      <Globe
-      
-  ref={globeEl}
-  globeImageUrl="//unpkg.com/three-globe/example/img/earth-dark.jpg" // Use a dark-themed globe image
-   // Set the background to black or a dark color
-  style={{ cursor: 'default' }} // Keep the cursor as default
-  // Land and water styling
-  polygonAltitude={0.06}
-  polygonCapColor={() => 'rgba(255, 255, 255, 0.7)'} // Light color for land
-  polygonSideColor={() => 'rgba(0, 0, 0, 0.15)'} // Darker shade for land sides
-  polygonStrokeColor={() => '#111'} // Dark color for country borders
-  // Lighting and atmosphere
-  atmosphereColor="rgba(255, 255, 255, 0.3)" // Light atmosphere
-  atmosphereAltitude={0.3}
-  // ... other props
-/>
-
-        <img src="path/to/your/key-icon.png" alt=""   style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }} />
+     
+       <p className="z-49 text-blue">test  </p>
+        <Globe
+          ref={globeEl}
+          globeImageUrl="/globe.jpg" // Use a dark-themed globe image
+          // Set the background to black or a dark color
+          style={{ cursor: "default" }} // Keep the cursor as default
+          // Land and water styling
+          polygonAltitude={0.06}
+          polygonCapColor={() => "rgba(255, 255, 255, 0.7)"} // Light color for land
+          polygonSideColor={() => "#fffff"} // Darker shade for land sides
+          polygonStrokeColor={() => "#ffff"} // Dark color for country borders
+          // Lighting and atmosphere
+          atmosphereColor="#F5F7F8" // Light atmosphere
+          atmosphereAltitude={0.3}
+          // ... other props
+        />
+       
       </div>
-    </div>
+    
+       
+    
+
+</div>
+    </>
+   
+      
+  
   );
 }

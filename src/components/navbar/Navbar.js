@@ -9,8 +9,8 @@ function Navbar() {
   const { logout, isPending } = useLogout();
 
   return (
-    <nav className="bg-blue-100 shadow-lg">
-      <ul className="flex justify-between items-center py-4 px-5">
+    <nav className="bg-black h-full">
+      <ul className="flex justify-between items-center  px-5">
         {!user && (
           <>
             <li>
