@@ -2,8 +2,8 @@ import React, { useEffect, useRef } from "react";
 import Globe from "react-globe.gl";
 import Sidebar from "../../components/sidebar/Sidebar";
 import { useAuthContext } from "../../hooks/useAuthContext";
-import "./Home.css";
-import Navbar from "../../components/navbar/Navbar";
+import { FaHandRock } from "react-icons/fa";
+
 
 export default function Home() {
   const { user } = useAuthContext();
@@ -45,28 +45,30 @@ export default function Home() {
     <>
      <div className="h-screen bg-blue overflow-hidden=">
     
-       
-      {user && <Sidebar />}
+       <button className="cursor-pointer "           
+>
+       {user && <Sidebar />}
       <div className="relative flex items-center justify-center h-full">
-     
-       <p className="z-49 text-blue">test  </p>
-        <Globe
-          ref={globeEl}
-          globeImageUrl="/globe.jpg" // Use a dark-themed globe image
-          // Set the background to black or a dark color
-          style={{ cursor: "default" }} // Keep the cursor as default
-          // Land and water styling
-          polygonAltitude={0.06}
-          polygonCapColor={() => "rgba(255, 255, 255, 0.7)"} // Light color for land
-          polygonSideColor={() => "#fffff"} // Darker shade for land sides
-          polygonStrokeColor={() => "#ffff"} // Dark color for country borders
-          // Lighting and atmosphere
-          atmosphereColor="#F5F7F8" // Light atmosphere
-          atmosphereAltitude={0.3}
-          // ... other props
-        />
-       
-      </div>
+    <Globe 
+      
+      ref={globeEl}
+      globeImageUrl="/globe.jpg" // Use a dark-themed globe image
+      // Land and water styling
+      polygonAltitude={0.06}
+      polygonCapColor={() => "rgba(255, 255, 255, 0.7)"} // Light color for land
+      polygonSideColor={() => "#fffff"} // Darker shade for land sides
+      polygonStrokeColor={() => "#ffff"} // Dark color for country borders
+      // Lighting and atmosphere
+      atmosphereColor="#F5F7F8" // Light atmosphere
+      atmosphereAltitude={0.3}
+      // ... other props
+    />
+    
+  </div>
+
+
+       </button>
+    
     
        
     

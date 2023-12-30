@@ -1,7 +1,6 @@
 import "./Sidebar.scss";
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { useAuthContext } from "../../hooks/useAuthContext";
 import { CgAdd } from "react-icons/cg";
 import { MdDashboard } from "react-icons/md";
 import { MdOutlinePersonalInjury } from "react-icons/md";

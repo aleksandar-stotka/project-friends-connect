@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect, useReducer } from "react";
 import { useCollection } from "../hooks/useCollection";
 import { HANDLE_PAGE,SET_DOCUMENTS } from "../actions/actions";
+
 import reducer from "../reducer/reducer";
 const AppContext = React.createContext();
 

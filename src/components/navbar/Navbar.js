@@ -4,13 +4,15 @@ import { useLogout } from "../../hooks/useLogout";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import Avatar from "../avatar/Avatar";
 
+
 function Navbar() {
   const { user } = useAuthContext();
   const { logout, isPending } = useLogout();
 
   return (
-    <nav className="bg-black h-full">
-      <ul className="flex justify-between items-center  px-5">
+    <nav className="flex   flex justify-center z-0">
+      <aside className="text-black     lg:w-[40rem] fixed bottom-0 w-[50rem] text-white py-4   transition-all duration-300 z-30">
+        <ul className="flex justify-between ">
         {!user && (
           <>
             <li>
@@ -18,7 +20,7 @@ function Navbar() {
                 className="hover:bg-blue-300 text-gray-700 font-bold py-2 px-4 rounded transition-colors"
                 to="/login"
               >
-                Login
+             
               </Link>
             </li>
             <li>
@@ -26,11 +28,18 @@ function Navbar() {
                 className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition-colors"
                 to="/signup"
               >
-                Signup
+             
               </Link>
             </li>
           </>
         )}
+          
+        </ul>
+     
+
+      </aside>
+      <ul className="flex justify-between items-center  px-5">
+     
 
         {user && (
           <li className="flex items-center space-x-3">

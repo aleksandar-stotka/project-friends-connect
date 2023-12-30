@@ -6,10 +6,8 @@ import Create from "./pages/create/Create";
 import Project from "./pages/project/Project";
 import Login from "./pages/login/Login";
 import Signup from "./pages/signup/Signup";
-import Sidebar from "./components/sidebar/Sidebar";
 
 import { useAuthContext } from "./hooks/useAuthContext";
-import About from "./pages/about/About";
 
 import ChatRoom from "./pages/chatRoom/ChatRoom";
 import UserProjects from "./pages/personalProjects/UserProjects";
@@ -22,12 +20,11 @@ function App() {
       
       {authIsReady && (
         <BrowserRouter>
-      
-       <Sidebar/>
+         
           <div>
             <Switch>
               
-              <Route exact path="/home">
+              <Route exact path="/">
                 <Home />
               </Route>
               <Route path="/dashboard">
@@ -56,9 +53,7 @@ function App() {
                 {user && <ChatRoom />}
               </Route>
              
-              <Route path="/about">
-                <About />
-              </Route>
+              
               <Route path="/personal">
                 {!user && <Redirect to="/home" />}
                 {user && <UserProjects />}
