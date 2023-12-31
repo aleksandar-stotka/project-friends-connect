@@ -43,11 +43,13 @@ export default function Home() {
 
   return (
     <>
+    
      <div className="h-screen bg-blue overflow-hidden=">
+      
     
        <button className="cursor-pointer "           
 >
-       {user && <Sidebar />}
+       
       <div className="relative flex items-center justify-center h-full">
     <Globe 
       

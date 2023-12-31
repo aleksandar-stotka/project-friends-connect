@@ -6,21 +6,24 @@ import Create from "./pages/create/Create";
 import Project from "./pages/project/Project";
 import Login from "./pages/login/Login";
 import Signup from "./pages/signup/Signup";
+import Sidebar from "./components/sidebar/Sidebar";
 
 import { useAuthContext } from "./hooks/useAuthContext";
 
 import ChatRoom from "./pages/chatRoom/ChatRoom";
 import UserProjects from "./pages/personalProjects/UserProjects";
 import Home from "./pages/Home/Home";
+import Navbar from "./components/navbar/Navbar";
 
 function App() {
   const { user, authIsReady } = useAuthContext();
   return (
-    <div>
+    <div className="bg-gray-700 ">
       
       {authIsReady && (
         <BrowserRouter>
-         
+          {user && <Sidebar />}
+          
           <div>
             <Switch>
               

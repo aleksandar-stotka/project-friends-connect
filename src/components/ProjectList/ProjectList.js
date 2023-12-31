@@ -24,7 +24,7 @@ function ProjectList({ projects = [] }) {
 
   return (
     <>
-      <div className="flex justify-center mt-4 p-5">
+      <div className="flex justify-center mt-4 p-5 bg-blue overflow-hidden">
         {pageNumbers.map((number) => (
           <button
             key={number}
@@ -37,13 +37,13 @@ function ProjectList({ projects = [] }) {
           </button>
         ))}
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 bg-[#F5F7F8]">
         {projects.length === 0 && <p className="text-gray-600">No projects yet</p>}
         {/* Display projects based on pagination */}
         {currentProjects.map((project, index) => (
           <Link
             className={`max-w-sm rounded overflow-hidden shadow-lg p-5 ${
-              index === 0 ? 'bg-yellow-300 text-gray-700' : 'bg-blue-100 text-gray-700'
+              index === 0 ? 'bg-[rgba(255,255,255,0.7)] text-gray-700' : 'bg-[#fffff] text-gray-700'
             }`}
             to={`/projects/${project.id}`}
             key={project.id}
