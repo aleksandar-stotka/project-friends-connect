@@ -3,8 +3,12 @@ import Globe from "react-globe.gl";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { useLogout } from "../../hooks/useLogout";
 import Avatar from "../../components/avatar/Avatar";
+import { useGlobalContext } from "../../globalContext/context";
 
 export default function Home() {
+
+     
+       const {paragraph} = useGlobalContext()
 
   const { user } = useAuthContext();
   const {isPending,logout} = useLogout()
@@ -44,11 +48,15 @@ export default function Home() {
 
   return (
     <>
+
+      
     
      <div className="h-screen bg-black overflow-hidden=">
+     
+     
       
       {user && (
-          <li className="flex items-center space-x-3">
+          <li className="flex items-center space-x-3 p-2">
           {!isPending && (
             <button
               className=" text-white font-bold py-2 px-4 rounded transition-colors"
@@ -68,10 +76,22 @@ export default function Home() {
           </div>
         </li>
       )}
-       <button className="cursor-pointer "           
+       <div className="cursor-pointer "           
 >
+<div className="transition-opacity duration-1000 opacity-1 flex justify-center"> 
+      {paragraph ? (
+       
+        <h1 className="text-white font-bold text-5xl">test first para</h1>
+         
+      ) : (
+        <h1 className="text-blue-400	text-5xl	font-bold">test secund</h1>
+
+      )}
+
+      </div>
        
       <div className="relative flex items-center justify-center h-full">
+     
     <Globe 
       
       ref={globeEl}
@@ -90,7 +110,7 @@ export default function Home() {
   </div>
 
 
-       </button>
+       </div>
        
     
     
