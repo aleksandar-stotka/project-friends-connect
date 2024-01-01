@@ -23,7 +23,7 @@ function OnlineUsers() {
       <div className="max-w-50 mx-auto p-5 shadow-lg rounded-lg ">
         {error && <div className="text-red-600">{error}</div>}
         {documents && documents.map((user) => (
-          <div key={user.id}  className="flex items-center space-x-3 p-2 bg-blue-600 rounded-lg my-2">
+          <div key={user.id}  className="flex items-center w-30  space-x-3 p-2 bg-blue-600 rounded-lg my-2">
             {user.online && <span className="bg-green-500 rounded-full h-3 w-3 m-1"></span>}
             <span className="text-gray-300">{user.displayName}</span>
             <Avatar src={user.photoURL} className="w-10 h-10" />

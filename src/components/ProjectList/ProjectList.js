@@ -22,13 +22,13 @@ function ProjectList({ projects = [] }) {
 
   return (
     <>
-      <div className="flex justify-center mt-4 p-5 bg-blue-900 overflow-hidden">
+      <div className="flex justify-center mt-4 p-5  overflow-hidden">
         {pageNumbers.map((number) => (
           <button
             key={number}
             onClick={() => paginate(number)}
             className={`mx-1 py-1 px-3 rounded text-white ${
-              currentPage === number ? 'bg-blue-700' : 'bg-blue-600 hover:bg-blue-700'
+              currentPage === number ? 'bg-blue-700' : 'bg-blue-500 font-bold hover:bg-blue-700'
             }`}
           >
             {number}
@@ -51,13 +51,13 @@ function ProjectList({ projects = [] }) {
                 <span>Project Name:</span>
                 <h3>{project.name}</h3>
               </h3>
-              <p className="text-blue-300 font-semibold">
+              <p className="text-blue-200 font-semibold">
                 By: {project.createdBy.displayName}
               </p>
               
               <p>{project.details}</p>
-              <h2>Assigned Users List:</h2>
-              <p>{project.assignedUsersList ? project.assignedUsersList.length : 0} users</p>
+              <h2 className="text-cyan-500 font-bold">Assigned Users List:</h2>
+              <p>{project.assingnedUsersList.length} users</p>
 
               <p className="font-bold">Due by: {project.createdAt.toDate().toDateString()}</p>
               {project.createdAt &&
