@@ -23,6 +23,7 @@ function App() {
       {authIsReady && (
         <BrowserRouter>
           {user && <Sidebar />}
+          {!user && <Navbar />}
           
           <div>
             <Switch>

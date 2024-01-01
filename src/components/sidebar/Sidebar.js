@@ -4,8 +4,11 @@ import { NavLink } from "react-router-dom";
 import { CgAdd } from "react-icons/cg";
 import { MdDashboard } from "react-icons/md";
 import { MdOutlinePersonalInjury } from "react-icons/md";
+import { useAuthContext } from "../../hooks/useAuthContext";
 
 function Sidebar() {
+
+  
   return (
     <div className="flex   flex justify-center z-0 ">
       <aside className="text-black     lg:w-[40rem] fixed bottom-0 w-[50rem] text-white py-4   transition-all duration-300 z-30">

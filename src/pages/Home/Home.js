@@ -1,12 +1,13 @@
 import React, { useEffect, useRef } from "react";
 import Globe from "react-globe.gl";
-import Sidebar from "../../components/sidebar/Sidebar";
 import { useAuthContext } from "../../hooks/useAuthContext";
-import { FaHandRock } from "react-icons/fa";
-
+import { useLogout } from "../../hooks/useLogout";
+import Avatar from "../../components/avatar/Avatar";
 
 export default function Home() {
+
   const { user } = useAuthContext();
+  const {isPending,logout} = useLogout()
   const globeEl = useRef();
 
   useEffect(() => {
@@ -44,9 +45,29 @@ export default function Home() {
   return (
     <>
     
-     <div className="h-screen bg-blue overflow-hidden=">
+     <div className="h-screen bg-black overflow-hidden=">
       
-    
+      {user && (
+          <li className="flex items-center space-x-3">
+          {!isPending && (
+            <button
+              className=" text-white font-bold py-2 px-4 rounded transition-colors"
+              onClick={logout}
+            >
+              Logout
+            </button>
+          )}
+          {isPending && (
+            <button className="bg-gray-300 text-gray-700 font-bold py-2 px-4 rounded" disabled>
+              Logging out...
+            </button>
+          )}
+          <div className="flex items-center space-x-3">
+            <Avatar src={user.photoURL} className="w-10 h-10" />
+            <p className="text-white">Hey {user.displayName}</p>
+          </div>
+        </li>
+      )}
        <button className="cursor-pointer "           
 >
        
@@ -70,6 +91,7 @@ export default function Home() {
 
 
        </button>
+       
     
     
        

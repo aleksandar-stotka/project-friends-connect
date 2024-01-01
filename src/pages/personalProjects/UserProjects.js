@@ -38,7 +38,7 @@ const UserProjects = () => {
                 ))}
               </ul>
             </div>  
-          </Link>
+        </Link>
         ))}
       </div>
     </div>
