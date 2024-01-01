@@ -81,10 +81,10 @@ export default function Home() {
 <div className="transition-opacity duration-1000 opacity-1 flex justify-center"> 
       {paragraph ? (
        
-        <h1 className="text-white font-bold text-5xl">test first para</h1>
+        <h1 className="text-white font-bold text-5xl tracking-wide">test first para</h1>
          
       ) : (
-        <h1 className="text-blue-400	text-5xl	font-bold">test secund</h1>
+        <h1 className="text-blue-400	text-5xl	font-bold tracking-wide">test secund</h1>
 
       )}
 
