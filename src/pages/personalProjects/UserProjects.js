@@ -21,18 +21,19 @@ const UserProjects = () => {
 
   return (
     <div className="flex justify-center">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-6xl mx-auto p-5">
+      <div className="grid  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-6xl mx-auto p-5">
         {userMapDocuments.map(project => (  // Safely mapping with an initialized array
           <Link className="max-w-sm rounded overflow-hidden shadow-lg p-5" to={`/projects/${project.id}`} key={project.id}>
-            <h2>{project.name}</h2>
-            <p>By {project.createdBy.displayName}</p>
-            <p>Due by {project.dueDate.toDate().toDateString()}</p>
+            <h2 className='text-white'>{project.name}</h2>
+            <p className='text-blue-200'>By: {project.createdBy.displayName}</p>
+            <p className='text-blue-200'>{project.details}</p>
+            <p className='font-bold text-blue-200'>Due by: {project.dueDate.toDate().toDateString()}</p>
             <div>
               <ul>
-                <h2>Assigned Users List:</h2>
-                {project.assignedUsersList?.map((user) => (  // Optional chaining for safe access
+                <h2 className='text-cyan-500 font-bold'>Assigned Users List:</h2>
+                {project.assingnedUsersList?.map((user) => (  // Optional chaining for safe access
                   <li key={user.photoURL}>
-                    <h4><br></br> {user.displayName}</h4>  
+                    <h4 className='text-blue-200'><br></br> {user.displayName}</h4>  
                     <Avatar src={user.photoURL} />
                   </li>
                 ))}

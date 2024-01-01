@@ -78,7 +78,7 @@ export default function Home() {
       )}
        <div className="cursor-pointer "           
 >
-<div className="transition-opacity duration-1000 opacity-1 flex justify-center"> 
+<div className="transition-opacity duration-1000 opacity-1 flex justify-center p-2"> 
       {paragraph ? (
        
         <h1 className="text-white font-bold text-5xl tracking-wide">test first para</h1>
