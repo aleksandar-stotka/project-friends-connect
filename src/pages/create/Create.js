@@ -102,88 +102,85 @@ function Create() {
   };
 
   return (
-    <>
-      <div className="flex items-center justify-center min-h-screen w-[50rem]" ref={messagesEndRef}>
-        <div
-          data-aos="flip-right"
-          style={{
-            width: "100%",
-            display: "flex",
-            justifyContent: "center",
-            flexDirection: "column",
-            alignItems: "center",
-            textAlign: "center",
-          }}
-        ></div>
-        <form onSubmit={handleSubmit} className="max-w-md mx-auto bg-white rounded-lg shadow-md w-[60rem] p-6">
-          <div className="mb-4">
-          <label className="block text-gray-700 font-semibold mb-2">
-            <span>Project Name:</span>
-            <input className="w-full border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500" placeholder="Enter project name"
+    <div className="flex items-center justify-center min-h-screen bg-blue-900 p-6">
+      <form onSubmit={handleSubmit} className="max-w-2xl w-full bg-gray-800 text-white rounded-lg shadow-lg p-6">
+        <h2 className="text-2xl font-bold mb-4">Create New Project</h2>
+        {/* Project Name */}
+        <div className="mb-4">
+          <label className="block text-gray-400 font-semibold mb-2">
+            Project Name:
+            <input
               required
               type="text"
               onChange={(e) => setName(e.target.value)}
               value={name}
+              className="w-full mt-1 p-2 bg-gray-700 text-white rounded"
+              placeholder="Enter project name"
             />
           </label>
-          </div>
-           <div className="mb-4">
-           <label className="block text-gray-700 font-semibold mb-2">
-            <span>details:</span>
+        </div>
+        {/* Project Details */}
+        <div className="mb-4">
+          <label className="block text-gray-400 font-semibold mb-2">
+            Details:
             <textarea
               required
-              type="text"
               onChange={(e) => setDetails(e.target.value)}
               value={details}
-              className="w-full border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500" placeholder="Enter project description"
+              className="w-full mt-1 p-2 bg-gray-700 text-white rounded"
+              placeholder="Enter project description"
             />
           </label>
-
-           </div>
-            <div className="mb-4">
-               <label className="block text-gray-700 font-semibold mb-2">
-               <span>date:</span>
+        </div>
+        {/* Due Date */}
+        <div className="mb-4">
+          <label className="block text-gray-400 font-semibold mb-2">
+            Due Date:
             <input
               required
               type="date"
               onChange={(e) => setDueDate(e.target.value)}
               value={dueDate}
+              className="w-full mt-1 p-2 bg-gray-700 text-white rounded"
             />
-               </label>
-            </div>
-            <div className="mb-4">
-            <label className="block text-gray-700 font-semibold mb-2">  
-              <span>Project category:</span>
-              <Select className="w-full border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 z-40"
-                onChange={(option) => setCategory(option)}
-                options={categories}
-              />
-            </label>
-              
-            </div>
-            <div className="mb-4">
-              
-            <label className="block text-gray-700 font-semibold mb-2">
-              <span>Assing to:</span>
+          </label>
+        </div>
+        {/* Project Category */}
+        <div className="mb-4">
+          <label className="block text-gray-400 font-semibold mb-2">
+            Project Category:
+            <Select
+              onChange={(option) => setCategory(option)}
+              options={categories}
+              className="text-black mt-1"
+            />
+          </label>
+        </div>
+        {/* Assigned Users */}
+        <div className="mb-4 relative z-10">
+          <label className="block text-gray-400 font-semibold mb-2">
+            Assign To:
+            <Select
+             menuPlacement="top"
+              options={users}
+              onChange={(option) => setAssingnedUsers(option)}
+              isMulti
+              className="text-black mt-1"
+              styles={{ menuPortal: base => ({ ...base, zIndex: 9999 }) }}
 
-              <Select className="w-full border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500"
-                options={users}
-                onChange={(option) => setAssingnedUsers(option)}
-                isMulti
-              />
-            </label>
-
-            </div>
-          
-           
-          <button style={{ marginBottom: "1em" }} className="block text-gray-700 font-semibold mb-2">
-            Add Project
-          </button>
-          {formError && <p className="error">{formError}</p>}
-        </form>
-      </div>
-    </>
+            />
+          </label>
+        </div>
+        {/* Submit Button */}
+        <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">
+          Add Project
+        </button>
+        {/* Error Message */}
+        {formError && <p className="text-red-500 mt-2">{formError}</p>}
+      </form>
+    </div>
   );
 }
+
 
 export default Create;

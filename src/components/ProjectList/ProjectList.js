@@ -40,7 +40,7 @@ function ProjectList({ projects = [] }) {
         {/* Display projects based on pagination */}
         {currentProjects.map((project, index) => (
           <Link
-          className={`max-w-sm rounded overflow-hidden shadow-lg p-5 ${
+          className={`max-w-sm rounded overflow-hidden shadow-lg p-5 shadow-md hover:shadow-xl duration-400 ${
             index === 0 ? 'bg-gray-500 text-white' : 'bg-blue-600 text-gray-300'
           }`}
             to={`/projects/${project.id}`}

@@ -2,104 +2,115 @@ import React from "react";
 import Avatar from "../../components/avatar/Avatar";
 import { useFirestore } from "../../hooks/useFirestore";
 import { useAuthContext } from "../../hooks/useAuthContext";
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { useState } from "react";
 
-
 function ProjectSummary({ project }) {
-  console.log(project.createdBy, "createb by");
-
   const { deleteDocument, updateDocument } = useFirestore("projects");
   const [name, setName] = useState(project.name);
   const [details, setDesc] = useState(project.details);
   const { user } = useAuthContext();
-  const [isModalOpen, setIsModalOpen] = useState(false)
-
-  console.log(user.uid, "uid");
-  
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const history = useHistory();
 
   const handleUpdate = async (e) => {
     e.preventDefault();
     await updateDocument(project.id, {
       name,
       details,
-      
     }).then(() => {
-      setIsModalOpen(false)
-    })
+      setIsModalOpen(false);
+    });
   };
 
-  
-  const history = useHistory();
   const handleClick = (e) => {
     deleteDocument(project.id);
-    history.push("/dashboard"  );
+    history.push("/dashboard");
   };
+
   const openModal = () => {
     setIsModalOpen(true);
   };
+
   const closeModal = () => {
     setIsModalOpen(false);
   };
 
   return (
-    <div >
-      <div className="project-summary">
-        <h2 className="page-title">{project.name}</h2>
-        <p>By {project.createdBy.displayName}</p>
-        <p className="due-date">
+    <div className="min-h-screen  text-white p-6">
+      <div className="max-w-4xl mx-auto bg-gray-800 p-5 rounded-lg shadow-lg">
+        <h2 className="text-2xl font-bold mb-2">{name}</h2>
+        <p className="text-gray-400">By {project.createdBy.displayName}</p>
+        <p className="text-blue-300">
           Project due by {project.dueDate.toDate().toDateString()}
         </p>
-        <p className="details">{project.details}</p>
-        <h4>Project is assigned to:</h4>
-        <div className="assigned-users">
-          {project.assingnedUsersList.map((user) => {
-            return (
-              <div key={user.id} className="m-2 ">
-                <Avatar className="avatar" src={user.photoURL} />
-                <h3>{user.displayName}</h3>
+        <p className="mt-2">{details}</p>
+
+        <h4 className="mt-4 font-semibold">Project is assigned to:</h4>
+        <div className="flex -space-x-2">
+          {(project.assignedUsersList || []).map((user) => (
+            <div key={user.id} className="m-2">
+              <Avatar className="w-10 h-10 rounded-full" src={user.photoURL} />
+              <h3 className="text-sm text-gray-300">{user.displayName}</h3>
+            </div>
+          ))}
+        </div>
+
+        {user.uid === project.createdBy.id && (
+          <div className="mt-4">
+            <button
+              className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
+              onClick={openModal}
+            >
+              Edit
+            </button>
+            <button
+              className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+              onClick={handleClick}
+            >
+              Mark as Complete
+            </button>
+          </div>
+        )}
+
+        <div
+          className={`${
+            isModalOpen ? 'fixed inset-0 bg-black bg-opacity-50' : 'hidden'
+          } flex justify-center items-center`}
+        >
+          <div className="bg-gray-700 p-5 rounded-lg">
+            <div className="edit-form">
+              <label className="block text-gray-400 mb-2">Project Name:</label>
+              <input
+                className="w-full p-2 rounded bg-gray-800 text-white"
+                onChange={(e) => setName(e.target.value)}
+                value={name}
+              />
+              <label className="block text-gray-400 mt-4 mb-2">Details:</label>
+              <textarea
+                className="w-full p-2 rounded bg-gray-800 text-white"
+                rows="4"
+                onChange={(e) => setDesc(e.target.value)}
+                value={details}
+              ></textarea>
+              <div className="mt-4 flex justify-end">
+                <button
+                  className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                  onClick={handleUpdate}
+                >
+                  Update
+                </button>
+                <button
+                  className="ml-2 bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+                  onClick={closeModal}
+                >
+                  Close
+                </button>
               </div>
-            );
-          })}
+            </div>
+          </div>
         </div>
       </div>
-      {user.uid === project.createdBy.id && (
-        <div>
-      
-           <button style={{margin:'1em'}} onClick={openModal}>edit</button>
-           {user.uid === project.createdBy.id && (
-        <button className="btn" onClick={handleClick}>
-          Mark as Complete
-        </button>
-
-      )}
-
-          
-          <div
-      className={`${
-        isModalOpen ? 'modal-overlay show-modal' : 'modal-overlay'
-      }`}
-    >
-      <div className='modal-container'>
-        <div className="edit-form">
-        <span>Project Name:</span>
-        <input onChange={(e) => setName(e.target.value)} value={name} />
-        <span>details:</span>
-          <textarea onChange={(e) => setDesc(e.target.value)} value={details} />
-        
-        <button style={{margin:"1em"}} onClick={handleUpdate}>update</button>
-
-        </div>
-       
-        <button className='close-modal-btn' onClick={closeModal}>
-       X
-        </button>
-      </div>
-    </div>
-        </div>
-      )}
-
-     
     </div>
   );
 }
