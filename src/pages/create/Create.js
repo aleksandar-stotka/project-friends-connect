@@ -150,6 +150,7 @@ function Create() {
           <label className="block text-gray-400 font-semibold mb-2">
             Project Category:
             <Select
+             menuPlacement="top"
               onChange={(option) => setCategory(option)}
               options={categories}
               className="text-black mt-1"

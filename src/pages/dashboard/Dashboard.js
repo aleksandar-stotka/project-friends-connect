@@ -4,6 +4,7 @@ import React from "react";
 import ProjectList from "../../components/ProjectList/ProjectList";
 import ProjectFilter from "./ProjectFilter";
 import { useAuthContext } from "../../hooks/useAuthContext";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 
 
@@ -68,7 +69,10 @@ function Dashboard() {
           changeFilter={changeFilter}
         />
       )}
+            <Link className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded " to="/">home</Link>
+
       <div className="grid lg:grid-cols-3 gap-5">
+        
         <div className="col-span-2">{projects && <ProjectList projects={projects} />}</div>
 
         <div className="col-span-1">
