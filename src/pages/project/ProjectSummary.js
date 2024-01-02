@@ -6,6 +6,8 @@ import { useHistory } from "react-router-dom";
 import { useState } from "react";
 
 function ProjectSummary({ project }) {
+  console.log("Assigned Users: ", project.assignedUsersList);
+
   const { deleteDocument, updateDocument } = useFirestore("projects");
   const [name, setName] = useState(project.name);
   const [details, setDesc] = useState(project.details);
@@ -47,13 +49,15 @@ function ProjectSummary({ project }) {
         <p className="mt-2">{details}</p>
 
         <h4 className="mt-4 font-semibold">Project is assigned to:</h4>
-        <div className="flex -space-x-2">
-          {(project.assignedUsersList || []).map((user) => (
-            <div key={user.id} className="m-2">
-              <Avatar className="w-10 h-10 rounded-full" src={user.photoURL} />
-              <h3 className="text-sm text-gray-300">{user.displayName}</h3>
-            </div>
-          ))}
+        <div className="flex space-x-2">
+        {project.assingnedUsersList.map((user) => {
+            return (
+              <div key={user.id}>
+                <Avatar className="p-3" src={user.photoURL} />
+                <p>{user.displayName}</p>
+              </div>
+            );
+          })}
         </div>
 
         {user.uid === project.createdBy.id && (
