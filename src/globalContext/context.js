@@ -28,7 +28,7 @@ export const AppProvider = ({ children }) => {
   const newBackground = () => {
     setTimeout(() => {
       setPara(true);
-    }, 5000)
+    }, 6000)
   };
 
 

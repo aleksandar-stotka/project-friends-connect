@@ -47,10 +47,10 @@ function ProjectList({ projects = [] }) {
             key={project.id}
           >
             <div className="mb-8">
-              <h3 className="font-bold text-xl mb-2">
-                <span>Project Name:</span>
-                <h3>{project.name}</h3>
-              </h3>
+               
+                
+                <h3 className="font-bold text-xl mb-2">{project.name}</h3>
+             
               <p className="text-blue-200 font-semibold">
                 By: {project.createdBy.displayName}
               </p>

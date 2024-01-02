@@ -22,7 +22,7 @@ export default function Home() {
     // Disable zooming with scroll
   
     const textDiv = document.createElement('div');
-    textDiv.innerText = 'Your Text Here';
+    textDiv.innerText = 'Building Projects, Nurturing Planet';
     textDiv.style.position = 'absolute';
     textDiv.style.top = '50%'; // Adjust the vertical position as needed
     textDiv.style.left = '50%'; // Adjust the horizontal position as needed
@@ -81,10 +81,10 @@ export default function Home() {
 <div className="transition-opacity duration-1000 opacity-1 flex justify-center p-2"> 
       {paragraph ? (
        
-        <h1 className="text-white font-bold text-5xl tracking-wide">test first para</h1>
+        <h2 className="text-white font-bold text-5xl tracking-wide">Empowering Your Vision, Project by Project</h2>
          
       ) : (
-        <h1 className="text-blue-400	text-5xl	font-bold tracking-wide">test secund</h1>
+        <h2 className="text-blue-200	text-5xl	font-bold tracking-wide">Elevate Every Task, Achieve Every Goal</h2>
 
       )}
 
