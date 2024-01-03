@@ -1,5 +1,3 @@
-import React, { useEffect } from "react";
-import { useAuthContext } from "../../hooks/useAuthContext";
 import NewChatForm from "../../components/newChatForm/NewChatForm";
 import ChatWindow from "../../components/chatWindow/ChatWindow";
 

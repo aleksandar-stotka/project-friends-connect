@@ -3,7 +3,6 @@ import { useCollection } from "../../hooks/useCollection";
 import React from "react";
 import Avatar from "../avatar/Avatar";
 import { useState } from "react";
-import { projectFirestore } from "../../firebase/config";
 
 function OnlineUsers() {
   const { documents, error } = useCollection("users");

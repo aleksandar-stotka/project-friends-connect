@@ -141,7 +141,7 @@ function Create() {
               type="date"
               onChange={(e) => setDueDate(e.target.value)}
               value={dueDate}
-              className="w-full mt-1 p-2 bg-gray-700 text-white rounded"
+              className="w-full mt-1 p-2 bg-white text-white rounded"
             />
           </label>
         </div>
