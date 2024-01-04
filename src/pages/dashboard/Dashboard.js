@@ -34,12 +34,14 @@ function Dashboard() {
           case "all":
             return true;
 
+            // eslint-disable-next-line no-unreachable
             let assignedToMe = false;
             document.assingnedUsersList.forEach((u) => {
               if (user.uid === u.id) {
                 assignedToMe = true;
               }
             });
+            // eslint-disable-next-line no-unreachable
             return assignedToMe;
           case "development":
           case "design":
