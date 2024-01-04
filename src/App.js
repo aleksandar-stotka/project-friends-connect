@@ -15,6 +15,7 @@ import UserProjects from "./pages/personalProjects/UserProjects";
 import Home from "./pages/Home/Home";
 import Navbar from "./components/navbar/Navbar";
 
+
 function App() {
   const { user, authIsReady } = useAuthContext();
   return (
@@ -50,7 +51,7 @@ function App() {
                 {!user && <Login />}
               </Route>
               <Route path="/signup">
-                {user && <Redirect to="/home" />}
+                {user && <Redirect to="/dashboard" />}
                 {!user && <Signup />}
               </Route>
               <Route path="/chatroom">
