@@ -19,7 +19,7 @@ export const AppProvider = ({ children }) => {
  
  ////////////////////////////////////////////////
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [newBack, setNewBack] = useState(true);
+  const [newBack] = useState(true);
   
     ///show more
  

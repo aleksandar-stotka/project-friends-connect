@@ -30,8 +30,7 @@ function Create() {
   const [name, setName] = useState("");
   const [details, setDetails] = useState("");
   const [dueDate, setDueDate] = useState("");
-  const [category, setCategory] = useState("");
-  const [createdDate, setC] = useState("");
+  const [category, setCategory] = useState("")
   const [assingnedUsers, setAssingnedUsers] = useState([]);
   const [formError, setFormError] = useState(null);
   const messagesEndRef = useRef(null);
@@ -141,7 +140,7 @@ function Create() {
               type="date"
               onChange={(e) => setDueDate(e.target.value)}
               value={dueDate}
-              className="w-full mt-1 p-2 bg-white text-white rounded"
+              className="w-full mt-1 p-2 bg-gray-400 text-white rounded"
             />
           </label>
         </div>

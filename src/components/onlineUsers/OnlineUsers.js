@@ -6,7 +6,7 @@ import { useState } from "react";
 
 function OnlineUsers() {
   const { documents, error } = useCollection("users");
-  const [user, setUser] = useState(null);
+  const [user] = useState(null);
   const [err] = useState(false);
   // Additional code ...
 
