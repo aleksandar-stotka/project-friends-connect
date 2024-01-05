@@ -19,7 +19,7 @@ import Navbar from "./components/navbar/Navbar";
 function App() {
   const { user, authIsReady } = useAuthContext();
   return (
-    <div className="bg-blue-500 h-screen">
+    <div className="bg-blue-500 h-auto h-screen">
       
       {authIsReady && (
         <BrowserRouter>
