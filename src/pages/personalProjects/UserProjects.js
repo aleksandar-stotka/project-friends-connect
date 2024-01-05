@@ -14,7 +14,7 @@ const UserProjects = () => {
   if (userMapDocuments.length === 0) {
     return (
       <div className="flex justify-center items-center h-screen">
-        <p>No projects</p>
+        <p className="text-white text-4xl">No projects</p>
       </div>
     );
   }
