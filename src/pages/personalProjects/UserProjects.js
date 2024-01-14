@@ -20,12 +20,12 @@ const UserProjects = () => {
   }
 
   return (
-    <div className="flex justify-center p-5">
-      <div className="grid  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-6xl mx-auto p-5">
+    <div className="p-5  ">
+      <div className="flex">
         {userMapDocuments.map(project => (  // Safely mapping with an initialized array
-          <Link className="max-w-sm rounded overflow-hidden shadow-lg p-5" to={`/projects/${project.id}`} key={project.id}>
-            <h2 className='text-white'>{project.name}</h2>
-            <p className='text-blue-200'>By: {project.createdBy.displayName}</p>
+          <Link className="max-w-lg rounded overflow-hidden shadow-lg p-5 " to={`/projects/${project.id}`} key={project.id}>
+            <h2 className='text-white text-2xl font-bold mb-2'>{project.name}</h2>
+            <p className='text-blue-100'>By: {project.createdBy.displayName}</p>
             <p className='text-blue-200'>{project.details}</p>
             <p className='font-bold text-blue-200'>Due by: {project.dueDate.toDate().toDateString()}</p>
             <div>

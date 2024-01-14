@@ -80,10 +80,10 @@ function ProjectSummary({ project }) {
         <div
           className={`${
             isModalOpen ? 'fixed inset-0 bg-black bg-opacity-50' : 'hidden'
-          } flex justify-center items-center`}
+          } flex justify-center items-center `}
         >
           <div className="bg-gray-700 p-5 rounded-lg">
-            <div className="edit-form">
+            <div className="edit-form w-96">
               <label className="block text-gray-400 mb-2">Project Name:</label>
               <input
                 className="w-full p-2 rounded bg-gray-800 text-white"
@@ -92,7 +92,7 @@ function ProjectSummary({ project }) {
               />
               <label className="block text-gray-400 mt-4 mb-2">Details:</label>
               <textarea
-                className="w-full p-2 rounded bg-gray-800 text-white"
+                className="w-full p-2 rounded bg-gray-800 text-white "
                 rows="4"
                 onChange={(e) => setDesc(e.target.value)}
                 value={details}

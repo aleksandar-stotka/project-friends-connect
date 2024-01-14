@@ -126,7 +126,7 @@ function Create() {
               required
               onChange={(e) => setDetails(e.target.value)}
               value={details}
-              className="w-full mt-1 p-2 bg-gray-700 text-white rounded"
+              className="w-full mt-1 h-72 p-2 bg-gray-700 text-white rounded"
               placeholder="Enter project description"
             />
           </label>
