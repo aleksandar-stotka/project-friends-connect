@@ -1,4 +1,3 @@
-import React from "react";
 import { projectFirestore } from "../firebase/config";
 import { useState } from "react";
 

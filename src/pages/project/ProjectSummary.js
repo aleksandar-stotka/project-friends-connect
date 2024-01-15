@@ -6,7 +6,6 @@ import { useHistory } from "react-router-dom";
 import { useState } from "react";
 
 function ProjectSummary({ project }) {
-  console.log("Assigned Users: ", project.assignedUsersList);
 
   const { deleteDocument, updateDocument } = useFirestore("projects");
   const [name, setName] = useState(project.name);
