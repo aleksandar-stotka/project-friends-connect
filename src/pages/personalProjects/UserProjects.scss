@@ -5,39 +5,8 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   grid-gap: 20px;
-  .assigned-to {
-     margin-top: 20px;
-  padding-top: 10px;
-  border-top: 1px solid #eee;
-
-
-  }
-  ul {
-    margin: 10px 0;
-  display: flex;
-   flex-direction: column;
-
-  }
   
-li {
-  margin-right: 10px;
-}
-a {
-  padding: 17px;
-  border-radius: 6px;
-  box-shadow: 3px 3px 5px #ffffff;
-  text-decoration: none;
-  color: inherit;
-  height:auto;
-}
-h2 {
-  font-size: 1.2em;
-  color: $textColorMedium;
-}
- p {
-  color: $paragraphColorSmall;
-  font-size: 1em;
-}
+
  .avatar {
   width: 40px;
   height: 40px;

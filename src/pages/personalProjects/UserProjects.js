@@ -22,6 +22,7 @@ const UserProjects = () => {
   return (
     <div className="p-5  ">
       <div className="flex">
+        
         {userMapDocuments.map(project => (  // Safely mapping with an initialized array
           <Link className="max-w-lg rounded overflow-hidden shadow-lg p-5 " to={`/projects/${project.id}`} key={project.id}>
             <h2 className='text-white text-2xl font-bold mb-2'>{project.name}</h2>
