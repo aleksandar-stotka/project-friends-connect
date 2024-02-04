@@ -32,7 +32,7 @@ const firestoreReducer = (state, action) => {
         success: true,
         error: null,
       };
-    case "ERROR":
+    case "ERROR": 
       return {
         isPending: false,
         document: null,
