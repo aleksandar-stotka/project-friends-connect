@@ -6,65 +6,27 @@ import { MdDashboard } from "react-icons/md";
 import { MdOutlinePersonalInjury } from "react-icons/md";
 
 function Sidebar() {
-
-  
   return (
-    <div className="flex   flex justify-center z-0 ">
-      <aside className="text-black     lg:w-[40rem] fixed bottom-0 w-[50rem] text-white py-4   transition-all duration-300 z-30">
+    <div className="flex flex justify-center z-0">
+      <aside className="text-black lg:w-[40rem] fixed bottom-0 w-full lg:w-[50rem] text-white py-4 transition-all duration-300 z-30">
         <div className="p-4">
-          <ul className="flex justify-between ">
-            <NavLink to="/dashboard">
+          <ul className="flex flex-col lg:flex-row justify-between">
+            <NavLink to="/dashboard" className="flex items-center">
               <MdDashboard className="w-10 h-6" />
-
-              <span>Dashboard</span>
+              <span className="lg:ml-2">Dashboard</span>
             </NavLink>
-            <NavLink to="/create">
+            <NavLink to="/create" className="flex items-center mt-4 lg:mt-0">
               <CgAdd className="w-10 h-6" />
-
-              <span className="new-project">New Project</span>
+              <span className="lg:ml-2 new-project">New Project</span>
             </NavLink>
-            <NavLink to="/personal">
+            <NavLink to="/personal" className="flex items-center mt-4 lg:mt-0">
               <MdOutlinePersonalInjury className="w-10 h-6" />
-
-              <span className="new-project">Personal projects</span>
+              <span className="lg:ml-2 new-project">Personal projects</span>
             </NavLink>
           </ul>
         </div>
       </aside>
     </div>
-
-    /*<div >
-        
-        <nav > 
-          <ul className="  flex justify-end gap-5 " >
-            <li>
-              <NavLink to="/">
-              <MdDashboard className="w-10 h-6" />
-
-                <span>Dashboard</span>
-              </NavLink>
-            </li>
-            <li>
-            
-            </li>
-            <li>
-              <NavLink to="/create">
-              <CgAdd className="w-10 h-6"  />
-
-                <span className="new-project">New Project</span>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/personal">
-              <MdOutlinePersonalInjury className="w-10 h-6"  />
-
-                <span className="new-project">Personal projects</span>
-              </NavLink>
-              
-            </li>
-          </ul>
-        </nav>
-      </div>*/
   );
 }
 
