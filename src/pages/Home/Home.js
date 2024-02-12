@@ -23,7 +23,6 @@ export default function Home() {
             {!isPending && (
               <button
                 className="text-white font-bold py-2 px-4 rounded transition-colors"
-                onClick={logout}
               >
                 Logout
               </button>

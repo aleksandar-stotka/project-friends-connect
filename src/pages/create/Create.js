@@ -6,13 +6,12 @@ import { useAuthContext } from "../../hooks/useAuthContext";
 import { useFirestore } from "../../hooks/useFirestore";
 import { useHistory } from "react-router-dom";
 
-
-import React, { useEffect ,useRef} from "react";
+import React, { useEffect, useRef } from "react";
 import { useState } from "react";
 
 const categories = [
   { value: "mine", label: "Mine" },
-  { value: "development", label: "development" },
+  { value: "development", label: "Development" },
   { value: "design", label: "Design" },
   { value: "sales", label: "Sales" },
   { value: "marketing", label: "Marketing" },
@@ -30,19 +29,16 @@ function Create() {
   const [name, setName] = useState("");
   const [details, setDetails] = useState("");
   const [dueDate, setDueDate] = useState("");
-  const [category, setCategory] = useState("")
+  const [category, setCategory] = useState("");
   const [assingnedUsers, setAssingnedUsers] = useState([]);
   const [formError, setFormError] = useState(null);
   const messagesEndRef = useRef(null);
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
-  
-
-  //i got both user uid and user createdID
 
   useEffect(() => {
-    scrollToBottom()
+    scrollToBottom();
     if (documents) {
       const options = documents.map((user) => {
         return { value: user, label: user.displayName };
@@ -59,7 +55,7 @@ function Create() {
       return;
     }
     if (assingnedUsers.length < 1) {
-      setFormError("Please assign project least 1");
+      setFormError("Please assign at least 1 user to the project");
       return;
     }
 
@@ -68,10 +64,6 @@ function Create() {
       photoURL: user.photoURL,
       id: user.uid,
     };
-
-    
-     
-  
 
     const assingnedUsersList = assingnedUsers.map((u) => {
       return {
@@ -82,9 +74,7 @@ function Create() {
     });
 
     const project = {
-      
       name,
-      
       details,
       category: category.value,
       dueDate: timestamp.fromDate(new Date(dueDate)),
@@ -102,7 +92,10 @@ function Create() {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-blue-900 p-6">
-      <form onSubmit={handleSubmit} className="max-w-2xl w-full bg-gray-800 text-white rounded-lg shadow-lg p-6">
+      <form
+        onSubmit={handleSubmit}
+        className="max-w-2xl w-full bg-gray-800 text-white rounded-lg shadow-lg p-6"
+      >
         <h2 className="text-2xl font-bold mb-4">Create New Project</h2>
         {/* Project Name */}
         <div className="mb-4">
@@ -126,7 +119,7 @@ function Create() {
               required
               onChange={(e) => setDetails(e.target.value)}
               value={details}
-              className="w-full mt-1 h-72 p-2 bg-gray-700 text-white rounded"
+              className="w-full mt-1 p-2 bg-gray-700 text-white rounded"
               placeholder="Enter project description"
             />
           </label>
@@ -149,7 +142,7 @@ function Create() {
           <label className="block text-gray-400 font-semibold mb-2">
             Project Category:
             <Select
-             menuPlacement="top"
+              menuPlacement="top"
               onChange={(option) => setCategory(option)}
               options={categories}
               className="text-black mt-1"
@@ -161,13 +154,12 @@ function Create() {
           <label className="block text-gray-400 font-semibold mb-2">
             Assign To:
             <Select
-             menuPlacement="top"
+              menuPlacement="top"
               options={users}
               onChange={(option) => setAssingnedUsers(option)}
               isMulti
               className="text-black mt-1"
-              styles={{ menuPortal: base => ({ ...base, zIndex: 9999 }) }}
-
+              styles={{ menuPortal: (base) => ({ ...base, zIndex: 9999 }) }}
             />
           </label>
         </div>
@@ -181,6 +173,5 @@ function Create() {
     </div>
   );
 }
-
 
 export default Create;
