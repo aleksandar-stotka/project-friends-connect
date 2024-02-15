@@ -21,9 +21,10 @@ export default function Home() {
         {user && (
           <li className="flex items-center space-x-3 p-2">
             {!isPending && (
-              <button
+              <button onClick={logout}
                 className="text-white font-bold py-2 px-4 rounded transition-colors"
               >
+                
                 Logout
               </button>
             )}
