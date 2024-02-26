@@ -45,32 +45,20 @@ export default function Home() {
           </li>
         )}
 
-        <div className="cursor-pointer">
-          <div className="transition-opacity duration-1000 opacity-1 flex justify-center p-2">
-            {paragraph ? (
-              <h2 className="text-white font-bold text-5xl lg:text-3xl tracking-wide">
-                Empowering Your Vision, Project by Project
-              </h2>
-            ) : (
-              <h2 className="text-blue-200 text-5xl lg:text-3xl font-bold tracking-wide">
-                Elevate Every Task, Achieve Every Goal
-              </h2>
-            )}
-          </div>
+<div className="cursor-pointer" style={{backgroundImage: 'url(\'earthback.jpg\')', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+  <div className="transition-opacity duration-1000 opacity-1 text-center">
+    {paragraph ? (
+      <h2 className="text-white font-bold text-5xl lg:text-6xl tracking-wide" style={{fontFamily: 'font-mono'}}>
+        Empowering Your Vision, Project by Project
+      </h2>
+    ) : (
+      <h2 className="text-blue-200 text-5xl lg:text-6xl font-bold tracking-wide" style={{fontFamily: 'font-mono'}}>
+        Elevate Every Task, Achieve Every Goal
+      </h2>
+    )}
+  </div>
+</div>
 
-          <div className="relative flex items-center justify-center h-full">
-            <Globe
-              ref={globeEl}
-              globeImageUrl="/globe.jpg"
-              polygonAltitude={0.06}
-              polygonCapColor={() => "rgba(255, 255, 255, 0.7)"}
-              polygonSideColor={() => "#fffff"}
-              polygonStrokeColor={() => "#ffff"}
-              atmosphereColor="#F5F7F8"
-              atmosphereAltitude={0.3}
-            />
-          </div>
-        </div>
       </div>
     </>
   );
