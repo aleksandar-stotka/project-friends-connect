@@ -1,5 +1,3 @@
-import React, { useEffect, useRef } from "react";
-import Globe from "react-globe.gl";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { useLogout } from "../../hooks/useLogout";
 import Avatar from "../../components/avatar/Avatar";
@@ -9,12 +7,8 @@ export default function Home() {
   const { paragraph } = useGlobalContext();
   const { user } = useAuthContext();
   const { isPending, logout } = useLogout();
-  const globeEl = useRef();
 
-  useEffect(() => {
-    // Existing useEffect code remains unchanged
-  }, []);
-
+ 
   return (
     <>
       <div className="h-screen bg-black overflow-hidden">
@@ -45,7 +39,7 @@ export default function Home() {
           </li>
         )}
 
-<div className="cursor-pointer" style={{backgroundImage: 'url(\'earthback.jpg\')', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+<div  style={{backgroundImage: 'url(\'earthback.jpg\')', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
   <div className="transition-opacity duration-1000 opacity-1 text-center">
     {paragraph ? (
       <h2 className="text-white font-bold text-5xl lg:text-6xl tracking-wide" style={{fontFamily: 'font-mono'}}>
