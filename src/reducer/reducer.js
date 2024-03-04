@@ -19,6 +19,7 @@ const reducer = (state, action) => {
         }
         return { ...state, page: prevPage };
       }
+      // eslint-disable-next-line no-fallthrough
       default:
         throw new Error(`no mathcing "${action.type}" action type`);
     }
