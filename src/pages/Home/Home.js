@@ -8,52 +8,67 @@ export default function Home() {
   const { user } = useAuthContext();
   const { isPending, logout } = useLogout();
 
- 
   return (
-    <>
-      <div className="h-screen bg-black overflow-hidden">
+    <div className="min-h-screen w-full relative bg-black">
+      {/* Background image with overlay */}
+      <div
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: "url('earthback.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-blue-900/60 to-black/80"></div>
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4">
+        {/* User Info Bar */}
         {user && (
-          <li className="flex items-center space-x-3 p-2">
-            {!isPending && (
-              <button onClick={logout}
-                className="text-white font-bold py-2 px-4 rounded transition-colors"
-              >
-                
-                Logout
-              </button>
-            )}
-            {isPending && (
-              <button
-                className="bg-gray-300 text-gray-700 font-bold py-2 px-4 rounded"
-                disabled
-              >
-                Logging out...
-              </button>
-            )}
-            <div className="flex items-center space-x-3">
-              <Avatar src={user.photoURL} className="w-10 h-10" />
-              <p className="text-white">
+          <div className="flex flex-col sm:flex-row items-center gap-4 w-full max-w-2xl mx-auto mt-6 bg-black/60 rounded-xl shadow-lg p-4">
+            <div className="flex items-center gap-3">
+              <Avatar src={user.photoURL} className="w-12 h-12 border-2 border-blue-400 rounded-full" />
+              <p className="text-white text-lg font-semibold">
                 Hey {user.displayName}
               </p>
             </div>
-          </li>
+            <div className="flex-1 flex justify-end">
+              {!isPending ? (
+                <button
+                  onClick={logout}
+                  className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-xl transition-colors shadow"
+                >
+                  Logout
+                </button>
+              ) : (
+                <button
+                  className="bg-gray-300 text-gray-700 font-bold py-2 px-6 rounded-xl shadow"
+                  disabled
+                >
+                  Logging out...
+                </button>
+              )}
+            </div>
+          </div>
         )}
 
-<div  style={{backgroundImage: 'url(\'earthback.jpg\')', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-  <div className="transition-opacity duration-1000 opacity-1 text-center">
-    {paragraph ? (
-      <h2 className="text-white font-bold text-5xl lg:text-6xl tracking-wide" style={{fontFamily: 'font-mono'}}>
-        Empowering Your Vision, Project by Project
-      </h2>
-    ) : (
-      <h2 className="text-blue-200 text-5xl lg:text-6xl font-bold tracking-wide" style={{fontFamily: 'font-mono'}}>
-        Elevate Every Task, Achieve Every Goal
-      </h2>
-    )}
-  </div>
-</div>
-
+        {/* Main Heading */}
+        <div className="flex flex-1 items-center justify-center w-full">
+          <div className="transition-opacity duration-1000 opacity-1 text-center max-w-3xl mx-auto mt-16 sm:mt-24">
+            {paragraph ? (
+              <h2 className="text-white font-bold text-3xl sm:text-5xl lg:text-6xl tracking-wide font-mono drop-shadow-lg">
+                Empowering Your Vision, Project by Project
+              </h2>
+            ) : (
+              <h2 className="text-blue-200 font-bold text-3xl sm:text-5xl lg:text-6xl tracking-wide font-mono drop-shadow-lg">
+                Elevate Every Task, Achieve Every Goal
+              </h2>
+            )}
+          </div>
+        </div>
       </div>
-    </>
+    </div>
   );
 }

@@ -56,7 +56,7 @@ function Dashboard() {
   }, []);
   return (
     <main>
- <div className=" min-h-screen bg-blue-500">
+ <div className=" min-h-screen">
       {error && <p className="error">{error}</p>}
       {documents && (
         <ProjectFilter
